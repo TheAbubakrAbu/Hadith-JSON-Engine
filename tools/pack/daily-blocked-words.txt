@@ -1,0 +1,75 @@
+# The daily-card blocked-word list, as the packer sees it.
+#
+# This is a COPY of Settings.dailyCardBlockedWords in Al-Islam-iOS (iPhone/Settings/SettingsQuran.swift),
+# which is shared with the Quran's Ayah of the Day and is app editorial policy, not hadith data. The
+# packer uses it to precompute the "gentle" bit on every hadith and stamps a fingerprint of the list
+# into each pack; the app compares that against its own list and falls back to checking the words at
+# runtime if the two ever disagree. Keeping them in sync is therefore an optimisation, never a
+# correctness requirement.
+#
+# Words are matched as whole tokens, never substrings. One per line; blank lines and # comments ignored.
+kill
+killed
+killing
+kills
+killer
+fight
+fights
+fighting
+fought
+violence
+violent
+violently
+murder
+murdered
+murderer
+murders
+slay
+slays
+slain
+slaying
+slew
+slaughter
+slaughtered
+slaughtering
+battle
+battles
+war
+wars
+warfare
+slave
+slaves
+slavery
+enslave
+enslaved
+slavegirl
+slavegirls
+captive
+captives
+hit
+hits
+hitting
+beat
+beats
+beaten
+beating
+strike
+strikes
+struck
+striking
+smite
+smote
+smitten
+whip
+whips
+whipped
+lash
+lashes
+lashed
+stoned
+stoning
+flog
+flogged
+flogging
+wounded
+bloodshed

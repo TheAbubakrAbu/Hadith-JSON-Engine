@@ -1,0 +1,316 @@
+{
+ "version": 1,
+ "description": "Single source of behavioural truth for the Hadith JSON Engine. Every port SHOULD assert these against its own reader, so a behaviour is specified ONCE here instead of re-asserted in N hand-written test files. Add or change a case here and each port picks it up. Reference consumer: tools/read_pack.py --verify. See docs/PORTING.md.",
+ "corpus": {
+  "books": 17,
+  "hadiths": 50884,
+  "chapters": 607,
+  "repaired": 4477,
+  "graded": 21455,
+  "cited": 47476
+ },
+ "books": [
+  {
+   "slug": "bukhari",
+   "folder": "the_9_books",
+   "hadiths": 7277,
+   "chapters": 97,
+   "withEnglish": 7277,
+   "graded": 0,
+   "cited": 7277
+  },
+  {
+   "slug": "muslim",
+   "folder": "the_9_books",
+   "hadiths": 7459,
+   "chapters": 57,
+   "withEnglish": 7458,
+   "graded": 0,
+   "cited": 7446
+  },
+  {
+   "slug": "nasai",
+   "folder": "the_9_books",
+   "hadiths": 5768,
+   "chapters": 52,
+   "withEnglish": 5768,
+   "graded": 5646,
+   "cited": 5766
+  },
+  {
+   "slug": "abudawud",
+   "folder": "the_9_books",
+   "hadiths": 5276,
+   "chapters": 43,
+   "withEnglish": 5276,
+   "graded": 4176,
+   "cited": 5276
+  },
+  {
+   "slug": "tirmidhi",
+   "folder": "the_9_books",
+   "hadiths": 4053,
+   "chapters": 49,
+   "withEnglish": 4053,
+   "graded": 3948,
+   "cited": 4053
+  },
+  {
+   "slug": "ibnmajah",
+   "folder": "the_9_books",
+   "hadiths": 4345,
+   "chapters": 38,
+   "withEnglish": 4345,
+   "graded": 4313,
+   "cited": 4345
+  },
+  {
+   "slug": "malik",
+   "folder": "the_9_books",
+   "hadiths": 1985,
+   "chapters": 61,
+   "withEnglish": 1973,
+   "graded": 1705,
+   "cited": 0
+  },
+  {
+   "slug": "ahmed",
+   "folder": "the_9_books",
+   "hadiths": 1374,
+   "chapters": 8,
+   "withEnglish": 1359,
+   "graded": 1239,
+   "cited": 1359
+  },
+  {
+   "slug": "darimi",
+   "folder": "the_9_books",
+   "hadiths": 3406,
+   "chapters": 24,
+   "withEnglish": 0,
+   "graded": 0,
+   "cited": 3406
+  },
+  {
+   "slug": "qudsi40",
+   "folder": "forties",
+   "hadiths": 40,
+   "chapters": 1,
+   "withEnglish": 40,
+   "graded": 0,
+   "cited": 40
+  },
+  {
+   "slug": "nawawi40",
+   "folder": "forties",
+   "hadiths": 42,
+   "chapters": 1,
+   "withEnglish": 42,
+   "graded": 0,
+   "cited": 42
+  },
+  {
+   "slug": "shahwaliullah40",
+   "folder": "forties",
+   "hadiths": 40,
+   "chapters": 1,
+   "withEnglish": 40,
+   "graded": 0,
+   "cited": 40
+  },
+  {
+   "slug": "aladab_almufrad",
+   "folder": "other_books",
+   "hadiths": 1326,
+   "chapters": 57,
+   "withEnglish": 1320,
+   "graded": 0,
+   "cited": 1326
+  },
+  {
+   "slug": "shamail_muhammadiyah",
+   "folder": "other_books",
+   "hadiths": 402,
+   "chapters": 57,
+   "withEnglish": 402,
+   "graded": 394,
+   "cited": 400
+  },
+  {
+   "slug": "riyad_assalihin",
+   "folder": "other_books",
+   "hadiths": 1896,
+   "chapters": 20,
+   "withEnglish": 1896,
+   "graded": 0,
+   "cited": 1896
+  },
+  {
+   "slug": "mishkat_almasabih",
+   "folder": "other_books",
+   "hadiths": 4428,
+   "chapters": 25,
+   "withEnglish": 4428,
+   "graded": 32,
+   "cited": 4426
+  },
+  {
+   "slug": "bulugh_almaram",
+   "folder": "other_books",
+   "hadiths": 1767,
+   "chapters": 16,
+   "withEnglish": 1767,
+   "graded": 2,
+   "cited": 378
+  }
+ ],
+ "repairedRecords": {
+  "description": "Records this repository repaired. A reader on stale or unrepaired data FAILS these - that is the point. Qudsi 24 is the record whose damage inverted the meaning; Nawawi 3 and 9 are second-pass repairs.",
+  "cases": [
+   {
+    "book": "qudsi40",
+    "idInBook": 24,
+    "englishText": "If Allah has loved a servant [of His] He calls Gabriel (on whom be peace) and says: I love So-and-so, therefore love him. He (the Prophet ﷺ) said: So Gabriel loves him. Then he (Gabriel) calls out in heaven, saying: Allah loves So-and-so, therefore love him. And the inhabitants of heaven love him. He (the Prophet ﷺ) said: Then acceptance is established for him on earth. And if Allah has abhorred a servant [of His], He calls Gabriel and says: I abhor So-and-so, therefore abhor him. So Gabriel abhors him. Then Gabriel calls out to the inhabitants of heaven: Allah abhors So-and-so, therefore abhor him. He (the Prophet ﷺ) said: So they abhor him, and abhorrence is established for him on earth. It was related by Muslim (also by al-Bukhari, Malik, and at-Tirmidhi)",
+    "narrator": "On the authority of Abu Hurayrah (may Allah be pleased with him), who said that the Messenger of Allah (ﷺ) said:",
+    "arabicSha256": "64360182004fd319"
+   },
+   {
+    "book": "nawawi40",
+    "idInBook": 3,
+    "englishText": "I heard the Messenger of Allah (ﷺ) say, \"Islam has been built on five [pillars]: testifying that there is no deity worthy of worship except Allah and that Muhammad is the Messenger of Allah, establishing the salah (prayer), paying the zakat (obligatory charity), making the hajj (pilgrimage) to the House, and fasting in Ramadhan.\" [Bukhari & Muslim]",
+    "narrator": "On the authority of Abdullah, the son of Umar ibn al-Khattab (ra), who said:",
+    "arabicSha256": "b24ec59ecb5a0e1c"
+   },
+   {
+    "book": "nawawi40",
+    "idInBook": 9,
+    "englishText": "I heard the Messenger of Allah (ﷺ) say, “What I have forbidden for you, avoid. What I have ordered you [to do], do as much of it as you can. For verily, it was only the excessive questioning and their disagreeing with their Prophets that destroyed [the nations] who were before you.” [Bukhari & Muslim]",
+    "narrator": "On the authority of Abu Hurayrah (ra):",
+    "arabicSha256": "2c4aa237ccc16bd3"
+   }
+  ]
+ },
+ "mustContain": {
+  "description": "Substrings that MUST be present. Their absence means the bracketed insertion was lost again.",
+  "cases": [
+   {
+    "book": "qudsi40",
+    "idInBook": 24,
+    "substrings": [
+     "a servant [of His]",
+     "I love So-and-so",
+     "And if Allah has abhorred a servant [of His]"
+    ]
+   },
+   {
+    "book": "nawawi40",
+    "idInBook": 3,
+    "substrings": [
+     "built on five [pillars]:",
+     "[Bukhari & Muslim]"
+    ]
+   },
+   {
+    "book": "nawawi40",
+    "idInBook": 9,
+    "substrings": [
+     "What I have ordered you [to do]"
+    ]
+   }
+  ]
+ },
+ "emptyEnglish": {
+  "description": "Books where english.text is legitimately empty. Readers MUST omit the English block, not render a blank.",
+  "cases": [
+   {
+    "book": "darimi",
+    "expectEmptyCount": 3406
+   }
+  ]
+ },
+ "chapterIdMapping": {
+  "description": "Fractional chapter ids map to a stable synthetic integer; truncation would collide with the integer chapter.",
+  "rule": "id == floor(id) ? int(id) : 1000 + round(id * 10)",
+  "cases": [
+   {
+    "input": 8.0,
+    "expected": 8
+   },
+   {
+    "input": 8.2,
+    "expected": 1082
+   },
+   {
+    "input": 1.0,
+    "expected": 1
+   }
+  ]
+ },
+ "packFormat": {
+  "magic": "0x4B504448",
+  "magicAscii": "HDPK",
+  "formatVersion": 4,
+  "headerBytes": 48,
+  "blockTableEntryBytes": 28,
+  "rowRecordBytes": 20,
+  "codecs": {
+   "1": "lzfse",
+   "2": "lzma"
+  },
+  "foldFingerprint": "87ae980f6662910b",
+  "blockedWordFingerprint": "364acd6b07a2588f",
+  "invariants": [
+   "every chapter's rows are one contiguous run",
+   "chapter ranges cover every row exactly once",
+   "no chapter has zero hadiths",
+   "every row decodes to exactly four strings (arabic, narrator, text, grades)",
+   "citation base 0 means no standard number exists; suffix 1-26 renders as a-z"
+  ],
+  "gradesEncoding": "4th display string: 'name U+001F grade' records joined by U+001E; empty = ungraded"
+ },
+ "citations": {
+  "description": "Standard sunnah.com citation numbers attached by tools/add_citations.py. Spot vectors a port SHOULD assert: (slug, idInBook) -> citation. The tirmidhi case is the user report that opened the numbering issue.",
+  "spot": [
+   {
+    "slug": "tirmidhi",
+    "idInBook": 3033,
+    "citation": "2950"
+   },
+   {
+    "slug": "tirmidhi",
+    "idInBook": 2605,
+    "citation": "2535",
+    "note": "scrape-era sunnah.com typo (2735), adjudicated by local sequence + second donor"
+   },
+   {
+    "slug": "muslim",
+    "idInBook": 1,
+    "citation": "8a"
+   },
+   {
+    "slug": "muslim",
+    "idInBook": 5,
+    "citation": "8e"
+   },
+   {
+    "slug": "bukhari",
+    "idInBook": 1,
+    "citation": "1"
+   },
+   {
+    "slug": "nawawi40",
+    "idInBook": 24,
+    "citation": "24"
+   }
+  ],
+  "uncitedMeansNoStandardNumber": [
+   "malik (all 1,985)",
+   "bulugh_almaram (1,389 of 1,767)",
+   "muslim muqaddimah (13)",
+   "nasai (2)",
+   "ahmed (15)",
+   "shamail_muhammadiyah (2)",
+   "mishkat_almasabih (2)"
+  ]
+ }
+}
