@@ -35,7 +35,7 @@ This repository **transmits** those gradings. It does not compute, infer, adjudi
 Built for and used by **Al-Islam | Islamic Pillars**:
 
 - **Author:** Abubakr Elmallah (أبوبكر الملاح)
-- **Project:** <https://github.com/TheAbubakrAbu/Al-Islam-Islamic-Pillars>
+- **Project:** <https://github.com/TheAbubakrAbu/Al-Islam-iOS>
 - **App Store:** <https://apps.apple.com/us/app/al-islam-islamic-pillars/id6449729655>
 - **Website:** <https://abubakrelmallah.com/>
 
@@ -44,8 +44,8 @@ The pack format (`.hpk`), the search-fold logic, and the daily-card policy are s
 Companion projects by the same author:
 
 - [**Quran Tajweed Engine**](https://github.com/TheAbubakrAbu/Quran-Tajweed-Engine) — the same idea, for the Quran
-- [**Al-Adhan | Prayer Times**](https://github.com/TheAbubakrAbu/Al-Adhan-Prayer-Times)
-- [**Al-Quran | Beginner Quran**](https://github.com/TheAbubakrAbu/Al-Quran-Beginner-Quran)
+- [**Al-Adhan | Prayer Times**](https://github.com/TheAbubakrAbu/Al-Adhan-iOS)
+- [**Al-Quran | Beginner Quran**](https://github.com/TheAbubakrAbu/Al-Quran-iOS)
 
 ## The one who reported it
 

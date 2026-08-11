@@ -2,7 +2,11 @@
 
 **An open-source, offline-first, framework-agnostic hadith engine.** The complete text of 17 collections — 50,884 hadiths in Arabic and English — *repaired* from a scraper bug that had been silently deleting sentences for years, graded by named scholars, and shipped as **portable data + a documented binary pack format + precise specifications**, so anyone can build a hadith app in any language on any platform. No network required; everything ships in the box.
 
-> The data originates from [AhmedBaset/hadith-json](https://github.com/AhmedBaset/hadith-json), which scraped [sunnah.com](https://sunnah.com). This repository repairs it, grades it, documents it, and packages it for offline apps. It is the data layer behind **[Al-Islam | Islamic Pillars](https://github.com/TheAbubakrAbu/Al-Islam-Islamic-Pillars)**. See [CREDITS.md](CREDITS.md).
+> The data originates from [AhmedBaset/hadith-json](https://github.com/AhmedBaset/hadith-json), which scraped [sunnah.com](https://sunnah.com). This repository repairs it, grades it, documents it, and packages it for offline apps. It is the data layer behind **[Al-Islam | Islamic Pillars](https://github.com/TheAbubakrAbu/Al-Islam-iOS)**. See [CREDITS.md](CREDITS.md).
+
+<a href="https://apps.apple.com/us/app/al-islam-islamic-pillars/id6449729655?platform=iphone">
+  <img src="Logo.png" alt="Logo" width="120" style="border-radius:10px;"/>
+</a>
 
 ## At a glance
 
@@ -74,6 +78,8 @@ Hadith-JSON-Engine/
 ```
 
 ## Engine modules
+
+Each module is data first and stands alone — take the text and ignore the rest, or adopt all of it:
 
 | Module | What it does | This engine |
 |---|---|---|
@@ -215,12 +221,26 @@ All three ultimately derive from [sunnah.com](https://sunnah.com). Please respec
 
 > **Note on upstream licensing:** AhmedBaset/hadith-json states no license. This repo redistributes its schema and Arabic text on the same basis the upstream project redistributes sunnah.com's. If the upstream author objects, open an issue and it will be taken down.
 
-## Apps by the author
+## The Al-Islamic Apps
 
-- [**Al-Islam | Islamic Pillars**](https://github.com/TheAbubakrAbu/Al-Islam-Islamic-Pillars)
-- [**Al-Adhan | Prayer Times**](https://github.com/TheAbubakrAbu/Al-Adhan-Prayer-Times)
-- [**Al-Quran | Beginner Quran**](https://github.com/TheAbubakrAbu/Al-Quran-Beginner-Quran)
-- [**Quran Tajweed Engine**](https://github.com/TheAbubakrAbu/Quran-Tajweed-Engine) — the same idea, for the Quran
+Five repositories by the same author: three apps, and the two engines the apps are built on. Everything is free, offline-first, and open source.
+
+**Apps**
+
+- [**Al-Islam | Islamic Pillars**](https://github.com/TheAbubakrAbu/Al-Islam-iOS) — prayer times, the Quran, hadith, tafsir, and the Islamic essentials in one app
+- [**Al-Adhan | Prayer Times**](https://github.com/TheAbubakrAbu/Al-Adhan-iOS) — prayer times, adhan notifications, and the Qibla
+- [**Al-Quran | Beginner Quran**](https://github.com/TheAbubakrAbu/Al-Quran-iOS) — the Quran for beginners and Arabic learners
+
+**Engines** — the data layers behind those apps, extracted so anyone can build on them in any language
+
+- [**Hadith JSON Engine**](https://github.com/TheAbubakrAbu/Hadith-JSON-Engine) — *this repository*. 50,884 hadiths across 17 collections: repaired, graded, cited, and packed
+- [**Quran Tajweed Engine**](https://github.com/TheAbubakrAbu/Quran-Tajweed-Engine) — the same idea for the Quran: 6,236 ayahs with pre-computed tajweed, qiraat, and recitations
+
+## License & attribution
+
+The tooling, documentation, and specifications here are MIT — see [LICENSE](LICENSE). Use, modify, and redistribute them freely, **with attribution**, and preserve the provenance in [CREDITS.md](CREDITS.md).
+
+**The hadith text is not this repository's to license.** It belongs to the tradition, and its English rendering to the translators and publishers whom [sunnah.com](https://sunnah.com) credits. These are the words of the Prophet ﷺ — keep them accurate, and keep the chain of attribution intact.
 
 ## Contributing
 
@@ -228,7 +248,7 @@ Better sources, closed gaps, new language ports of the pack reader, and scholarl
 
 ## A note on intent
 
-This project — like **[Al-Islam](https://github.com/TheAbubakrAbu/Al-Islam-Islamic-Pillars)**, **[Al-Adhan](https://github.com/TheAbubakrAbu/Al-Adhan-Prayer-Times)**, **[Al-Quran](https://github.com/TheAbubakrAbu/Al-Quran-Beginner-Quran)**, and the **[Quran Tajweed Engine](https://github.com/TheAbubakrAbu/Quran-Tajweed-Engine)** — is offered as *sadaqah jariyah*. These are the words of the Prophet ﷺ; they deserve to be transmitted accurately. If a hadith in your app is wrong, someone may act on it. That is the whole reason this repository exists, and why every repair here is gated by a proof rather than a guess.
+This project — like **[Al-Islam](https://github.com/TheAbubakrAbu/Al-Islam-iOS)**, **[Al-Adhan](https://github.com/TheAbubakrAbu/Al-Adhan-iOS)**, **[Al-Quran](https://github.com/TheAbubakrAbu/Al-Quran-iOS)**, and the **[Quran Tajweed Engine](https://github.com/TheAbubakrAbu/Quran-Tajweed-Engine)** — is offered as *sadaqah jariyah*. These are the words of the Prophet ﷺ; they deserve to be transmitted accurately. If a hadith in your app is wrong, someone may act on it. That is the whole reason this repository exists, and why every repair here is gated by a proof rather than a guess.
 
 If it helps you, keep the chain of attribution intact and contribute improvements back.
 
