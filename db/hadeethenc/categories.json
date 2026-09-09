@@ -1,0 +1,4528 @@
+{
+ "version": 1,
+ "source": "hadeethenc.com",
+ "generatedAt": "2026-09-05",
+ "description": "The Hadith Encyclopedia's category tree: 452 nodes, 7 roots, at most 4 deep. `direct` is the narrations filed on the node itself, `total` the subtree. A narration can sit under several categories, so the roots' totals sum to more than the corpus.",
+ "tree": [
+  {
+   "id": "1",
+   "parent": null,
+   "labels": {
+    "en": "The Noble Qur'an and Qur'anic Sciences",
+    "ar": "القرآن الكريم وعلومه"
+   },
+   "direct": 0,
+   "total": 88
+  },
+  {
+   "id": "2",
+   "parent": null,
+   "labels": {
+    "en": "The Hadith and Hadith Sciences",
+    "ar": "الحديث وعلومه"
+   },
+   "direct": 0,
+   "total": 12
+  },
+  {
+   "id": "3",
+   "parent": null,
+   "labels": {
+    "en": "The Creed",
+    "ar": "العقيدة"
+   },
+   "direct": 3,
+   "total": 545
+  },
+  {
+   "id": "4",
+   "parent": null,
+   "labels": {
+    "en": "Jurisprudence and Juristic Principles",
+    "ar": "الفقه وأصوله"
+   },
+   "direct": 2,
+   "total": 1311
+  },
+  {
+   "id": "5",
+   "parent": null,
+   "labels": {
+    "en": "Virtues and Manners",
+    "ar": "الفضائل والآداب"
+   },
+   "direct": 31,
+   "total": 864
+  },
+  {
+   "id": "6",
+   "parent": null,
+   "labels": {
+    "en": "Da‘wah and Hisbah",
+    "ar": "الدعوة والحسبة"
+   },
+   "direct": 0,
+   "total": 111
+  },
+  {
+   "id": "7",
+   "parent": null,
+   "labels": {
+    "en": "Seerah and History",
+    "ar": "السيرة والتاريخ"
+   },
+   "direct": 1,
+   "total": 229
+  },
+  {
+   "id": "8",
+   "parent": "1",
+   "labels": {
+    "en": "Revelation and Collection of the Qur'an",
+    "ar": "نزول القرآن وجمعه"
+   },
+   "direct": 6,
+   "total": 16
+  },
+  {
+   "id": "9",
+   "parent": "1",
+   "labels": {
+    "en": "Modes of Qur'anic Recitation and Tajweed",
+    "ar": "القراءات والتجويد"
+   },
+   "direct": 0,
+   "total": 8
+  },
+  {
+   "id": "10",
+   "parent": "1",
+   "labels": {
+    "en": "Qur'anic Exegesis",
+    "ar": "تفسير القرآن"
+   },
+   "direct": 4,
+   "total": 18
+  },
+  {
+   "id": "11",
+   "parent": "1",
+   "labels": {
+    "en": "General Qur'anic Topics",
+    "ar": "مباحث قرآنية عامة"
+   },
+   "direct": 0,
+   "total": 15
+  },
+  {
+   "id": "12",
+   "parent": "1",
+   "labels": {
+    "en": "Excellence of the Qur'an",
+    "ar": "فضائل القرآن"
+   },
+   "direct": 1,
+   "total": 31
+  },
+  {
+   "id": "13",
+   "parent": "8",
+   "labels": {
+    "en": "Meanings and Attributes of the Qur'an",
+    "ar": "معنى القرآن وأوصافه"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "14",
+   "parent": "8",
+   "labels": {
+    "en": "Occasions of Revelation",
+    "ar": "أسباب النزول"
+   },
+   "direct": 5,
+   "total": 5
+  },
+  {
+   "id": "16",
+   "parent": "8",
+   "labels": {
+    "en": "Abrogating and Abrogated Verses",
+    "ar": "الناسخ والمنسوخ"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "17",
+   "parent": "8",
+   "labels": {
+    "en": "Collecting the Qur'an",
+    "ar": "جمع القرآن"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "18",
+   "parent": "9",
+   "labels": {
+    "en": "Seven Modes of the Qur'anic Revelation",
+    "ar": "الأحرف السبعة"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "20",
+   "parent": "9",
+   "labels": {
+    "en": "Science of Tajweed",
+    "ar": "علم التجويد"
+   },
+   "direct": 4,
+   "total": 4
+  },
+  {
+   "id": "21",
+   "parent": "9",
+   "labels": {
+    "en": "Stops and Starts",
+    "ar": "الوقف والابتداء"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "24",
+   "parent": "10",
+   "labels": {
+    "en": "Rules and Principles of Exegesis",
+    "ar": "أصول التفسير وقواعده"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "29",
+   "parent": "11",
+   "labels": {
+    "en": "Rulings of the Qur'an and Codices",
+    "ar": "أحكام القرآن والمصاحف"
+   },
+   "direct": 4,
+   "total": 4
+  },
+  {
+   "id": "31",
+   "parent": "11",
+   "labels": {
+    "en": "Manners of Reading and Memorizing the Qur'an",
+    "ar": "آداب قراءة القرآن وحملته"
+   },
+   "direct": 7,
+   "total": 7
+  },
+  {
+   "id": "32",
+   "parent": "11",
+   "labels": {
+    "en": "Refuting Allegations against the Qur'an",
+    "ar": "رد الشبهات حول القرآن"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "38",
+   "parent": "11",
+   "labels": {
+    "en": "Inference from the Qur'an",
+    "ar": "الاستنباط من القرآن"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "39",
+   "parent": "12",
+   "labels": {
+    "en": "Merit of Taking Care of the Qur'an",
+    "ar": "فضل العناية بالقرآن"
+   },
+   "direct": 13,
+   "total": 13
+  },
+  {
+   "id": "40",
+   "parent": "12",
+   "labels": {
+    "en": "Virtues of Surahs and Verses",
+    "ar": "فضائل السور والآيات"
+   },
+   "direct": 17,
+   "total": 17
+  },
+  {
+   "id": "44",
+   "parent": "2",
+   "labels": {
+    "en": "General Sunnah Topics",
+    "ar": "مباحث عامة في السنة"
+   },
+   "direct": 0,
+   "total": 12
+  },
+  {
+   "id": "56",
+   "parent": "44",
+   "labels": {
+    "en": "Significance and Status of the Sunnah",
+    "ar": "أهمية السنة ومكانتها"
+   },
+   "direct": 9,
+   "total": 9
+  },
+  {
+   "id": "57",
+   "parent": "44",
+   "labels": {
+    "en": "Writing the Sunnah",
+    "ar": "تدوين السنة النبوية"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "59",
+   "parent": "3",
+   "labels": {
+    "en": "Belief in Allah the Mighty and Majestic",
+    "ar": "الإيمان بالله عز وجل"
+   },
+   "direct": 14,
+   "total": 141
+  },
+  {
+   "id": "60",
+   "parent": "3",
+   "labels": {
+    "en": "Belief in the Angels",
+    "ar": "الإيمان بالملائكة"
+   },
+   "direct": 5,
+   "total": 33
+  },
+  {
+   "id": "61",
+   "parent": "3",
+   "labels": {
+    "en": "Belief in the Revealed Books",
+    "ar": "الإيمان بالكتب"
+   },
+   "direct": 1,
+   "total": 3
+  },
+  {
+   "id": "62",
+   "parent": "3",
+   "labels": {
+    "en": "Belief in the Messengers",
+    "ar": "الإيمان بالرسل"
+   },
+   "direct": 0,
+   "total": 52
+  },
+  {
+   "id": "63",
+   "parent": "3",
+   "labels": {
+    "en": "Belief in the Last Day",
+    "ar": "الإيمان باليوم الآخر"
+   },
+   "direct": 28,
+   "total": 120
+  },
+  {
+   "id": "64",
+   "parent": "3",
+   "labels": {
+    "en": "Belief in the Divine Decree and Fate",
+    "ar": "الإيمان بالقضاء والقدر"
+   },
+   "direct": 8,
+   "total": 27
+  },
+  {
+   "id": "65",
+   "parent": "3",
+   "labels": {
+    "en": "Names and Rulings",
+    "ar": "الأسماء والأحكام"
+   },
+   "direct": 2,
+   "total": 95
+  },
+  {
+   "id": "66",
+   "parent": "3",
+   "labels": {
+    "en": "The Companions",
+    "ar": "الصحابة"
+   },
+   "direct": 0,
+   "total": 39
+  },
+  {
+   "id": "67",
+   "parent": "3",
+   "labels": {
+    "en": "The Prophet's Family",
+    "ar": "آل البيت"
+   },
+   "direct": 0,
+   "total": 15
+  },
+  {
+   "id": "68",
+   "parent": "3",
+   "labels": {
+    "en": "Allegiance and Dissociation",
+    "ar": "الولاء والبراء"
+   },
+   "direct": 0,
+   "total": 15
+  },
+  {
+   "id": "69",
+   "parent": "3",
+   "labels": {
+    "en": "People of the Sunnah and the Community",
+    "ar": "أهل السنة والجماعة"
+   },
+   "direct": 0,
+   "total": 1
+  },
+  {
+   "id": "71",
+   "parent": "3",
+   "labels": {
+    "en": "Sects and Schools",
+    "ar": "الفرق والمذاهب"
+   },
+   "direct": 0,
+   "total": 1
+  },
+  {
+   "id": "72",
+   "parent": "59",
+   "labels": {
+    "en": "Oneness of Allah's Lordship",
+    "ar": "توحيد الربوبية"
+   },
+   "direct": 8,
+   "total": 8
+  },
+  {
+   "id": "73",
+   "parent": "59",
+   "labels": {
+    "en": "Oneness of Allah's Worship",
+    "ar": "توحيد الألوهية"
+   },
+   "direct": 43,
+   "total": 43
+  },
+  {
+   "id": "74",
+   "parent": "59",
+   "labels": {
+    "en": "Oneness of Allah's Names and Attributes",
+    "ar": "توحيد الأسماء والصفات"
+   },
+   "direct": 76,
+   "total": 76
+  },
+  {
+   "id": "75",
+   "parent": "60",
+   "labels": {
+    "en": "The Angels",
+    "ar": "الملائكة"
+   },
+   "direct": 20,
+   "total": 20
+  },
+  {
+   "id": "76",
+   "parent": "60",
+   "labels": {
+    "en": "The Jinn",
+    "ar": "الجن"
+   },
+   "direct": 8,
+   "total": 8
+  },
+  {
+   "id": "77",
+   "parent": "61",
+   "labels": {
+    "en": "Pre-Islamic Scriptures",
+    "ar": "الكتب السابقة"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "78",
+   "parent": "61",
+   "labels": {
+    "en": "The Qur'an",
+    "ar": "القرآن"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "79",
+   "parent": "62",
+   "labels": {
+    "en": "Prophethood",
+    "ar": "النبوة"
+   },
+   "direct": 5,
+   "total": 5
+  },
+  {
+   "id": "80",
+   "parent": "62",
+   "labels": {
+    "en": "Pre-Islamic Prophets and Messengers, peace be upon them",
+    "ar": "الأنبياء والرسل السابقين عليهم السلام"
+   },
+   "direct": 23,
+   "total": 23
+  },
+  {
+   "id": "81",
+   "parent": "62",
+   "labels": {
+    "en": "Our Prophet Muhammad, may Allah's peace and blessings be upon him",
+    "ar": "نبينا محمد صلى الله عليه وسلم"
+   },
+   "direct": 20,
+   "total": 20
+  },
+  {
+   "id": "82",
+   "parent": "62",
+   "labels": {
+    "en": "Miracles of the Pious Allies of Allah",
+    "ar": "كرامات الأولياء"
+   },
+   "direct": 4,
+   "total": 4
+  },
+  {
+   "id": "83",
+   "parent": "63",
+   "labels": {
+    "en": "The Barzakh Life (After death Period)",
+    "ar": "الحياة البرزخية"
+   },
+   "direct": 19,
+   "total": 19
+  },
+  {
+   "id": "84",
+   "parent": "63",
+   "labels": {
+    "en": "Portents of the Hour",
+    "ar": "أشراط الساعة"
+   },
+   "direct": 27,
+   "total": 27
+  },
+  {
+   "id": "85",
+   "parent": "63",
+   "labels": {
+    "en": "The Hereafter Life",
+    "ar": "الحياة الآخرة"
+   },
+   "direct": 46,
+   "total": 46
+  },
+  {
+   "id": "86",
+   "parent": "64",
+   "labels": {
+    "en": "Levels of Divine Decree and Fate",
+    "ar": "مراتب القضاء والقدر"
+   },
+   "direct": 10,
+   "total": 10
+  },
+  {
+   "id": "87",
+   "parent": "64",
+   "labels": {
+    "en": "Issues of Divine Decree and Fate",
+    "ar": "مسائل القضاء والقدر"
+   },
+   "direct": 9,
+   "total": 9
+  },
+  {
+   "id": "88",
+   "parent": "65",
+   "labels": {
+    "en": "Islam",
+    "ar": "الإسلام"
+   },
+   "direct": 23,
+   "total": 23
+  },
+  {
+   "id": "89",
+   "parent": "65",
+   "labels": {
+    "en": "Nullifiers of Islam",
+    "ar": "نواقض الإسلام"
+   },
+   "direct": 7,
+   "total": 7
+  },
+  {
+   "id": "90",
+   "parent": "65",
+   "labels": {
+    "en": "Issues of Pre-Islamic Era",
+    "ar": "مسائل الجاهلية"
+   },
+   "direct": 8,
+   "total": 8
+  },
+  {
+   "id": "92",
+   "parent": "65",
+   "labels": {
+    "en": "Increase and Decrease of Faith",
+    "ar": "زيادة الإيمان ونقصانه"
+   },
+   "direct": 9,
+   "total": 9
+  },
+  {
+   "id": "94",
+   "parent": "65",
+   "labels": {
+    "en": "Branches of Faith",
+    "ar": "شعب الإيمان"
+   },
+   "direct": 7,
+   "total": 7
+  },
+  {
+   "id": "96",
+   "parent": "65",
+   "labels": {
+    "en": "Disbelief",
+    "ar": "الكفر"
+   },
+   "direct": 7,
+   "total": 7
+  },
+  {
+   "id": "97",
+   "parent": "65",
+   "labels": {
+    "en": "Polytheism",
+    "ar": "الشرك"
+   },
+   "direct": 12,
+   "total": 12
+  },
+  {
+   "id": "98",
+   "parent": "65",
+   "labels": {
+    "en": "Hypocrisy",
+    "ar": "النفاق"
+   },
+   "direct": 10,
+   "total": 10
+  },
+  {
+   "id": "99",
+   "parent": "65",
+   "labels": {
+    "en": "Immorality",
+    "ar": "الفسق"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "100",
+   "parent": "65",
+   "labels": {
+    "en": "Religious Innovation",
+    "ar": "البدعة"
+   },
+   "direct": 5,
+   "total": 7
+  },
+  {
+   "id": "101",
+   "parent": "66",
+   "labels": {
+    "en": "Merit of the Companions",
+    "ar": "فضل الصحابة رضي الله عنهم"
+   },
+   "direct": 31,
+   "total": 31
+  },
+  {
+   "id": "102",
+   "parent": "66",
+   "labels": {
+    "en": "Belief in the the Companions",
+    "ar": "الاعتقاد في الصحابة رضي الله عنهم"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "103",
+   "parent": "66",
+   "labels": {
+    "en": "Degrees of the Companions",
+    "ar": "درجات الصحابة رضي الله عنهم"
+   },
+   "direct": 6,
+   "total": 6
+  },
+  {
+   "id": "105",
+   "parent": "67",
+   "labels": {
+    "en": "Merit of the Prophet's Family",
+    "ar": "فضل آل البيت"
+   },
+   "direct": 6,
+   "total": 6
+  },
+  {
+   "id": "106",
+   "parent": "67",
+   "labels": {
+    "en": "Merit of the Mothers of the Believers",
+    "ar": "فضل أمهات المؤمنين"
+   },
+   "direct": 4,
+   "total": 4
+  },
+  {
+   "id": "107",
+   "parent": "67",
+   "labels": {
+    "en": "Belief in the Prophet's Family",
+    "ar": "الاعتقاد في آل البيت"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "108",
+   "parent": "67",
+   "labels": {
+    "en": "Rights of the Prophet's Family",
+    "ar": "حقوق آل البيت"
+   },
+   "direct": 4,
+   "total": 4
+  },
+  {
+   "id": "109",
+   "parent": "68",
+   "labels": {
+    "en": "Rulings of Allegiance and Dissociation",
+    "ar": "أحكام الولاء والبراء"
+   },
+   "direct": 5,
+   "total": 5
+  },
+  {
+   "id": "110",
+   "parent": "68",
+   "labels": {
+    "en": "Forbidden Emulation",
+    "ar": "التشبه المنهي عنه"
+   },
+   "direct": 6,
+   "total": 6
+  },
+  {
+   "id": "111",
+   "parent": "68",
+   "labels": {
+    "en": "Emigration and its Rulings",
+    "ar": "الهجرة وأحكامها"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "112",
+   "parent": "68",
+   "labels": {
+    "en": "Desertion and its Conditions",
+    "ar": "الهجر وشروطه"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "113",
+   "parent": "69",
+   "labels": {
+    "en": "Characteristics of the People of the Sunnah and the Community",
+    "ar": "خصائص أهل السنة والجماعة"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "119",
+   "parent": "71",
+   "labels": {
+    "en": "Old Sects and Schools",
+    "ar": "الفرق والمذاهب القديمة النشأة"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "121",
+   "parent": "4",
+   "labels": {
+    "en": "Jurisprudence of Acts of Worship",
+    "ar": "فقه العبادات"
+   },
+   "direct": 0,
+   "total": 823
+  },
+  {
+   "id": "122",
+   "parent": "4",
+   "labels": {
+    "en": "Jurisprudence of Transactions",
+    "ar": "فقه المعاملات"
+   },
+   "direct": 0,
+   "total": 107
+  },
+  {
+   "id": "123",
+   "parent": "4",
+   "labels": {
+    "en": "Religious Obligations",
+    "ar": "الفرائض"
+   },
+   "direct": 0,
+   "total": 7
+  },
+  {
+   "id": "124",
+   "parent": "4",
+   "labels": {
+    "en": "Family Jurisprudence",
+    "ar": "فقه الأسرة"
+   },
+   "direct": 0,
+   "total": 197
+  },
+  {
+   "id": "125",
+   "parent": "4",
+   "labels": {
+    "en": "Spiritual and Physical Therapy",
+    "ar": "الطب والتداوي والرقية الشرعية"
+   },
+   "direct": 5,
+   "total": 22
+  },
+  {
+   "id": "126",
+   "parent": "4",
+   "labels": {
+    "en": "Foods and Drinks",
+    "ar": "الأطعمة والأشربة"
+   },
+   "direct": 0,
+   "total": 46
+  },
+  {
+   "id": "127",
+   "parent": "4",
+   "labels": {
+    "en": "Crimes",
+    "ar": "الجنايات"
+   },
+   "direct": 4,
+   "total": 24
+  },
+  {
+   "id": "128",
+   "parent": "4",
+   "labels": {
+    "en": "Prescribed Punishments",
+    "ar": "الحدود"
+   },
+   "direct": 2,
+   "total": 46
+  },
+  {
+   "id": "129",
+   "parent": "4",
+   "labels": {
+    "en": "Judiciary",
+    "ar": "القضاء"
+   },
+   "direct": 2,
+   "total": 15
+  },
+  {
+   "id": "132",
+   "parent": "4",
+   "labels": {
+    "en": "Principles of Islamic Jurisprudence",
+    "ar": "أصول الفقه"
+   },
+   "direct": 0,
+   "total": 22
+  },
+  {
+   "id": "133",
+   "parent": "121",
+   "labels": {
+    "en": "Purification",
+    "ar": "الطهارة"
+   },
+   "direct": 0,
+   "total": 147
+  },
+  {
+   "id": "134",
+   "parent": "121",
+   "labels": {
+    "en": "Prayer",
+    "ar": "الصلاة"
+   },
+   "direct": 1,
+   "total": 384
+  },
+  {
+   "id": "135",
+   "parent": "121",
+   "labels": {
+    "en": "Funerals",
+    "ar": "الجنائز"
+   },
+   "direct": 2,
+   "total": 34
+  },
+  {
+   "id": "136",
+   "parent": "121",
+   "labels": {
+    "en": "Zakah",
+    "ar": "الزكاة"
+   },
+   "direct": 0,
+   "total": 44
+  },
+  {
+   "id": "137",
+   "parent": "121",
+   "labels": {
+    "en": "Fasting",
+    "ar": "الصيام"
+   },
+   "direct": 2,
+   "total": 61
+  },
+  {
+   "id": "138",
+   "parent": "121",
+   "labels": {
+    "en": "Hajj and ‘Umrah",
+    "ar": "الحج والعمرة"
+   },
+   "direct": 0,
+   "total": 68
+  },
+  {
+   "id": "139",
+   "parent": "121",
+   "labels": {
+    "en": "Jihad",
+    "ar": "الجهاد"
+   },
+   "direct": 3,
+   "total": 85
+  },
+  {
+   "id": "140",
+   "parent": "122",
+   "labels": {
+    "en": "Sales",
+    "ar": "البيوع"
+   },
+   "direct": 4,
+   "total": 20
+  },
+  {
+   "id": "141",
+   "parent": "140",
+   "labels": {
+    "en": "Conditions of Sale",
+    "ar": "شروط البيع"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "142",
+   "parent": "140",
+   "labels": {
+    "en": "Sale-Related Stipulations",
+    "ar": "الشروط في البيع"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "143",
+   "parent": "140",
+   "labels": {
+    "en": "Selling Assets and Fruits",
+    "ar": "بيع الأصول والثمار"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "144",
+   "parent": "122",
+   "labels": {
+    "en": "Advance Payment",
+    "ar": "السلم"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "145",
+   "parent": "122",
+   "labels": {
+    "en": "Usury",
+    "ar": "الربا"
+   },
+   "direct": 6,
+   "total": 6
+  },
+  {
+   "id": "146",
+   "parent": "122",
+   "labels": {
+    "en": "Loan",
+    "ar": "القرض"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "147",
+   "parent": "122",
+   "labels": {
+    "en": "Mortgage",
+    "ar": "الرهن"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "148",
+   "parent": "122",
+   "labels": {
+    "en": "Collateral and Surety",
+    "ar": "الضمان والكفالة"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "150",
+   "parent": "122",
+   "labels": {
+    "en": "Conciliation and Neighborhood Rulings",
+    "ar": "الصلح وأحكام الجوار"
+   },
+   "direct": 4,
+   "total": 4
+  },
+  {
+   "id": "151",
+   "parent": "122",
+   "labels": {
+    "en": "Interdiction",
+    "ar": "الحَجْر"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "153",
+   "parent": "122",
+   "labels": {
+    "en": "Partnership",
+    "ar": "الشركة"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "154",
+   "parent": "122",
+   "labels": {
+    "en": "Sharecropping",
+    "ar": "المساقاة والمزارعة"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "155",
+   "parent": "122",
+   "labels": {
+    "en": "Leasing",
+    "ar": "الإجارة"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "156",
+   "parent": "122",
+   "labels": {
+    "en": "Racing and Gambling",
+    "ar": "السبق والقمار والميسر"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "158",
+   "parent": "122",
+   "labels": {
+    "en": "Usurpation",
+    "ar": "الغصب"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "159",
+   "parent": "122",
+   "labels": {
+    "en": "Preemption",
+    "ar": "الشفعة"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "163",
+   "parent": "122",
+   "labels": {
+    "en": "Found Item and Foundling",
+    "ar": "اللقطة واللقيط"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "164",
+   "parent": "122",
+   "labels": {
+    "en": "Endowment",
+    "ar": "الوقف"
+   },
+   "direct": 6,
+   "total": 6
+  },
+  {
+   "id": "165",
+   "parent": "122",
+   "labels": {
+    "en": "Gift",
+    "ar": "الهبة والعطية"
+   },
+   "direct": 10,
+   "total": 10
+  },
+  {
+   "id": "166",
+   "parent": "122",
+   "labels": {
+    "en": "Bequest",
+    "ar": "الوصية"
+   },
+   "direct": 4,
+   "total": 4
+  },
+  {
+   "id": "167",
+   "parent": "122",
+   "labels": {
+    "en": "Manumission",
+    "ar": "العتق"
+   },
+   "direct": 15,
+   "total": 15
+  },
+  {
+   "id": "169",
+   "parent": "122",
+   "labels": {
+    "en": "Oaths and Vows",
+    "ar": "الأيمان والنذور"
+   },
+   "direct": 18,
+   "total": 23
+  },
+  {
+   "id": "173",
+   "parent": "123",
+   "labels": {
+    "en": "Conditions of Inheritance",
+    "ar": "شروط الإرث"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "174",
+   "parent": "123",
+   "labels": {
+    "en": "Impediments of Inheritance",
+    "ar": "موانع الإرث"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "176",
+   "parent": "123",
+   "labels": {
+    "en": "Agnates",
+    "ar": "العـصبة"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "182",
+   "parent": "123",
+   "labels": {
+    "en": "Inheritance Shares of Blood Relatives",
+    "ar": "ميراث ذوي الأرحام"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "183",
+   "parent": "123",
+   "labels": {
+    "en": "Inheritance Shares of Embryos",
+    "ar": "ميراث الحمل"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "191",
+   "parent": "124",
+   "labels": {
+    "en": "Marriage",
+    "ar": "النكاح"
+   },
+   "direct": 14,
+   "total": 66
+  },
+  {
+   "id": "192",
+   "parent": "124",
+   "labels": {
+    "en": "Divorce",
+    "ar": "الطلاق"
+   },
+   "direct": 1,
+   "total": 13
+  },
+  {
+   "id": "193",
+   "parent": "124",
+   "labels": {
+    "en": "Remarriage with One's Divorcee",
+    "ar": "الرجعة"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "194",
+   "parent": "124",
+   "labels": {
+    "en": "Wife-Initiated Divorce",
+    "ar": "الخلع"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "195",
+   "parent": "124",
+   "labels": {
+    "en": "Oath to Abstain from Intercourse with One's Wife",
+    "ar": "الإيلاء"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "196",
+   "parent": "124",
+   "labels": {
+    "en": "Zihaar (Likening one's wife to an unmarrriagble woman)",
+    "ar": "الظهار"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "197",
+   "parent": "124",
+   "labels": {
+    "en": "Oath of Condemnation",
+    "ar": "اللعان"
+   },
+   "direct": 12,
+   "total": 12
+  },
+  {
+   "id": "198",
+   "parent": "124",
+   "labels": {
+    "en": "Waiting Period",
+    "ar": "العدة"
+   },
+   "direct": 9,
+   "total": 14
+  },
+  {
+   "id": "199",
+   "parent": "124",
+   "labels": {
+    "en": "Breastfeeding",
+    "ar": "الرضاع"
+   },
+   "direct": 5,
+   "total": 9
+  },
+  {
+   "id": "200",
+   "parent": "124",
+   "labels": {
+    "en": "Custody",
+    "ar": "الحضانة"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "201",
+   "parent": "124",
+   "labels": {
+    "en": "Expenses",
+    "ar": "النفقات"
+   },
+   "direct": 11,
+   "total": 11
+  },
+  {
+   "id": "202",
+   "parent": "124",
+   "labels": {
+    "en": "Clothing and Adornment",
+    "ar": "اللباس والزينة"
+   },
+   "direct": 12,
+   "total": 12
+  },
+  {
+   "id": "204",
+   "parent": "124",
+   "labels": {
+    "en": "Muslim Society",
+    "ar": "المجتمع المسلم"
+   },
+   "direct": 7,
+   "total": 7
+  },
+  {
+   "id": "205",
+   "parent": "124",
+   "labels": {
+    "en": "Rulings of Women",
+    "ar": "أحكام النساء"
+   },
+   "direct": 19,
+   "total": 30
+  },
+  {
+   "id": "206",
+   "parent": "124",
+   "labels": {
+    "en": "Rulings of Newborns",
+    "ar": "أحكام المولود"
+   },
+   "direct": 3,
+   "total": 11
+  },
+  {
+   "id": "207",
+   "parent": "125",
+   "labels": {
+    "en": "Prophetic Medicine",
+    "ar": "الطب النبوي"
+   },
+   "direct": 5,
+   "total": 5
+  },
+  {
+   "id": "208",
+   "parent": "125",
+   "labels": {
+    "en": "Rulings of Medication",
+    "ar": "أحكام التداوي"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "211",
+   "parent": "125",
+   "labels": {
+    "en": "Ruqyah (Healing and Protective Supplications)",
+    "ar": "الرقية الشرعية"
+   },
+   "direct": 8,
+   "total": 9
+  },
+  {
+   "id": "212",
+   "parent": "126",
+   "labels": {
+    "en": "Rulings of Foods and Drinks",
+    "ar": "أحكام الأطعمة والأشربة"
+   },
+   "direct": 6,
+   "total": 6
+  },
+  {
+   "id": "213",
+   "parent": "126",
+   "labels": {
+    "en": "Lawful and Unlawful Animals and Birds",
+    "ar": "ما يحل ويحرم من الحيوانات والطيور"
+   },
+   "direct": 16,
+   "total": 16
+  },
+  {
+   "id": "215",
+   "parent": "126",
+   "labels": {
+    "en": "Slaughtering",
+    "ar": "التذكية"
+   },
+   "direct": 9,
+   "total": 9
+  },
+  {
+   "id": "216",
+   "parent": "126",
+   "labels": {
+    "en": "Hunting",
+    "ar": "الصيد"
+   },
+   "direct": 6,
+   "total": 6
+  },
+  {
+   "id": "217",
+   "parent": "126",
+   "labels": {
+    "en": "Rulings of Animals Slaughtered by the Disbelievers",
+    "ar": "أحكام ذبائح الكفار"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "218",
+   "parent": "126",
+   "labels": {
+    "en": "Forbidden Drinks",
+    "ar": "الأشربة المحرمة"
+   },
+   "direct": 8,
+   "total": 8
+  },
+  {
+   "id": "219",
+   "parent": "127",
+   "labels": {
+    "en": "Retribution",
+    "ar": "القصاص"
+   },
+   "direct": 11,
+   "total": 11
+  },
+  {
+   "id": "220",
+   "parent": "127",
+   "labels": {
+    "en": "Blood Money",
+    "ar": "الديات"
+   },
+   "direct": 9,
+   "total": 9
+  },
+  {
+   "id": "221",
+   "parent": "128",
+   "labels": {
+    "en": "Rulings of Prescribed Punishments",
+    "ar": "أحكام الحدود"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "223",
+   "parent": "128",
+   "labels": {
+    "en": "Conditions of implementing Prescribed Punishments",
+    "ar": "شروط إقامة الحدود"
+   },
+   "direct": 4,
+   "total": 4
+  },
+  {
+   "id": "224",
+   "parent": "128",
+   "labels": {
+    "en": "Prescribed Punishment for Adultery",
+    "ar": "حد الزنا"
+   },
+   "direct": 11,
+   "total": 11
+  },
+  {
+   "id": "225",
+   "parent": "128",
+   "labels": {
+    "en": "Prescribed Punishment for Calumny",
+    "ar": "حد القذف"
+   },
+   "direct": 4,
+   "total": 4
+  },
+  {
+   "id": "226",
+   "parent": "128",
+   "labels": {
+    "en": "Prescribed Punishment for Drinking Alcohol",
+    "ar": "حد الخمر"
+   },
+   "direct": 8,
+   "total": 8
+  },
+  {
+   "id": "227",
+   "parent": "128",
+   "labels": {
+    "en": "Prescribed Punishment for Theft",
+    "ar": "حد السرقة"
+   },
+   "direct": 7,
+   "total": 7
+  },
+  {
+   "id": "228",
+   "parent": "128",
+   "labels": {
+    "en": "Prescribed Punishment for Highway Robbery",
+    "ar": "حد قطاع الطريق"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "230",
+   "parent": "128",
+   "labels": {
+    "en": "Prescribed Punishment for Apostasy",
+    "ar": "حد الردة"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "231",
+   "parent": "128",
+   "labels": {
+    "en": "Rulings of Discretionary Punishments",
+    "ar": "أحكام التعزير"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "232",
+   "parent": "129",
+   "labels": {
+    "en": "Judiciary: Its Ruling, Merit, and Significance",
+    "ar": "حكم القضاء وفضله وخطره"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "233",
+   "parent": "129",
+   "labels": {
+    "en": "Manners of Judges",
+    "ar": "آداب القاضي"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "235",
+   "parent": "129",
+   "labels": {
+    "en": "Claims and Proofs",
+    "ar": "الدعاوى والبيِّنات"
+   },
+   "direct": 7,
+   "total": 7
+  },
+  {
+   "id": "236",
+   "parent": "129",
+   "labels": {
+    "en": "Testimonies",
+    "ar": "الشهادات"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "249",
+   "parent": "132",
+   "labels": {
+    "en": "Shariah Ruling",
+    "ar": "الحكم الشرعي"
+   },
+   "direct": 5,
+   "total": 5
+  },
+  {
+   "id": "250",
+   "parent": "132",
+   "labels": {
+    "en": "Juristic and Usooli (Juristic Priciples) Rules",
+    "ar": "القواعد الفقهية والأصولية"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "251",
+   "parent": "132",
+   "labels": {
+    "en": "Religious Assignment and its Conditions",
+    "ar": "التكليف وشروطه"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "253",
+   "parent": "132",
+   "labels": {
+    "en": "The Book (the Qur'an)",
+    "ar": "الكتاب (القرآن)"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "254",
+   "parent": "132",
+   "labels": {
+    "en": "The Sunnah",
+    "ar": "السنة"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "258",
+   "parent": "132",
+   "labels": {
+    "en": "Abrogation",
+    "ar": "النسخ"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "259",
+   "parent": "132",
+   "labels": {
+    "en": "Significations and Inference",
+    "ar": "دلالات الألفاظ وكيفية الاستنباط"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "260",
+   "parent": "132",
+   "labels": {
+    "en": "Personal Reasoning and Imitation",
+    "ar": "الاجتهاد والتقليد"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "261",
+   "parent": "132",
+   "labels": {
+    "en": "Divergence and Preponderance",
+    "ar": "التعارض والترجيح"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "262",
+   "parent": "132",
+   "labels": {
+    "en": "Shariah Objectives",
+    "ar": "مقاصد الشريعة"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "265",
+   "parent": "5",
+   "labels": {
+    "en": "Virtues",
+    "ar": "الفضائل"
+   },
+   "direct": 1,
+   "total": 177
+  },
+  {
+   "id": "266",
+   "parent": "5",
+   "labels": {
+    "en": "Jurisprudence of Ethics",
+    "ar": "فقه الأخلاق"
+   },
+   "direct": 1,
+   "total": 131
+  },
+  {
+   "id": "267",
+   "parent": "5",
+   "labels": {
+    "en": "Shariah-approved Manners",
+    "ar": "الآداب الشرعية"
+   },
+   "direct": 2,
+   "total": 194
+  },
+  {
+   "id": "268",
+   "parent": "5",
+   "labels": {
+    "en": "Jurisprudence of Supplications and Remembrance of Allah",
+    "ar": "فقه الأدعية والأذكار"
+   },
+   "direct": 0,
+   "total": 121
+  },
+  {
+   "id": "269",
+   "parent": "5",
+   "labels": {
+    "en": "Heart-Softeners and Sermons",
+    "ar": "الرقائق والمواعظ"
+   },
+   "direct": 1,
+   "total": 210
+  },
+  {
+   "id": "270",
+   "parent": "265",
+   "labels": {
+    "en": "Excellence of Knowledge",
+    "ar": "فضل العلم"
+   },
+   "direct": 13,
+   "total": 16
+  },
+  {
+   "id": "271",
+   "parent": "265",
+   "labels": {
+    "en": "Excellence of Monotheism",
+    "ar": "فضائل التوحيد"
+   },
+   "direct": 11,
+   "total": 11
+  },
+  {
+   "id": "272",
+   "parent": "265",
+   "labels": {
+    "en": "Merits of the Noble Qur'an",
+    "ar": "فضائل القرآن الكريم"
+   },
+   "direct": 10,
+   "total": 10
+  },
+  {
+   "id": "273",
+   "parent": "265",
+   "labels": {
+    "en": "Merits of Being Dutiful to One's Parents",
+    "ar": "فضائل بر الوالدين"
+   },
+   "direct": 10,
+   "total": 10
+  },
+  {
+   "id": "274",
+   "parent": "265",
+   "labels": {
+    "en": "Merits of Maintaining Kinship Ties",
+    "ar": "فضائل صلة الأرحام"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "275",
+   "parent": "265",
+   "labels": {
+    "en": "Merits of Prophet's Family",
+    "ar": "فضائل آل البيت رضي الله عنهم"
+   },
+   "direct": 9,
+   "total": 9
+  },
+  {
+   "id": "276",
+   "parent": "265",
+   "labels": {
+    "en": "Merits of the Companions",
+    "ar": "فضائل الصحابة رضي الله عنهم"
+   },
+   "direct": 34,
+   "total": 35
+  },
+  {
+   "id": "277",
+   "parent": "265",
+   "labels": {
+    "en": "Merits of Good Deeds",
+    "ar": "فضائل الأعمال الصالحة"
+   },
+   "direct": 33,
+   "total": 33
+  },
+  {
+   "id": "278",
+   "parent": "265",
+   "labels": {
+    "en": "Merits of Remembering Allah",
+    "ar": "فضائل الذكر"
+   },
+   "direct": 25,
+   "total": 25
+  },
+  {
+   "id": "279",
+   "parent": "265",
+   "labels": {
+    "en": "Merits of Supplication",
+    "ar": "فضل الدعاء"
+   },
+   "direct": 4,
+   "total": 4
+  },
+  {
+   "id": "280",
+   "parent": "265",
+   "labels": {
+    "en": "Merits of Heart Acts",
+    "ar": "فضائل أعمال القلوب"
+   },
+   "direct": 13,
+   "total": 13
+  },
+  {
+   "id": "281",
+   "parent": "265",
+   "labels": {
+    "en": "Merits of Organs' Acts",
+    "ar": "فضائل أعمال الجوارح"
+   },
+   "direct": 8,
+   "total": 8
+  },
+  {
+   "id": "282",
+   "parent": "266",
+   "labels": {
+    "en": "Praiseworthy Morals",
+    "ar": "الأخلاق الحميدة"
+   },
+   "direct": 83,
+   "total": 83
+  },
+  {
+   "id": "283",
+   "parent": "266",
+   "labels": {
+    "en": "Blameworthy Morals",
+    "ar": "الأخلاق الذميمة"
+   },
+   "direct": 47,
+   "total": 47
+  },
+  {
+   "id": "284",
+   "parent": "267",
+   "labels": {
+    "en": "Manners of Scholars and Learners",
+    "ar": "آداب العالم والمتعلم"
+   },
+   "direct": 12,
+   "total": 12
+  },
+  {
+   "id": "285",
+   "parent": "267",
+   "labels": {
+    "en": "Etiquettes of Reciting the Noble Qur’an",
+    "ar": "آداب تلاوة القرآن الكريم"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "286",
+   "parent": "267",
+   "labels": {
+    "en": "Manners of Greeting and Seeking Permission",
+    "ar": "آداب السلام والاستئذان"
+   },
+   "direct": 24,
+   "total": 24
+  },
+  {
+   "id": "287",
+   "parent": "267",
+   "labels": {
+    "en": "Manners of Speaking and Keeping Silent",
+    "ar": "آداب الكلام والصمت"
+   },
+   "direct": 23,
+   "total": 32
+  },
+  {
+   "id": "288",
+   "parent": "267",
+   "labels": {
+    "en": "Manners of Divergence",
+    "ar": "آداب الخلاف"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "289",
+   "parent": "267",
+   "labels": {
+    "en": "Manners of Debate",
+    "ar": "آداب المناظرة"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "290",
+   "parent": "267",
+   "labels": {
+    "en": "Manners of Eating and Drinking",
+    "ar": "آداب الأكل والشرب"
+   },
+   "direct": 35,
+   "total": 35
+  },
+  {
+   "id": "291",
+   "parent": "267",
+   "labels": {
+    "en": "Manners of the Road and the Market",
+    "ar": "آداب الطريق والسوق"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "292",
+   "parent": "267",
+   "labels": {
+    "en": "Manners and Rulings of Travel",
+    "ar": "آداب وأحكام السفر"
+   },
+   "direct": 22,
+   "total": 22
+  },
+  {
+   "id": "293",
+   "parent": "267",
+   "labels": {
+    "en": "Manners of Sleeping and Waking Up",
+    "ar": "آداب النوم والاستيقاظ"
+   },
+   "direct": 7,
+   "total": 7
+  },
+  {
+   "id": "294",
+   "parent": "267",
+   "labels": {
+    "en": "Manners of Visions",
+    "ar": "آداب الرؤيا"
+   },
+   "direct": 9,
+   "total": 9
+  },
+  {
+   "id": "295",
+   "parent": "267",
+   "labels": {
+    "en": "Manners of Visiting and Seeking Permission",
+    "ar": "آداب الزيارة والاستئذان"
+   },
+   "direct": 13,
+   "total": 13
+  },
+  {
+   "id": "296",
+   "parent": "267",
+   "labels": {
+    "en": "Manners of Sneezing and Yawning",
+    "ar": "آداب العطاس والتثاؤب"
+   },
+   "direct": 5,
+   "total": 5
+  },
+  {
+   "id": "297",
+   "parent": "267",
+   "labels": {
+    "en": "Manners of Visiting the Sick",
+    "ar": "آداب عيادة المريض"
+   },
+   "direct": 9,
+   "total": 9
+  },
+  {
+   "id": "298",
+   "parent": "267",
+   "labels": {
+    "en": "Manners of Dressing",
+    "ar": "آداب اللباس"
+   },
+   "direct": 15,
+   "total": 15
+  },
+  {
+   "id": "299",
+   "parent": "268",
+   "labels": {
+    "en": "Prophetic Guidance on Remembering Allah",
+    "ar": "هدي النبي صلى الله عليه وسلم في الذكر"
+   },
+   "direct": 8,
+   "total": 8
+  },
+  {
+   "id": "300",
+   "parent": "268",
+   "labels": {
+    "en": "Benefits of Remembering Allah",
+    "ar": "فوائد ذكر الله عز وجل"
+   },
+   "direct": 15,
+   "total": 15
+  },
+  {
+   "id": "301",
+   "parent": "268",
+   "labels": {
+    "en": "Morning and Evening Dhikr",
+    "ar": "أذكار الصباح والمساء"
+   },
+   "direct": 7,
+   "total": 7
+  },
+  {
+   "id": "302",
+   "parent": "268",
+   "labels": {
+    "en": "Timeless Dhikr",
+    "ar": "الأذكار المطلقة"
+   },
+   "direct": 8,
+   "total": 8
+  },
+  {
+   "id": "303",
+   "parent": "268",
+   "labels": {
+    "en": "Dhikr on Entering and Leaving the House",
+    "ar": "أذكار الدخول والخروج من المنزل"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "305",
+   "parent": "268",
+   "labels": {
+    "en": "Dhikr on Entering and Leaving the Bathroom",
+    "ar": "أذكار الدخول والخروج من الخلاء"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "306",
+   "parent": "268",
+   "labels": {
+    "en": "Dhikr on Entering and Leaving the Mosque",
+    "ar": "أذكار الدخول والخروج من المسجد"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "307",
+   "parent": "268",
+   "labels": {
+    "en": "Hard Times Dhikr",
+    "ar": "الأذكار التي تقال في أوقات الشدة"
+   },
+   "direct": 4,
+   "total": 4
+  },
+  {
+   "id": "308",
+   "parent": "268",
+   "labels": {
+    "en": "Dhikr on Special Occasions",
+    "ar": "الأذكار للأمور العارضة"
+   },
+   "direct": 21,
+   "total": 21
+  },
+  {
+   "id": "309",
+   "parent": "268",
+   "labels": {
+    "en": "Rulings of Supplication",
+    "ar": "أحكام الدعاء"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "310",
+   "parent": "268",
+   "labels": {
+    "en": "Types of Supplication",
+    "ar": "أنواع الدعاء"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "311",
+   "parent": "268",
+   "labels": {
+    "en": "Manners of Supplication",
+    "ar": "آداب الدعاء"
+   },
+   "direct": 7,
+   "total": 7
+  },
+  {
+   "id": "312",
+   "parent": "268",
+   "labels": {
+    "en": "Causes for Answering or not Answering Supplications",
+    "ar": "أسباب إجابة الدعاء وموانعه"
+   },
+   "direct": 10,
+   "total": 10
+  },
+  {
+   "id": "313",
+   "parent": "268",
+   "labels": {
+    "en": "Reported Supplications",
+    "ar": "الأدعية المأثورة"
+   },
+   "direct": 33,
+   "total": 33
+  },
+  {
+   "id": "314",
+   "parent": "269",
+   "labels": {
+    "en": "Acts of Heart",
+    "ar": "أعمال القلوب"
+   },
+   "direct": 27,
+   "total": 27
+  },
+  {
+   "id": "315",
+   "parent": "269",
+   "labels": {
+    "en": "Heart Diseases",
+    "ar": "أمراض القلوب"
+   },
+   "direct": 5,
+   "total": 5
+  },
+  {
+   "id": "316",
+   "parent": "269",
+   "labels": {
+    "en": "Asceticism and Piety",
+    "ar": "الزهد والورع"
+   },
+   "direct": 14,
+   "total": 14
+  },
+  {
+   "id": "317",
+   "parent": "269",
+   "labels": {
+    "en": "States of the Righteous Believers",
+    "ar": "أحوال الصالحين"
+   },
+   "direct": 14,
+   "total": 14
+  },
+  {
+   "id": "318",
+   "parent": "269",
+   "labels": {
+    "en": "Condemning Sins",
+    "ar": "ذم المعاصي"
+   },
+   "direct": 21,
+   "total": 21
+  },
+  {
+   "id": "319",
+   "parent": "269",
+   "labels": {
+    "en": "Condemning Love of the World",
+    "ar": "ذم حب الدنيا"
+   },
+   "direct": 26,
+   "total": 26
+  },
+  {
+   "id": "320",
+   "parent": "269",
+   "labels": {
+    "en": "Condemning Whims and Desires",
+    "ar": "ذَمُّ الهوى والشَّهوات"
+   },
+   "direct": 9,
+   "total": 9
+  },
+  {
+   "id": "321",
+   "parent": "269",
+   "labels": {
+    "en": "Repentance",
+    "ar": "التوبة"
+   },
+   "direct": 15,
+   "total": 15
+  },
+  {
+   "id": "322",
+   "parent": "269",
+   "labels": {
+    "en": "Purification of Souls",
+    "ar": "تزكية النفوس"
+   },
+   "direct": 21,
+   "total": 21
+  },
+  {
+   "id": "323",
+   "parent": "269",
+   "labels": {
+    "en": "Terrors of the Graves",
+    "ar": "أهوال القبور"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "324",
+   "parent": "269",
+   "labels": {
+    "en": "Descriptions of Paradise and Hell",
+    "ar": "صفات الجنة والنار"
+   },
+   "direct": 54,
+   "total": 54
+  },
+  {
+   "id": "325",
+   "parent": "6",
+   "labels": {
+    "en": "Calling to Allah (Da‘wah)",
+    "ar": "الدعوة إلى الله"
+   },
+   "direct": 3,
+   "total": 40
+  },
+  {
+   "id": "326",
+   "parent": "6",
+   "labels": {
+    "en": "Enjoining Good and Forbidding Evil",
+    "ar": "الأمر بالمعروف والنهي عن المنكر"
+   },
+   "direct": 0,
+   "total": 14
+  },
+  {
+   "id": "327",
+   "parent": "6",
+   "labels": {
+    "en": "Shariah-approved Politics",
+    "ar": "السياسة الشرعية"
+   },
+   "direct": 5,
+   "total": 56
+  },
+  {
+   "id": "328",
+   "parent": "6",
+   "labels": {
+    "en": "Islamic Culture",
+    "ar": "الثقافة الإسلامية"
+   },
+   "direct": 0,
+   "total": 1
+  },
+  {
+   "id": "329",
+   "parent": "325",
+   "labels": {
+    "en": "Ruling of Calling to Allah",
+    "ar": "حكم الدعوة إلى الله"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "331",
+   "parent": "325",
+   "labels": {
+    "en": "Manners of Calling to Allah",
+    "ar": "آداب الدعوة إلى الله"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "334",
+   "parent": "325",
+   "labels": {
+    "en": "Backgrounds and Duties of the Callers to Allah",
+    "ar": "سير الدعاة وواجباتهم"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "338",
+   "parent": "325",
+   "labels": {
+    "en": "Excellence and Merits of Islam",
+    "ar": "فضل الإسلام ومحاسنه"
+   },
+   "direct": 14,
+   "total": 14
+  },
+  {
+   "id": "339",
+   "parent": "325",
+   "labels": {
+    "en": "Universality of Islam",
+    "ar": "عموم الدين الإسلامي"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "340",
+   "parent": "325",
+   "labels": {
+    "en": "Human Rights in Islam",
+    "ar": "حقوق الإنسان في الإسلام"
+   },
+   "direct": 5,
+   "total": 5
+  },
+  {
+   "id": "341",
+   "parent": "325",
+   "labels": {
+    "en": "Animal Rights in Islam",
+    "ar": "حقوق الحيوان في الإسلام"
+   },
+   "direct": 10,
+   "total": 10
+  },
+  {
+   "id": "344",
+   "parent": "326",
+   "labels": {
+    "en": "Ruling of Enjoining Good and Forbidding Evil",
+    "ar": "حكم الأمر بالمعروف والنهي عن المنكر"
+   },
+   "direct": 4,
+   "total": 4
+  },
+  {
+   "id": "345",
+   "parent": "326",
+   "labels": {
+    "en": "Excellence of Enjoining Good and Forbidding Evil",
+    "ar": "فضل الأمر بالمعروف والنهي عن المنكر"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "346",
+   "parent": "326",
+   "labels": {
+    "en": "Manners of Enjoining Good and Forbidding Evil",
+    "ar": "آداب الأمر بالمعروف والنهي عن المنكر"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "347",
+   "parent": "326",
+   "labels": {
+    "en": "Principles of Enjoining Good and Forbidding Evil",
+    "ar": "أصول الأمر بالمعروف والنهي عن المنكر"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "348",
+   "parent": "326",
+   "labels": {
+    "en": "Requirements of Enjoining Good and Forbidding Evil",
+    "ar": "شروط الأمر بالمعروف والنهي عن المنكر"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "349",
+   "parent": "326",
+   "labels": {
+    "en": "Rulings and Issues of Enjoining Good and Forbidding Evil",
+    "ar": "أحكام ومسائل متعلقة بالأمر بالمعروف والنهي عن المنكر"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "350",
+   "parent": "327",
+   "labels": {
+    "en": "Ways of Electing the Supreme Muslim Imam (Ruler)",
+    "ar": "طرق اختيار الإمام للإمامة الكبرى"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "351",
+   "parent": "327",
+   "labels": {
+    "en": "Requirements of the Supreme Imamate (Leadership)",
+    "ar": "شروط الإمامة العظمى"
+   },
+   "direct": 4,
+   "total": 4
+  },
+  {
+   "id": "352",
+   "parent": "327",
+   "labels": {
+    "en": "Duties of the Imam",
+    "ar": "واجبات الإمام"
+   },
+   "direct": 18,
+   "total": 18
+  },
+  {
+   "id": "353",
+   "parent": "327",
+   "labels": {
+    "en": "Imam's Rights over the Subjects",
+    "ar": "حق الإمام على الرعية"
+   },
+   "direct": 19,
+   "total": 19
+  },
+  {
+   "id": "354",
+   "parent": "327",
+   "labels": {
+    "en": "Rebelling against the Muslim Ruler",
+    "ar": "الخروج على الإمام"
+   },
+   "direct": 6,
+   "total": 6
+  },
+  {
+   "id": "355",
+   "parent": "327",
+   "labels": {
+    "en": "International Relations in Islam",
+    "ar": "العلاقات الدولية في الإسلام"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "356",
+   "parent": "327",
+   "labels": {
+    "en": "Consultation System in Islam",
+    "ar": "نظام الشورى في الإسلام"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "365",
+   "parent": "328",
+   "labels": {
+    "en": "Islamic Civilization",
+    "ar": "الحضارة الإسلامية"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "367",
+   "parent": "7",
+   "labels": {
+    "en": "Prophet's Biography",
+    "ar": "السيرة النبوية"
+   },
+   "direct": 1,
+   "total": 209
+  },
+  {
+   "id": "368",
+   "parent": "7",
+   "labels": {
+    "en": "History",
+    "ar": "التاريخ"
+   },
+   "direct": 0,
+   "total": 19
+  },
+  {
+   "id": "389",
+   "parent": "367",
+   "labels": {
+    "en": "Prophet's Lineage",
+    "ar": "نسبه صلى الله عليه وسلم"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "392",
+   "parent": "367",
+   "labels": {
+    "en": "Prophet's Wives and Family Issues",
+    "ar": "زوجاته صلى الله عليه وسلم وأحوال بيت النبوة"
+   },
+   "direct": 14,
+   "total": 14
+  },
+  {
+   "id": "393",
+   "parent": "367",
+   "labels": {
+    "en": "Prophet's Children",
+    "ar": "أولاده صلى الله عليه وسلم"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "397",
+   "parent": "367",
+   "labels": {
+    "en": "Prophet's Servants",
+    "ar": "خدمه صلى الله عليه وسلم"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "398",
+   "parent": "367",
+   "labels": {
+    "en": "Prophet's Life before Mission",
+    "ar": "حياته قبل البعثة صلى الله عليه وسلم"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "399",
+   "parent": "367",
+   "labels": {
+    "en": "Prophet's Mission",
+    "ar": "مبعثه صلى الله عليه وسلم"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "400",
+   "parent": "367",
+   "labels": {
+    "en": "The Makkan Period",
+    "ar": "العهد المكي"
+   },
+   "direct": 5,
+   "total": 5
+  },
+  {
+   "id": "401",
+   "parent": "367",
+   "labels": {
+    "en": "The Emigration (Hijrah)",
+    "ar": "الهجرة"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "402",
+   "parent": "367",
+   "labels": {
+    "en": "The Madinan Period",
+    "ar": "العهد المدني"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "403",
+   "parent": "367",
+   "labels": {
+    "en": "Prophet's Battles and Expeditions",
+    "ar": "غزواته وسراياه صلى الله عليه وسلم"
+   },
+   "direct": 28,
+   "total": 28
+  },
+  {
+   "id": "404",
+   "parent": "367",
+   "labels": {
+    "en": "Prophet's Correspondences",
+    "ar": "مكاتباته ومراسلاته صلى الله عليه وسلم"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "405",
+   "parent": "367",
+   "labels": {
+    "en": "Prophet's Death",
+    "ar": "وفاته صلى الله عليه وسلم"
+   },
+   "direct": 18,
+   "total": 18
+  },
+  {
+   "id": "406",
+   "parent": "367",
+   "labels": {
+    "en": "Muhammadan Qualities",
+    "ar": "الشمائل المحمدية"
+   },
+   "direct": 3,
+   "total": 109
+  },
+  {
+   "id": "407",
+   "parent": "368",
+   "labels": {
+    "en": "Stories and Conditions of Pre-Islamic Nations",
+    "ar": "قصص وأحوال الأمم السابقة"
+   },
+   "direct": 9,
+   "total": 9
+  },
+  {
+   "id": "408",
+   "parent": "368",
+   "labels": {
+    "en": "History of Makkah, Madinah, and the Aqsa (Jerusalem)",
+    "ar": "تاريخ مكة والمدينة والأقصى"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "409",
+   "parent": "368",
+   "labels": {
+    "en": "Wars and Battles",
+    "ar": "الحروب والغزوات"
+   },
+   "direct": 1,
+   "total": 2
+  },
+  {
+   "id": "413",
+   "parent": "368",
+   "labels": {
+    "en": "Biographies (of Famous Figures)",
+    "ar": "التراجم وسير الأعلام"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "414",
+   "parent": "368",
+   "labels": {
+    "en": "Countries and Figures",
+    "ar": "البلدان والأعلام"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "415",
+   "parent": "368",
+   "labels": {
+    "en": "Periodical Occasions",
+    "ar": "مناسبات دورية"
+   },
+   "direct": 2,
+   "total": 3
+  },
+  {
+   "id": "418",
+   "parent": "100",
+   "labels": {
+    "en": "Ahl-us-Sunnah's (Sunni) Stance on Religious Innovators",
+    "ar": "موقف أهل السنة من أهل البدع"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "431",
+   "parent": "133",
+   "labels": {
+    "en": "Rulings of Water",
+    "ar": "أحكام المياه"
+   },
+   "direct": 6,
+   "total": 6
+  },
+  {
+   "id": "432",
+   "parent": "133",
+   "labels": {
+    "en": "Removing Impurities",
+    "ar": "إزالة النجاسات"
+   },
+   "direct": 13,
+   "total": 13
+  },
+  {
+   "id": "434",
+   "parent": "133",
+   "labels": {
+    "en": "Utensils",
+    "ar": "الآنية"
+   },
+   "direct": 5,
+   "total": 5
+  },
+  {
+   "id": "435",
+   "parent": "133",
+   "labels": {
+    "en": "Toilet Manners",
+    "ar": "آداب قضاء الحاجة"
+   },
+   "direct": 13,
+   "total": 13
+  },
+  {
+   "id": "436",
+   "parent": "133",
+   "labels": {
+    "en": "Natural Cleanliness Practices",
+    "ar": "سنن الفطرة"
+   },
+   "direct": 9,
+   "total": 9
+  },
+  {
+   "id": "437",
+   "parent": "133",
+   "labels": {
+    "en": "Ablution",
+    "ar": "الوضوء"
+   },
+   "direct": 4,
+   "total": 44
+  },
+  {
+   "id": "438",
+   "parent": "133",
+   "labels": {
+    "en": "Ritual Bath",
+    "ar": "الغسل"
+   },
+   "direct": 22,
+   "total": 29
+  },
+  {
+   "id": "439",
+   "parent": "133",
+   "labels": {
+    "en": "Dry Ablution",
+    "ar": "التيمم"
+   },
+   "direct": 6,
+   "total": 6
+  },
+  {
+   "id": "440",
+   "parent": "133",
+   "labels": {
+    "en": "Menses, Postpartum Bleeding, Extra-Menses Bleeding",
+    "ar": "الحيض والنفاس والاستحاضة"
+   },
+   "direct": 12,
+   "total": 12
+  },
+  {
+   "id": "441",
+   "parent": "437",
+   "labels": {
+    "en": "Excellence of Ablution",
+    "ar": "فضل الوضوء"
+   },
+   "direct": 7,
+   "total": 7
+  },
+  {
+   "id": "442",
+   "parent": "437",
+   "labels": {
+    "en": "Pillars of Ablution",
+    "ar": "أركان الوضوء"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "443",
+   "parent": "437",
+   "labels": {
+    "en": "Recommended Acts and Manners of Ablution",
+    "ar": "سنن وآداب الوضوء"
+   },
+   "direct": 12,
+   "total": 12
+  },
+  {
+   "id": "444",
+   "parent": "437",
+   "labels": {
+    "en": "Method of Ablution",
+    "ar": "صفة الوضوء"
+   },
+   "direct": 11,
+   "total": 11
+  },
+  {
+   "id": "445",
+   "parent": "437",
+   "labels": {
+    "en": "Nullifiers of Ablution",
+    "ar": "نواقض الوضوء"
+   },
+   "direct": 8,
+   "total": 8
+  },
+  {
+   "id": "447",
+   "parent": "438",
+   "labels": {
+    "en": "Rulings of the Ritual Bath",
+    "ar": "أحكام الغسل"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "448",
+   "parent": "438",
+   "labels": {
+    "en": "Causes of Obligatory Ritual Bath",
+    "ar": "موجبات الغسل"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "450",
+   "parent": "438",
+   "labels": {
+    "en": "Recommended Manners of the Ritual Bath",
+    "ar": "سنن وآداب الغسل"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "456",
+   "parent": "134",
+   "labels": {
+    "en": "Obligation of Prayer and Ruling on Its Abandoner",
+    "ar": "وجوب الصلاة وحكم تاركها"
+   },
+   "direct": 11,
+   "total": 11
+  },
+  {
+   "id": "457",
+   "parent": "134",
+   "labels": {
+    "en": "Virtue of Prayer",
+    "ar": "فضل الصلاة"
+   },
+   "direct": 17,
+   "total": 17
+  },
+  {
+   "id": "458",
+   "parent": "134",
+   "labels": {
+    "en": "The Azan and Iqaamah",
+    "ar": "الأذان والإقامة"
+   },
+   "direct": 23,
+   "total": 23
+  },
+  {
+   "id": "459",
+   "parent": "134",
+   "labels": {
+    "en": "Times Not to Pray",
+    "ar": "أوقات النهي عن الصلاة"
+   },
+   "direct": 6,
+   "total": 6
+  },
+  {
+   "id": "460",
+   "parent": "134",
+   "labels": {
+    "en": "Conditions of Prayer",
+    "ar": "شروط الصلاة"
+   },
+   "direct": 28,
+   "total": 28
+  },
+  {
+   "id": "461",
+   "parent": "134",
+   "labels": {
+    "en": "Pillars of Prayer",
+    "ar": "أركان الصلاة"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "462",
+   "parent": "134",
+   "labels": {
+    "en": "Obligatory Acts of Prayer",
+    "ar": "واجبات الصلاة"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "463",
+   "parent": "134",
+   "labels": {
+    "en": "Recommended Acts of Prayer",
+    "ar": "سنن الصلاة"
+   },
+   "direct": 16,
+   "total": 16
+  },
+  {
+   "id": "464",
+   "parent": "134",
+   "labels": {
+    "en": "Method of Prayer",
+    "ar": "صفة الصلاة"
+   },
+   "direct": 53,
+   "total": 53
+  },
+  {
+   "id": "465",
+   "parent": "134",
+   "labels": {
+    "en": "Dhikr (Invocation) during Prayer",
+    "ar": "أذكار الصلاة"
+   },
+   "direct": 23,
+   "total": 23
+  },
+  {
+   "id": "466",
+   "parent": "134",
+   "labels": {
+    "en": "Nullifiers of Prayer",
+    "ar": "مبطلات الصلاة"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "467",
+   "parent": "134",
+   "labels": {
+    "en": "Mistakes during Prayer",
+    "ar": "أخطاء المصلين"
+   },
+   "direct": 12,
+   "total": 12
+  },
+  {
+   "id": "468",
+   "parent": "134",
+   "labels": {
+    "en": "Prostration of Forgetfulness, Recitation, Gratitude",
+    "ar": "سجود السهو والتلاوة والشكر"
+   },
+   "direct": 16,
+   "total": 16
+  },
+  {
+   "id": "469",
+   "parent": "134",
+   "labels": {
+    "en": "Virtue and Rulings of Congregational Prayer",
+    "ar": "فضل صلاة الجماعة وأحكامها"
+   },
+   "direct": 16,
+   "total": 16
+  },
+  {
+   "id": "470",
+   "parent": "134",
+   "labels": {
+    "en": "Rulings of the Imam and Followers in Prayer",
+    "ar": "أحكام الإمام والمأموم"
+   },
+   "direct": 27,
+   "total": 27
+  },
+  {
+   "id": "471",
+   "parent": "134",
+   "labels": {
+    "en": "Prayer of the People with Excuses",
+    "ar": "صلاة أهل الأعذار"
+   },
+   "direct": 9,
+   "total": 9
+  },
+  {
+   "id": "472",
+   "parent": "134",
+   "labels": {
+    "en": "Jumu‘ah (Friday) Prayer",
+    "ar": "صلاة الجمعة"
+   },
+   "direct": 9,
+   "total": 16
+  },
+  {
+   "id": "473",
+   "parent": "134",
+   "labels": {
+    "en": "Voluntary Prayer",
+    "ar": "صلاة التطوع"
+   },
+   "direct": 17,
+   "total": 61
+  },
+  {
+   "id": "476",
+   "parent": "134",
+   "labels": {
+    "en": "Prayer of Fear",
+    "ar": "صلاة الخوف"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "477",
+   "parent": "472",
+   "labels": {
+    "en": "Virtue of Friday",
+    "ar": "فضل يوم الجمعة"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "478",
+   "parent": "472",
+   "labels": {
+    "en": "Merit of Jumu‘ah Prayer",
+    "ar": "فضل صلاة الجمعة"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "480",
+   "parent": "472",
+   "labels": {
+    "en": "Rulings of Jumu‘ah Prayer",
+    "ar": "أحكام صلاة الجمعة"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "481",
+   "parent": "472",
+   "labels": {
+    "en": "Rulings of Jumu‘ah Sermon",
+    "ar": "أحكام خطبة الجمعة"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "482",
+   "parent": "473",
+   "labels": {
+    "en": "Virtue of Voluntary Prayer",
+    "ar": "فضل صلاة التطوع"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "483",
+   "parent": "473",
+   "labels": {
+    "en": "Regular Sunnah (Recommended) Prayers",
+    "ar": "السنن الرواتب"
+   },
+   "direct": 6,
+   "total": 6
+  },
+  {
+   "id": "484",
+   "parent": "473",
+   "labels": {
+    "en": "Voluntary Night Prayer (Qiyaam)",
+    "ar": "قيام الليل"
+   },
+   "direct": 29,
+   "total": 29
+  },
+  {
+   "id": "486",
+   "parent": "473",
+   "labels": {
+    "en": "Prayer of the Two Eids",
+    "ar": "صلاة العيدين"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "487",
+   "parent": "134",
+   "labels": {
+    "en": "Prayer of the Solar and Lunar Eclipse",
+    "ar": "صلاة الكسوف والخسوف"
+   },
+   "direct": 4,
+   "total": 4
+  },
+  {
+   "id": "488",
+   "parent": "134",
+   "labels": {
+    "en": "Rain-Seeking Prayer",
+    "ar": "صلاة الاستسقاء"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "489",
+   "parent": "473",
+   "labels": {
+    "en": "Forenoon Prayer",
+    "ar": "صلاة الضحى"
+   },
+   "direct": 4,
+   "total": 4
+  },
+  {
+   "id": "490",
+   "parent": "473",
+   "labels": {
+    "en": "Guidance-Seeking Prayer",
+    "ar": "صلاة الاستخارة"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "492",
+   "parent": "135",
+   "labels": {
+    "en": "Death and Its Rulings",
+    "ar": "الموت وأحكامه"
+   },
+   "direct": 12,
+   "total": 12
+  },
+  {
+   "id": "493",
+   "parent": "135",
+   "labels": {
+    "en": "Washing the Dead",
+    "ar": "غسل الميت"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "495",
+   "parent": "135",
+   "labels": {
+    "en": "Method of Praying over the Dead",
+    "ar": "صفة الصلاة على الميت"
+   },
+   "direct": 7,
+   "total": 7
+  },
+  {
+   "id": "496",
+   "parent": "135",
+   "labels": {
+    "en": "Carrying and Burying the Dead",
+    "ar": "حمل الميت ودفنه"
+   },
+   "direct": 4,
+   "total": 4
+  },
+  {
+   "id": "497",
+   "parent": "135",
+   "labels": {
+    "en": "Consolation",
+    "ar": "التعزية"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "498",
+   "parent": "135",
+   "labels": {
+    "en": "Visiting the Graves",
+    "ar": "زيارة القبور"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "499",
+   "parent": "135",
+   "labels": {
+    "en": "Doing Good Deeds on behalf of the Deceased and Gifting them the Reward",
+    "ar": "الأعمال الصالحة عن الميت وإهداء الثواب له"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "500",
+   "parent": "136",
+   "labels": {
+    "en": "Obligation of Zakah and Ruling of Its Abandoning",
+    "ar": "وجوب الزكاة وحكم تاركها"
+   },
+   "direct": 4,
+   "total": 4
+  },
+  {
+   "id": "503",
+   "parent": "136",
+   "labels": {
+    "en": "Rulings and Issues of Zakah",
+    "ar": "أحكام ومسائل الزكاة"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "504",
+   "parent": "136",
+   "labels": {
+    "en": "Zakah of Gold and Silver",
+    "ar": "زكاة النقدين"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "505",
+   "parent": "136",
+   "labels": {
+    "en": "Zakah of Livestock",
+    "ar": "زكاة بهيمة الأنعام"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "506",
+   "parent": "136",
+   "labels": {
+    "en": "Zakah of Land Produce",
+    "ar": "زكاة الخارج من الأرض"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "509",
+   "parent": "136",
+   "labels": {
+    "en": "Zakat-ul-Fitr (Minor-Eid Charity)",
+    "ar": "زكاة الفطر"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "510",
+   "parent": "136",
+   "labels": {
+    "en": "Channels of Zakah (People Who Receive Zakah)",
+    "ar": "مصارف الزكاة"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "511",
+   "parent": "136",
+   "labels": {
+    "en": "Voluntary Charity",
+    "ar": "صدقة التطوع"
+   },
+   "direct": 27,
+   "total": 27
+  },
+  {
+   "id": "512",
+   "parent": "137",
+   "labels": {
+    "en": "Obligation of Fasting and Ruling of Its Abandoning",
+    "ar": "وجوب الصيام وحكم تاركه"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "513",
+   "parent": "137",
+   "labels": {
+    "en": "Virtue of Fasting",
+    "ar": "فضل الصيام"
+   },
+   "direct": 6,
+   "total": 6
+  },
+  {
+   "id": "514",
+   "parent": "137",
+   "labels": {
+    "en": "Recommended Acts of Fasting",
+    "ar": "سنن الصيام"
+   },
+   "direct": 7,
+   "total": 7
+  },
+  {
+   "id": "515",
+   "parent": "137",
+   "labels": {
+    "en": "Sighting the Crescent",
+    "ar": "رؤية الهلال"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "516",
+   "parent": "137",
+   "labels": {
+    "en": "Fasting on the Day of Doubt",
+    "ar": "صيام يوم الشك"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "517",
+   "parent": "137",
+   "labels": {
+    "en": "Fasting Missed Days of Ramadaan",
+    "ar": "قضاء الصيام"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "518",
+   "parent": "137",
+   "labels": {
+    "en": "Fasting of People with Excuses",
+    "ar": "صيام أهل الأعذار"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "519",
+   "parent": "137",
+   "labels": {
+    "en": "Nullifiers of Fasting",
+    "ar": "مفسدات الصيام"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "520",
+   "parent": "137",
+   "labels": {
+    "en": "Fasting Obligations",
+    "ar": "ما يجب على الصائم"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "521",
+   "parent": "137",
+   "labels": {
+    "en": "What is Permissible for the Fasting Person",
+    "ar": "ما يجوز للصائم"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "522",
+   "parent": "137",
+   "labels": {
+    "en": "Fasting Prohibitions",
+    "ar": "ما يحرم على الصائم"
+   },
+   "direct": 4,
+   "total": 4
+  },
+  {
+   "id": "523",
+   "parent": "137",
+   "labels": {
+    "en": "What is Disliked for the Fasting Person",
+    "ar": "ما يكره للصائم"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "524",
+   "parent": "137",
+   "labels": {
+    "en": "Voluntary Fasting",
+    "ar": "صيام التطوع"
+   },
+   "direct": 14,
+   "total": 14
+  },
+  {
+   "id": "525",
+   "parent": "137",
+   "labels": {
+    "en": "Seclusion for Worship in Ramadaan (I‘tikaaf)",
+    "ar": "الاعتكاف"
+   },
+   "direct": 5,
+   "total": 5
+  },
+  {
+   "id": "526",
+   "parent": "137",
+   "labels": {
+    "en": "Last Ten Days of Ramadaan",
+    "ar": "العشر الأواخر من رمضان"
+   },
+   "direct": 6,
+   "total": 6
+  },
+  {
+   "id": "531",
+   "parent": "138",
+   "labels": {
+    "en": "Obligation of Hajj and ‘Umrah and Ruling of Its Abandoner",
+    "ar": "وجوب الحج والعمرة وحكم تاركهما"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "532",
+   "parent": "138",
+   "labels": {
+    "en": "Virtue of Hajj and Umrah",
+    "ar": "فضل الحج والعمرة"
+   },
+   "direct": 7,
+   "total": 7
+  },
+  {
+   "id": "533",
+   "parent": "138",
+   "labels": {
+    "en": "First Ten Days of Dhul Hijjah (Twelfth Lunar Month)",
+    "ar": "العشر من ذي الحجة"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "534",
+   "parent": "138",
+   "labels": {
+    "en": "Rulings of Al-Masjid Al-Haraam, the Prophet's Mosque, and the Aqsa Mosque",
+    "ar": "أحكام المسجد الحرام والمسجد النبوي وبيت المقدس"
+   },
+   "direct": 6,
+   "total": 6
+  },
+  {
+   "id": "536",
+   "parent": "138",
+   "labels": {
+    "en": "Rulings of Ihraam (the Ritual State of Consecration)",
+    "ar": "أحكام الإحرام"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "537",
+   "parent": "138",
+   "labels": {
+    "en": "Prohibitions of Ihraam",
+    "ar": "محظورات الإحرام"
+   },
+   "direct": 6,
+   "total": 6
+  },
+  {
+   "id": "538",
+   "parent": "138",
+   "labels": {
+    "en": "Ransom and Hunting Expiation",
+    "ar": "الفدية وجزاء الصيد"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "539",
+   "parent": "138",
+   "labels": {
+    "en": "Types of Rituals (Pilgrimage)",
+    "ar": "أنواع النسك"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "542",
+   "parent": "138",
+   "labels": {
+    "en": "Obligations of ‘Umrah",
+    "ar": "واجبات العمرة"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "544",
+   "parent": "138",
+   "labels": {
+    "en": "How to Make Hajj (Pilgrimage)",
+    "ar": "صفة الحج"
+   },
+   "direct": 9,
+   "total": 9
+  },
+  {
+   "id": "545",
+   "parent": "138",
+   "labels": {
+    "en": "Pillars of Hajj (Pilgrimage)",
+    "ar": "أركان الحج"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "546",
+   "parent": "138",
+   "labels": {
+    "en": "Obligations of Hajj (Pilgrimage)",
+    "ar": "واجبات الحج"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "549",
+   "parent": "138",
+   "labels": {
+    "en": "Rulings of the Prophet's Mosque",
+    "ar": "أحكام المسجد النبوي"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "550",
+   "parent": "138",
+   "labels": {
+    "en": "Sacrificial Animals and Expiations",
+    "ar": "الهدي والكفارات"
+   },
+   "direct": 6,
+   "total": 6
+  },
+  {
+   "id": "551",
+   "parent": "138",
+   "labels": {
+    "en": "Sacrifice",
+    "ar": "الأضحية"
+   },
+   "direct": 5,
+   "total": 5
+  },
+  {
+   "id": "554",
+   "parent": "138",
+   "labels": {
+    "en": "Rulings and Issues of Hajj and ‘Umrah",
+    "ar": "أحكام ومسائل الحج والعمرة"
+   },
+   "direct": 16,
+   "total": 16
+  },
+  {
+   "id": "555",
+   "parent": "139",
+   "labels": {
+    "en": "Ruling of Jihad",
+    "ar": "حكم الجهاد"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "556",
+   "parent": "139",
+   "labels": {
+    "en": "Excellence of Jihad",
+    "ar": "فضل الجهاد"
+   },
+   "direct": 35,
+   "total": 35
+  },
+  {
+   "id": "557",
+   "parent": "139",
+   "labels": {
+    "en": "Categories of Jihad",
+    "ar": "أقسام الجهاد"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "558",
+   "parent": "139",
+   "labels": {
+    "en": "Rulings and Issues of Jihad",
+    "ar": "أحكام ومسائل الجهاد"
+   },
+   "direct": 31,
+   "total": 31
+  },
+  {
+   "id": "559",
+   "parent": "139",
+   "labels": {
+    "en": "Manners of Jihad",
+    "ar": "آداب الجهاد"
+   },
+   "direct": 7,
+   "total": 7
+  },
+  {
+   "id": "560",
+   "parent": "139",
+   "labels": {
+    "en": "Rulings of Non-Muslims Living in Muslim Country",
+    "ar": "أحكام أهل الذمة"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "561",
+   "parent": "139",
+   "labels": {
+    "en": "Rulings of Truce and Security",
+    "ar": "أحكام الهدنة والأمان"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "562",
+   "parent": "139",
+   "labels": {
+    "en": "Rulings of Terrorism, Assassinations, and Explosions",
+    "ar": "أحكام الإرهاب والاغتيالات والتفجيرات"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "564",
+   "parent": "140",
+   "labels": {
+    "en": "Forbidden Sales",
+    "ar": "البيوع المحرمة"
+   },
+   "direct": 10,
+   "total": 10
+  },
+  {
+   "id": "566",
+   "parent": "169",
+   "labels": {
+    "en": "Oaths",
+    "ar": "الأيمان"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "567",
+   "parent": "169",
+   "labels": {
+    "en": "Vows",
+    "ar": "النذور"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "570",
+   "parent": "191",
+   "labels": {
+    "en": "Excellence of Marriage",
+    "ar": "فضل النكاح"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "571",
+   "parent": "191",
+   "labels": {
+    "en": "Manners of Marriage",
+    "ar": "آداب النكاح"
+   },
+   "direct": 7,
+   "total": 7
+  },
+  {
+   "id": "572",
+   "parent": "191",
+   "labels": {
+    "en": "Rulings and Conditions of Marriage",
+    "ar": "أحكام وشروط النكاح"
+   },
+   "direct": 4,
+   "total": 4
+  },
+  {
+   "id": "573",
+   "parent": "191",
+   "labels": {
+    "en": "Women Unlawful to Marry",
+    "ar": "المحرمات في النكاح"
+   },
+   "direct": 4,
+   "total": 4
+  },
+  {
+   "id": "574",
+   "parent": "191",
+   "labels": {
+    "en": "Conditions of Marriage",
+    "ar": "الشروط في النكاح"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "576",
+   "parent": "191",
+   "labels": {
+    "en": "Marrying the Disbelievers",
+    "ar": "نكاح الكفار"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "577",
+   "parent": "191",
+   "labels": {
+    "en": "Forbidden Marriages",
+    "ar": "الأنكحة المحرمة"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "579",
+   "parent": "191",
+   "labels": {
+    "en": "Dowry",
+    "ar": "الصداق"
+   },
+   "direct": 7,
+   "total": 7
+  },
+  {
+   "id": "580",
+   "parent": "191",
+   "labels": {
+    "en": "Wedding Banquet",
+    "ar": "وليمة العرس"
+   },
+   "direct": 5,
+   "total": 5
+  },
+  {
+   "id": "581",
+   "parent": "191",
+   "labels": {
+    "en": "Marital Relations",
+    "ar": "العشرة بين الزوجين"
+   },
+   "direct": 17,
+   "total": 17
+  },
+  {
+   "id": "584",
+   "parent": "192",
+   "labels": {
+    "en": "Words of Divorce",
+    "ar": "ألفاظ الطلاق"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "585",
+   "parent": "192",
+   "labels": {
+    "en": "Sunnah Divorce and Innovative Divorce",
+    "ar": "الطلاق السني والطلاق البدعي"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "586",
+   "parent": "192",
+   "labels": {
+    "en": "Revocable and Irrevocable Divorce",
+    "ar": "الطلاق الرجعي والبائن"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "587",
+   "parent": "192",
+   "labels": {
+    "en": "Rulings and Issues of Divorce",
+    "ar": "أحكام ومسائل الطلاق"
+   },
+   "direct": 5,
+   "total": 5
+  },
+  {
+   "id": "588",
+   "parent": "198",
+   "labels": {
+    "en": "Rulings of the Waiting Period",
+    "ar": "أحكام العدة"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "590",
+   "parent": "198",
+   "labels": {
+    "en": "The Divorced Woman's Waiting Period",
+    "ar": "عدة المطلقة"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "591",
+   "parent": "198",
+   "labels": {
+    "en": "Waiting Period of the Lost Husband's Wife",
+    "ar": "عدة المفقود زوجها"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "593",
+   "parent": "198",
+   "labels": {
+    "en": "Ascertaining Non-Pregnancy",
+    "ar": "الاستبراء"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "594",
+   "parent": "199",
+   "labels": {
+    "en": "Ruling of Breastfeeding",
+    "ar": "حكم الرضاع"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "596",
+   "parent": "199",
+   "labels": {
+    "en": "Conditions of Breastfeeding",
+    "ar": "شروط الرضاع"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "597",
+   "parent": "199",
+   "labels": {
+    "en": "Consequences of Breastfeeding",
+    "ar": "آثار الرضاع"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "601",
+   "parent": "205",
+   "labels": {
+    "en": "Jurisprudence for Muslim Women",
+    "ar": "الفقه المرأة المسلمة"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "604",
+   "parent": "205",
+   "labels": {
+    "en": "Intermixing",
+    "ar": "الاختلاط"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "605",
+   "parent": "205",
+   "labels": {
+    "en": "Polygamy",
+    "ar": "تعدد الزوجات"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "607",
+   "parent": "205",
+   "labels": {
+    "en": "Men-Women Relationships",
+    "ar": "العلاقة بين الرجل والمرأة"
+   },
+   "direct": 8,
+   "total": 8
+  },
+  {
+   "id": "608",
+   "parent": "206",
+   "labels": {
+    "en": "Naming the Newborn",
+    "ar": "تسمية المولود وتكنيته"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "609",
+   "parent": "206",
+   "labels": {
+    "en": "Sacrificing for the Newborn",
+    "ar": "العقيقة"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "610",
+   "parent": "206",
+   "labels": {
+    "en": "Providing for Children",
+    "ar": "النفقة على الأولاد"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "611",
+   "parent": "206",
+   "labels": {
+    "en": "Raising Children",
+    "ar": "تربية الأولاد"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "612",
+   "parent": "211",
+   "labels": {
+    "en": "Rulings of Ruqyah (protective and healing supplications)",
+    "ar": "أحكام الرقية"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "629",
+   "parent": "270",
+   "labels": {
+    "en": "Merit and Significance of Knowledge",
+    "ar": "فضل العلم وأهميته"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "631",
+   "parent": "276",
+   "labels": {
+    "en": "Merits of the Rightly Guided Caliphs",
+    "ar": "فضائل الخلفاء الراشدين رضي الله عنهم"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "636",
+   "parent": "287",
+   "labels": {
+    "en": "Forbidden Utterances and Tongue Evils",
+    "ar": "المناهي اللفظية وآفات اللسان"
+   },
+   "direct": 9,
+   "total": 9
+  },
+  {
+   "id": "639",
+   "parent": "406",
+   "labels": {
+    "en": "Physical Attributes",
+    "ar": "الصفات الخَلْقية"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "640",
+   "parent": "406",
+   "labels": {
+    "en": "Prophet's Dress Code",
+    "ar": "لباسه صلى الله عليه وسلم"
+   },
+   "direct": 7,
+   "total": 7
+  },
+  {
+   "id": "641",
+   "parent": "406",
+   "labels": {
+    "en": "Prophet's Furniture, Stuff, and Arms",
+    "ar": "أثاثه ومتاعه وسلاحه صلى الله عليه وسلم"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "642",
+   "parent": "406",
+   "labels": {
+    "en": "Prophet's Food and Drink",
+    "ar": "طعامه وشرابه صلى الله عليه وسلم"
+   },
+   "direct": 8,
+   "total": 8
+  },
+  {
+   "id": "645",
+   "parent": "406",
+   "labels": {
+    "en": "Prophet's Travel",
+    "ar": "سفره صلى الله عليه وسلم"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "646",
+   "parent": "406",
+   "labels": {
+    "en": "Moral Attributes",
+    "ar": "الصفات الخُلُقية"
+   },
+   "direct": 3,
+   "total": 56
+  },
+  {
+   "id": "647",
+   "parent": "406",
+   "labels": {
+    "en": "Prophet's Guidance",
+    "ar": "الهدي النبوي"
+   },
+   "direct": 8,
+   "total": 30
+  },
+  {
+   "id": "648",
+   "parent": "646",
+   "labels": {
+    "en": "Prophet's Generosity",
+    "ar": "كرمه صلى الله عليه وسلم"
+   },
+   "direct": 6,
+   "total": 6
+  },
+  {
+   "id": "649",
+   "parent": "646",
+   "labels": {
+    "en": "Prophet's Modesty",
+    "ar": "حياؤه صلى الله عليه وسلم"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "650",
+   "parent": "646",
+   "labels": {
+    "en": "Prophet's Humility",
+    "ar": "تواضعه صلى الله عليه وسلم"
+   },
+   "direct": 7,
+   "total": 7
+  },
+  {
+   "id": "651",
+   "parent": "646",
+   "labels": {
+    "en": "Prophet's Courage",
+    "ar": "شجاعته صلى الله عليه وسلم"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "652",
+   "parent": "646",
+   "labels": {
+    "en": "Prophet's Gentleness",
+    "ar": "رفقه صلى الله عليه وسلم"
+   },
+   "direct": 5,
+   "total": 5
+  },
+  {
+   "id": "653",
+   "parent": "646",
+   "labels": {
+    "en": "Prophet's Forgiveness",
+    "ar": "عفوه صلى الله عليه وسلم"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "654",
+   "parent": "646",
+   "labels": {
+    "en": "Prophet's Mercy",
+    "ar": "رحمته صلى الله عليه وسلم"
+   },
+   "direct": 17,
+   "total": 17
+  },
+  {
+   "id": "655",
+   "parent": "646",
+   "labels": {
+    "en": "Prophet's Speech",
+    "ar": "كلامه صلى الله عليه وسلم"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "656",
+   "parent": "646",
+   "labels": {
+    "en": "Prophet's Laughing",
+    "ar": "ضحكه صلى الله عليه وسلم"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "657",
+   "parent": "646",
+   "labels": {
+    "en": "Prophet's Crying",
+    "ar": "بكاؤه صلى الله عليه وسلم"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "659",
+   "parent": "646",
+   "labels": {
+    "en": "Prophet's Compassion",
+    "ar": "شفقته صلى الله عليه وسلم"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "660",
+   "parent": "646",
+   "labels": {
+    "en": "Prophet's Asceticism",
+    "ar": "زهده صلى الله عليه وسلم"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "661",
+   "parent": "646",
+   "labels": {
+    "en": "Prophet's Justice",
+    "ar": "عدله صلى الله عليه وسلم"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "662",
+   "parent": "646",
+   "labels": {
+    "en": "Prophet's Forbearance",
+    "ar": "حلمه صلى الله عليه وسلم"
+   },
+   "direct": 4,
+   "total": 4
+  },
+  {
+   "id": "666",
+   "parent": "647",
+   "labels": {
+    "en": "Prophet's Guidance on Public Speaking",
+    "ar": "هديه صلى الله عليه وسلم في خطبه"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "667",
+   "parent": "647",
+   "labels": {
+    "en": "Prophet's Guidance on Purification",
+    "ar": "هديه صلى الله عليه وسلم في التطهر"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "668",
+   "parent": "647",
+   "labels": {
+    "en": "Prophet's Guidance on Prayer",
+    "ar": "هديه صلى الله عليه وسلم في الصلاة"
+   },
+   "direct": 11,
+   "total": 11
+  },
+  {
+   "id": "669",
+   "parent": "647",
+   "labels": {
+    "en": "Prophet's Guidance on Fasting",
+    "ar": "هديه صلى الله عليه وسلم في الصوم"
+   },
+   "direct": 2,
+   "total": 2
+  },
+  {
+   "id": "671",
+   "parent": "647",
+   "labels": {
+    "en": "Prophet's Guidance on Funerals",
+    "ar": "هديه صلى الله عليه وسلم في الجنائز"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "678",
+   "parent": "647",
+   "labels": {
+    "en": "Prophet's Guidance on Marriage and Treating One's Wife",
+    "ar": "هديه صلى الله عليه وسلم في النكاح ومعاشرته أهله"
+   },
+   "direct": 3,
+   "total": 3
+  },
+  {
+   "id": "679",
+   "parent": "409",
+   "labels": {
+    "en": "The Battle of Yamaamah",
+    "ar": "معركة اليمامة"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "721",
+   "parent": "415",
+   "labels": {
+    "en": "Rulings and Manners of Eid",
+    "ar": "أحكام وآداب العيد"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "725",
+   "parent": "134",
+   "labels": {
+    "en": "The rulings of mosques",
+    "ar": "أحكام المساجد"
+   },
+   "direct": 34,
+   "total": 34
+  },
+  {
+   "id": "726",
+   "parent": "137",
+   "labels": {
+    "en": "Ramadan",
+    "ar": "رمضان"
+   },
+   "direct": 1,
+   "total": 1
+  },
+  {
+   "id": "727",
+   "parent": "133",
+   "labels": {
+    "en": "Wiping Over Leather Socks and the like",
+    "ar": "المسح على الخفين ونحوهما"
+   },
+   "direct": 10,
+   "total": 10
+  },
+  {
+   "id": "735",
+   "parent": "367",
+   "labels": {
+    "en": "Prophetic characteristics",
+    "ar": "الخصائص النبوية"
+   },
+   "direct": 19,
+   "total": 19
+  },
+  {
+   "id": "738",
+   "parent": "10",
+   "labels": {
+    "en": "Interpretation of verses",
+    "ar": "تفسير الآيات"
+   },
+   "direct": 13,
+   "total": 13
+  }
+ ]
+}

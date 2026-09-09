@@ -24,6 +24,24 @@ They are likewise the source of the `citation` field — the standard sunnah.com
 
 **sunnah.com** additionally publishes [`sunnah-com/api`](https://github.com/sunnah-com/api), whose OpenAPI specification and `text_transform.py` informed the documentation here.
 
+## The Hadith Encyclopedia
+
+`db/hadeethenc/` comes from **[hadeethenc.com](https://hadeethenc.com)** (الموسوعة الحديثية, the Hadith Encyclopedia), prepared under the supervision of the **Dawah and Guidance Association** and the **Association for Serving Islamic Content in Languages**. It is the only corpus here that does not descend from sunnah.com, and the only one carrying a scholarly explanation, a benefits list, word glosses and a full takhrij reference with each narration.
+
+**hadeethenc.com permits reuse on two conditions: no modification, addition or deletion of the content, and the source clearly credited.** Both are binding on anyone redistributing this data, not just on this repository:
+
+- The text in `db/hadeethenc/` is **not edited**. [`tools/build_hadeethenc.py`](tools/build_hadeethenc.py) normalises structure only; its one text touch is CRLF to LF plus trimming outer whitespace, which changes no content.
+- **Every screen rendering this text must render the credit**, where the words are and not in an About page.
+- A typographic or wording pass over it is a modification. If you apply one, you are no longer redistributing under these terms. See [docs/05-hadeethenc.md](docs/05-hadeethenc.md#licence-attribution-is-a-condition-not-a-courtesy).
+
+The Arabic and English layers reached this repository through **Tilawa**'s build of the site's own API (see below).
+
+## The subject index
+
+`db/topics.json` is the curation of **Jamil Hammoudeh**, from the **Tilawa** project, used with permission: the 331 titles, the 21 subjects and the 7 lanes are his editorial work. The ranked-search weights in [`tools/ranked_search.py`](tools/ranked_search.py) are ported from Tilawa's `hadithSearchEngine.ts`, likewise with permission.
+
+No hadith text is copied from that curation. Every entry is a citation resolved against `db/by_book/`, so what a reader sees is this repository's own text.
+
 ## Gradings
 
 The verdicts in `english.grades` are attributed to the scholars named in each record — among them Al-Albani, Zubair Ali Zai, Shuaib Al Arnaut, Ahmad Muhammad Shakir, Muhammad Fouad Abd al-Baqi, Abu Ghuddah, Bashar Awad Maarouf, Salim al-Hilali, and the Darussalam editorial team.
@@ -39,7 +57,7 @@ Built for and used by **Al-Islam | Islamic Pillars**:
 - **App Store:** <https://apps.apple.com/us/app/al-islam-islamic-pillars/id6449729655>
 - **Website:** <https://abubakrelmallah.com/>
 
-The pack format (`.hpk`), the search-fold logic, and the daily-card policy are shared with that app; `HadithFold.swift` is a verbatim copy kept in sync by fingerprint.
+The pack format (`.hpk`), the `.henc` container, the search-fold logic, the ranked-search weights and the daily-card policy are shared with that app; `HadithFold.swift` is a verbatim copy kept in sync by fingerprint, and `db/vocabulary.txt` is cross-checked against the copy that app exports from its own built packs.
 
 Companion projects by the same author:
 

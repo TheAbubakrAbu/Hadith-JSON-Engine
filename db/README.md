@@ -10,19 +10,24 @@ db/
 │   ├── forties/       qudsi40 · nawawi40 · shahwaliullah40
 │   └── other_books/   riyad_assalihin · bulugh_almaram · mishkat_almasabih
 │                      aladab_almufrad · shamail_muhammadiyah
-└── catalog.json       the 17 collections: titles, compilers, eras, descriptions, name aliases
+├── catalog.json       the 17 collections: titles, compilers, eras, descriptions, name aliases
+├── hadeethenc/        the Hadith Encyclopedia: 2,328 explained narrations under 452 categories
+│   ├── categories.json
+│   └── narrations.json
+├── topics.json        a curated subject index over by_book/: 331 narrations, 21 topics, 7 lanes
+└── vocabulary.txt     every English word the corpus uses, for correcting a typed one
 ```
 
-`by_book/` holds the text. [`catalog.json`](catalog.json) holds everything *about* the collections — how to title and attribute them, and which name forms a `"bukhari 5"` lookup should accept — kept separate so the book files stay pure upstream schema. See [docs/01-data-schema.md](../docs/01-data-schema.md#the-catalog--dbcatalogjson).
+`by_book/` holds the text, and everything beside it is an index into that text or a corpus of its own. [`catalog.json`](catalog.json) holds everything *about* the collections — how to title and attribute them, and which name forms a `"bukhari 5"` lookup should accept — kept separate so the book files stay pure upstream schema. See [docs/01-data-schema.md](../docs/01-data-schema.md#the-catalog--dbcatalogjson).
 
 | File | Hadiths | Chapters | English? | Graded | Repaired |
 |---|---:|---:|:---:|---:|---:|
 | `the_9_books/bukhari.json` | 7,277 | 97 | ✓ | — | 15 |
 | `the_9_books/muslim.json` | 7,459 | 57 | ✓ | — | 88 |
-| `the_9_books/nasai.json` | 5,768 | 52 | ✓ | 5,646 | 258 |
-| `the_9_books/abudawud.json` | 5,276 | 43 | ✓ | 4,176 | 13 |
-| `the_9_books/tirmidhi.json` | 4,053 | 49 | ✓ | 3,948 | 727 |
-| `the_9_books/ibnmajah.json` | 4,345 | 38 | ✓ | 4,313 | 124 |
+| `the_9_books/nasai.json` | 5,768 | 52 | ✓ | 5,760 | 258 |
+| `the_9_books/abudawud.json` | 5,276 | 43 | ✓ | 5,273 | 13 |
+| `the_9_books/tirmidhi.json` | 4,053 | 49 | ✓ | 4,021 | 727 |
+| `the_9_books/ibnmajah.json` | 4,345 | 38 | ✓ | 4,338 | 124 |
 | `the_9_books/malik.json` | 1,985 | 61 | ✓ | 1,705 | 1 |
 | `the_9_books/ahmed.json` | 1,374 | 8 | ✓ | 1,239 | 218 |
 | `the_9_books/darimi.json` | 3,406 | 24 | **none** | — | 0 |
@@ -34,7 +39,9 @@ db/
 | `other_books/riyad_assalihin.json` | 1,896 | 20 | ✓ | — | 1,888 |
 | `other_books/mishkat_almasabih.json` | 4,428 | 25 | ✓ | 32 | 194 |
 | `other_books/bulugh_almaram.json` | 1,767 | 16 | ✓ | 2 | 799 |
-| **Total** | **50,884** | **607** | | **21,455** | **4,477** |
+| **Total** | **50,884** | **607** | | **22,764** | **4,477** |
+
+The other four files are documented in their own specs: [`hadeethenc/`](../docs/05-hadeethenc.md), [`topics.json`](../docs/07-topics.md), and [`vocabulary.txt`](../docs/06-ranked-search.md). Only `by_book/` and `hadeethenc/` carry text; `topics.json` and `vocabulary.txt` are both **derived**, and both are regenerated and checked by [`tools/verify_corpora.py`](../tools/verify_corpora.py).
 
 Bukhari and Muslim show no gradings **on purpose** — sunnah.com does not grade them hadith by hadith. See [docs/03-gradings.md](../docs/03-gradings.md).
 

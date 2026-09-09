@@ -1,12 +1,12 @@
 {
- "version": 1,
- "description": "Single source of behavioural truth for the Hadith JSON Engine. Every port SHOULD assert these against its own reader, so a behaviour is specified ONCE here instead of re-asserted in N hand-written test files. Add or change a case here and each port picks it up. Reference consumer: tools/read_pack.py --verify. See docs/PORTING.md.",
+ "version": 2,
+ "description": "Single source of behavioural truth for the Hadith JSON Engine. Every port SHOULD assert these against its own reader, so a behaviour is specified ONCE here instead of re-asserted in N hand-written test files. Add or change a case here and each port picks it up. Reference consumers: tools/read_pack.py --verify and tools/verify_packs.py for the books and the packs; tools/verify_corpora.py for hadeethenc, topics, the vocabulary and ranked search. See docs/PORTING.md.",
  "corpus": {
   "books": 17,
   "hadiths": 50884,
   "chapters": 607,
   "repaired": 4477,
-  "graded": 21455,
+  "graded": 22764,
   "cited": 47476
  },
  "books": [
@@ -34,7 +34,7 @@
    "hadiths": 5768,
    "chapters": 52,
    "withEnglish": 5768,
-   "graded": 5646,
+   "graded": 5760,
    "cited": 5766
   },
   {
@@ -43,7 +43,7 @@
    "hadiths": 5276,
    "chapters": 43,
    "withEnglish": 5276,
-   "graded": 4176,
+   "graded": 5273,
    "cited": 5276
   },
   {
@@ -52,7 +52,7 @@
    "hadiths": 4053,
    "chapters": 49,
    "withEnglish": 4053,
-   "graded": 3948,
+   "graded": 4021,
    "cited": 4053
   },
   {
@@ -61,7 +61,7 @@
    "hadiths": 4345,
    "chapters": 38,
    "withEnglish": 4345,
-   "graded": 4313,
+   "graded": 4338,
    "cited": 4345
   },
   {
@@ -312,5 +312,459 @@
    "shamail_muhammadiyah (2)",
    "mishkat_almasabih (2)"
   ]
+ },
+ "hadeethenc": {
+  "description": "The Hadith Encyclopedia corpus, db/hadeethenc/. See docs/05-hadeethenc.md. The roots' totals sum to more than the corpus on purpose: a narration can sit under several categories.",
+  "narrations": 2328,
+  "categories": 452,
+  "roots": 7,
+  "maxDepth": 5,
+  "nodesByDepth": [
+   7,
+   39,
+   232,
+   136,
+   38
+  ],
+  "rootTotalsSum": 3160,
+  "withEnglishExplanation": 2328,
+  "withEnglishBenefits": 854,
+  "withArabicWords": 1479,
+  "withReference": 2328,
+  "maxCategoriesPerNarration": 7,
+  "idsAscendNumerically": true,
+  "known": [
+   {
+    "id": "1751",
+    "categories": [
+     "493"
+    ],
+    "englishTitlePrefix": "Wash her three times, or five times, or more if you find tha",
+    "arabicBodySha256": "ed44200c7131d43804cd344ab37454c8a99f22f13f7cacf2860d6d5db3d8b5dd"
+   }
+  ],
+  "packFormat": {
+   "magic": "HENC",
+   "magicLE": 1129271112,
+   "version": 2,
+   "entriesPerBlock": 128,
+   "headerBytes": 24,
+   "blockRowBytes": 16,
+   "fullRecordFields": 17,
+   "lightRecordFields": 6,
+   "treeRecordFields": 6,
+   "benefitsSeparator": "U+001F"
+  }
+ },
+ "topics": {
+  "description": "The curated subject index, db/topics.json. See docs/07-topics.md. `entryLanes` has one lane more than `topicLanes`: `popular` owns no topic and cuts across the others.",
+  "entries": 331,
+  "topics": 21,
+  "lanes": 7,
+  "entriesByLane": {
+   "adhkar": 44,
+   "akhlaq": 50,
+   "daily-life": 42,
+   "foundations": 84,
+   "popular": 26,
+   "qudsi": 13,
+   "worship": 72
+  },
+  "entriesByTopicLane": {
+   "adhkar": 48,
+   "akhlaq": 62,
+   "daily-life": 43,
+   "foundations": 92,
+   "qudsi": 13,
+   "worship": 73
+  },
+  "entriesBySlug": {
+   "abudawud": 13,
+   "bukhari": 218,
+   "muslim": 90,
+   "tirmidhi": 10
+  },
+  "crossLaneEntries": 26,
+  "topicsSpanningMoreThanOneBook": 14,
+  "ranksAreUnique": true,
+  "everyCitationResolves": true,
+  "known": [
+   {
+    "id": "bukhari-1",
+    "slug": "bukhari",
+    "citation": "1",
+    "topic": "intention",
+    "lane": "popular",
+    "title": "Actions Are By Intentions"
+   }
+  ]
+ },
+ "vocabulary": {
+  "description": "db/vocabulary.txt, derived from the English search folds by tools/build_vocabulary.py. See docs/06-ranked-search.md.",
+  "words": 32555,
+  "minLength": 4,
+  "maxLength": 24,
+  "sortedAndUnique": true,
+  "sha256": "704ecdd59295a59098a79755ab9161aa8d4a49b740b386ef340fb61b3c47c439",
+  "contains": [
+   "intention",
+   "neighbour",
+   "neighbor",
+   "ramadan",
+   "patience"
+  ],
+  "excludes": [
+   "the",
+   "of",
+   "a",
+   "an"
+  ]
+ },
+ "rankedSearch": {
+  "description": "Probes for tools/ranked_search.py. See docs/06-ranked-search.md. Ties break on (-score, slug, row), so the order is total and comparable element by element. `row` is the 0-based index into the book's `hadiths` array.",
+  "weights": {
+   "primary": 12,
+   "citation": 7,
+   "body": 3,
+   "phraseBonusPrimary": 60,
+   "phraseBonusBody": 25,
+   "wholeWordBonus": 6,
+   "stemPenalty": 2,
+   "fuzzyPenalty": 5,
+   "relaxedTokenWeight": 40,
+   "minimumHit": 1
+  },
+  "stopwords": [
+   "a",
+   "an",
+   "and",
+   "are",
+   "as",
+   "at",
+   "be",
+   "by",
+   "for",
+   "from",
+   "he",
+   "his",
+   "in",
+   "is",
+   "it",
+   "of",
+   "on",
+   "or",
+   "that",
+   "the",
+   "to",
+   "was",
+   "who",
+   "with"
+  ],
+  "contiguousScanBaseline": {
+   "controlling anger": 0,
+   "rights of the neighbour": 0,
+   "intetion": 0,
+   "neighbour": 125,
+   "neighbor": 138
+  },
+  "probes": [
+   {
+    "query": "controlling anger",
+    "tokens": [
+     "controlling",
+     "anger"
+    ],
+    "corrections": [],
+    "hits": 4,
+    "relaxed": false,
+    "top": [
+     {
+      "slug": "aladab_almufrad",
+      "row": 1319,
+      "score": 19,
+      "matched": 2
+     },
+     {
+      "slug": "bukhari",
+      "row": 5881,
+      "score": 10,
+      "matched": 2
+     },
+     {
+      "slug": "muslim",
+      "row": 6480,
+      "score": 10,
+      "matched": 2
+     },
+     {
+      "slug": "muslim",
+      "row": 7325,
+      "score": 10,
+      "matched": 2
+     }
+    ]
+   },
+   {
+    "query": "rights of the neighbour",
+    "tokens": [
+     "rights",
+     "neighbour"
+    ],
+    "corrections": [],
+    "hits": 47,
+    "relaxed": false,
+    "top": [
+     {
+      "slug": "aladab_almufrad",
+      "row": 108,
+      "score": 22,
+      "matched": 2
+     },
+     {
+      "slug": "aladab_almufrad",
+      "row": 115,
+      "score": 22,
+      "matched": 2
+     },
+     {
+      "slug": "aladab_almufrad",
+      "row": 119,
+      "score": 22,
+      "matched": 2
+     },
+     {
+      "slug": "tirmidhi",
+      "row": 2010,
+      "score": 19,
+      "matched": 2
+     },
+     {
+      "slug": "tirmidhi",
+      "row": 2011,
+      "score": 19,
+      "matched": 2
+     }
+    ]
+   },
+   {
+    "query": "intetion",
+    "tokens": [
+     "intetion"
+    ],
+    "corrections": [
+     {
+      "from": "intetion",
+      "to": "intention"
+     }
+    ],
+    "hits": 333,
+    "relaxed": false,
+    "top": [
+     {
+      "slug": "abudawud",
+      "row": 101,
+      "score": 1,
+      "matched": 1
+     },
+     {
+      "slug": "abudawud",
+      "row": 354,
+      "score": 1,
+      "matched": 1
+     },
+     {
+      "slug": "abudawud",
+      "row": 477,
+      "score": 1,
+      "matched": 1
+     },
+     {
+      "slug": "abudawud",
+      "row": 558,
+      "score": 1,
+      "matched": 1
+     },
+     {
+      "slug": "abudawud",
+      "row": 562,
+      "score": 1,
+      "matched": 1
+     }
+    ]
+   },
+   {
+    "query": "fasting ramadan",
+    "tokens": [
+     "fasting",
+     "ramadan"
+    ],
+    "corrections": [],
+    "hits": 547,
+    "relaxed": false,
+    "top": [
+     {
+      "slug": "nasai",
+      "row": 5009,
+      "score": 43,
+      "matched": 2
+     },
+     {
+      "slug": "abudawud",
+      "row": 2327,
+      "score": 36,
+      "matched": 2
+     },
+     {
+      "slug": "abudawud",
+      "row": 2332,
+      "score": 36,
+      "matched": 2
+     },
+     {
+      "slug": "abudawud",
+      "row": 2336,
+      "score": 36,
+      "matched": 2
+     },
+     {
+      "slug": "abudawud",
+      "row": 2388,
+      "score": 36,
+      "matched": 2
+     }
+    ]
+   },
+   {
+    "query": "the",
+    "tokens": [
+     "the"
+    ],
+    "corrections": [],
+    "hits": 46619,
+    "relaxed": false,
+    "top": [
+     {
+      "slug": "abudawud",
+      "row": 1161,
+      "score": 27,
+      "matched": 1
+     },
+     {
+      "slug": "abudawud",
+      "row": 1162,
+      "score": 27,
+      "matched": 1
+     },
+     {
+      "slug": "abudawud",
+      "row": 1163,
+      "score": 27,
+      "matched": 1
+     },
+     {
+      "slug": "abudawud",
+      "row": 1164,
+      "score": 27,
+      "matched": 1
+     },
+     {
+      "slug": "abudawud",
+      "row": 1165,
+      "score": 27,
+      "matched": 1
+     }
+    ]
+   },
+   {
+    "query": "prayer of a traveller in the rain",
+    "tokens": [
+     "prayer",
+     "traveller",
+     "rain"
+    ],
+    "corrections": [],
+    "hits": 9,
+    "relaxed": false,
+    "top": [
+     {
+      "slug": "muslim",
+      "row": 1494,
+      "score": 42,
+      "matched": 3
+     },
+     {
+      "slug": "muslim",
+      "row": 1498,
+      "score": 42,
+      "matched": 3
+     },
+     {
+      "slug": "muslim",
+      "row": 1499,
+      "score": 42,
+      "matched": 3
+     },
+     {
+      "slug": "muslim",
+      "row": 1501,
+      "score": 42,
+      "matched": 3
+     },
+     {
+      "slug": "muslim",
+      "row": 1502,
+      "score": 42,
+      "matched": 3
+     }
+    ]
+   },
+   {
+    "query": "sunrise camel silk",
+    "tokens": [
+     "sunrise",
+     "camel",
+     "silk"
+    ],
+    "corrections": [],
+    "hits": 2,
+    "relaxed": true,
+    "top": [
+     {
+      "slug": "malik",
+      "row": 1371,
+      "score": 98,
+      "matched": 2
+     },
+     {
+      "slug": "muslim",
+      "row": 95,
+      "score": 92,
+      "matched": 2
+     }
+    ]
+   }
+  ]
+ },
+ "semantic": {
+  "description": "Meaning search, docs/08-semantic-search.md. The engine ships no model and no vectors; these pin the corpus shape an index is built over and the .svec header.",
+  "items": 50884,
+  "itemsWithNoEnglish": 3449,
+  "distinctWords": 30828,
+  "wordOccurrences": 3762645,
+  "keyFormat": "<slug>|<idInBook>",
+  "absoluteFloor": 0.38,
+  "relativeFloor": 0.85,
+  "packFormat": {
+   "magic": "SEM4",
+   "magicLE": 1397048372,
+   "indexWidths": [
+    2,
+    4
+   ],
+   "vectorsAreHalfFloats": true,
+   "vectorsAreUnitLength": true,
+   "rejectOnEmbeddingRevisionMismatch": true,
+   "rejectOnFingerprintMismatch": true
+  }
  }
 }

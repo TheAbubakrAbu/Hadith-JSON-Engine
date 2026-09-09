@@ -64,12 +64,17 @@ It covers:
 - chapter row ranges — contiguity and full coverage
 - pack invariants — magic, version, fingerprints
 - fractional chapter id mapping
+- the encyclopedia's counts, tree shape, and known records
+- the subject index's counts per lane and per book, and that every citation resolves
+- the vocabulary's size, hash, and bounds
+- ranked-search weights, stopwords, and seven query probes with their top hits
 
 Two tools run against it, and they answer different questions:
 
 ```bash
 python3 tools/read_pack.py <pack>.hpk --verify   # does this pack DECODE? per-book counts
 python3 tools/verify_packs.py <packs-dir>        # does it say what the JSON says? every vector asserted
+python3 tools/verify_corpora.py                  # the same, for everything in db/ that is not by_book/
 ```
 
 `read_pack.py --verify` is a decode check: every row reachable, chapter ranges covering the corpus, and the counts printed for a human to read. It does **not** assert the vectors.
@@ -90,6 +95,31 @@ python3 tools/fold.py "الصلاة خير من النوم"
 ```
 
 Run the same probes (`fold.PROBES`) through your implementation, hash the results the same way, and compare. They are chosen so that changing any single rule changes the fingerprint — hamza carriers, dagger alif, alif maqsurah, teh marbuta, tashkeel, Quranic signs, the salawat ligature, punctuation, case, and whitespace collapsing. If it matches, your fold agrees with the packer everywhere. If it doesn't, refuse the prebuilt search text and fold at runtime instead of shipping a search that quietly finds nothing.
+
+## Level 3: the rest of `db/`
+
+Three more corpora sit beside the books, and none of them needs the pack reader.
+
+| What | Read it as | Spec |
+|---|---|---|
+| [`db/hadeethenc/`](../db/hadeethenc) | plain JSON, or the `.henc` container | [05](05-hadeethenc.md) |
+| [`db/topics.json`](../db/topics.json) | plain JSON; resolve `slug` + `citation` against `db/by_book/` | [07](07-topics.md) |
+| [`db/vocabulary.txt`](../db/vocabulary.txt) | one word per line, UTF-8 | [06](06-ranked-search.md) |
+
+`.henc` is a second container with its own layout, simpler than `.hpk`: a header holding the category tree and a light row per narration, then xz blocks of full narrations. The same three rules apply to it and for the same reasons. Bound every count from the file before allocating against it, check each inflated size against the length recorded for it, and key a block cache by block index rather than by object identity. [`tools/read_henc.py`](../tools/read_henc.py) is the reference decoder, written from the spec rather than from the packer.
+
+## The two files to translate
+
+The fold is the first ([below](#the-fold-is-the-part-ports-get-wrong)). The second is [`tools/ranked_search.py`](../tools/ranked_search.py), and it is worth translating for the same reason: it is a *transformation*, it decides what a reader sees, and a port that gets it subtly wrong returns plausible results in the wrong order rather than an error.
+
+Everything it does is a byte compare against the folds a pack already carries, so a port needs nothing new from its language. What it needs is care with the details that look incidental and are not:
+
+- **A row can match through its chapter alone.** Chapter and collection scores are computed once per chapter and added to every row of it, so a block whose folds contain no word of the query can still hold rows that count. A reader that skips blocks by content must exempt the blocks holding a matched chapter's rows, or those rows disappear from the results with nothing to indicate they were dropped.
+- **A stem matches at a word start only**, never mid-word, and is discounted. The other spelling (`neighbour` / `neighbor`) is charged at full price, because the corpus genuinely contains both.
+- **A word already in the vocabulary as a substring is never "corrected".** A half-typed word is a prefix, not a mistake, and correcting it takes the search away from what the reader is about to type.
+- **Ties break on `(-score, slug, row)`.** Without a total order, two correct ports produce different lists and neither can be checked against the other.
+
+[`conformance/vectors.json`](../conformance/vectors.json) pins seven probes under `rankedSearch`, with the hit count, the corrections, the relaxed flag and the top five for each. Assert against those.
 
 ## A note on scope
 

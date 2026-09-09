@@ -15,8 +15,11 @@
 | **50,884** hadiths | **17** collections |
 | **607** chapters | Arabic + English |
 | **4,477** repaired records | **2** independent proof-gated passes |
-| **21,455** graded records | **10+** named scholars |
+| **22,764** graded records | **10+** named scholars |
 | **47,476** cited records | standard sunnah.com numbering |
+| **2,328** explained narrations | a second, independent corpus |
+| **331** curated entries | 21 subjects across 4 collections |
+| **32,555** vocabulary words | typo correction from the corpus itself |
 | **79 MB** JSON → **25 MB** packs | **3.15x**, block-lazy |
 | **0** network calls at runtime | 100% offline |
 
@@ -55,7 +58,10 @@ Hadith-JSON-Engine/
 │   │   ├── forties/            qudsi40 · nawawi40 · shahwaliullah40
 │   │   └── other_books/        riyad_assalihin · bulugh_almaram · mishkat_almasabih
 │   │                           aladab_almufrad · shamail_muhammadiyah
-│   └── catalog.json            how each collection is titled, attributed, and named
+│   ├── catalog.json            how each collection is titled, attributed, and named
+│   ├── hadeethenc/             the Hadith Encyclopedia: 2,328 explained narrations, 452 topics
+│   ├── topics.json             a curated subject index: 331 narrations, 21 subjects, 7 lanes
+│   └── vocabulary.txt          the corpus's own English words, for correcting a typed one
 ├── logs/                       ← per-hadith before/after for all 4,477 repairs
 ├── docs/                       ← comprehensive documentation
 │   ├── 00-getting-started · architecture · glossary · faq
@@ -63,6 +69,10 @@ Hadith-JSON-Engine/
 │   ├── 02-repair-pipeline      the bug, the proof, both passes
 │   ├── 03-gradings             sahih/hasan/da'if, and what is refused
 │   ├── 04-hpk-format           the binary pack format, portable spec
+│   ├── 05-hadeethenc           the encyclopedia corpus and the .henc container
+│   ├── 06-ranked-search        scoring by where a word landed; typo correction
+│   ├── 07-topics               the curated subject index
+│   ├── 08-semantic-search      meaning search, and the .svec vector pack
 │   └── PORTING.md              read the packs from any language
 ├── tools/                      ← the pipeline
 │   ├── final_repair.py         pass 1 · whole-string greedy proof
@@ -71,9 +81,16 @@ Hadith-JSON-Engine/
 │   ├── add_grades.py           scholar gradings, content-matched
 │   ├── add_citations.py        standard sunnah.com numbers, content-matched
 │   ├── read_pack.py            reference decoder · the executable spec
+│   ├── read_henc.py            the same for the encyclopedia container
 │   ├── fold.py                 the search fold, portable · the file to translate
+│   ├── ranked_search.py        ranked search, portable · the other file to translate
+│   ├── semantic.py             meaning search and the .svec pack, portable
+│   ├── build_hadeethenc.py     the encyclopedia corpus, structure-only normalisation
+│   ├── build_topics.py         the subject index · every citation must resolve
+│   ├── build_vocabulary.py     the search vocabulary, derived from the corpus
 │   ├── verify_packs.py         the gate · proves a pack IS its JSON
-│   └── pack/                   build.sh · pack-hadith.swift · HadithFold.swift
+│   ├── verify_corpora.py       the gate for everything in db/ that is not by_book/
+│   └── pack/                   build.sh · pack-hadith.swift · pack_hadeethenc.py
 └── conformance/vectors.json    ← behavioural truth any port can assert against
 ```
 
@@ -91,6 +108,10 @@ Each module is data first and stands alone — take the text and ignore the rest
 | Search folds | precomputed Arabic + English normalisation | ✓ |
 | Packing | 3.15x block-compressed binary, lazy reads | ✓ |
 | Daily selection | precomputed length + editorial flags | 12,039 |
+| Encyclopedia | explained narrations, benefits, glosses, takhrij | 2,328 |
+| Subject index | curated topics across collections | 331 |
+| Ranked search | word-independent scoring, stems, typo correction | ✓ |
+| Meaning search | word-vector MaxSim, model-agnostic | ✓ |
 | Framework-agnostic | plain JSON, plus a documented binary | ✓ |
 
 Specifications, in reading order:
@@ -99,7 +120,11 @@ Specifications, in reading order:
 2. **[Repair pipeline](docs/02-repair-pipeline.md)** — the bug, the proof gate, both passes
 3. **[Gradings](docs/03-gradings.md)** — what is attached, and what is deliberately refused
 4. **[HPK format](docs/04-hpk-format.md)** — the binary pack, byte by byte
-5. **[Porting](docs/PORTING.md)** — read the data or the packs from any language
+5. **[The Hadith Encyclopedia](docs/05-hadeethenc.md)**: the second corpus, and the `.henc` container
+6. **[Ranked search](docs/06-ranked-search.md)**: scoring by where a word landed, and typo correction
+7. **[The subject index](docs/07-topics.md)**: 331 narrations by subject, citations only
+8. **[Meaning search](docs/08-semantic-search.md)**: word-vector MaxSim, and the `.svec` pack
+9. **[Porting](docs/PORTING.md)** — read the data or the packs from any language
 
 ## Two ways to consume this
 
@@ -163,13 +188,13 @@ Two passes were needed, because the first simulation was subtly wrong. Full deta
 
 ## Gradings
 
-Upstream carries **no grading field at all**, so a reader cannot tell sahih from da'if. [`tools/add_grades.py`](tools/add_grades.py) attaches `english.grades` — **21,455 records (42.2%)** from 10+ named scholars. Nothing is computed or adjudicated; where scholars differ, every verdict is kept.
+Upstream carries **no grading field at all**, so a reader cannot tell sahih from da'if. [`tools/add_grades.py`](tools/add_grades.py) attaches `english.grades` — **22,764 records (44.7%)** from 10+ named scholars. Nothing is computed or adjudicated; where scholars differ, every verdict is kept.
 
 | Grader | Records | | Verdict | Records |
 |---|---:|---|---|---:|
-| Zubair Ali Zai | 17,563 | | Sahih | 40,862 |
-| Al-Albani | 17,492 | | Hasan | 7,606 |
-| Darussalam | 13,848 | | Daif | 7,201 |
+| Al-Albani | 18,590 | | Sahih | 41,053 |
+| Zubair Ali Zai | 17,563 | | Hasan | 7,640 |
+| Darussalam | 14,059 | | Daif | 7,201 |
 | Shuaib Al Arnaut | 5,783 | | Hasan Sahih | 3,298 |
 
 Full detail, including the three categories of grading this deliberately **refuses** to write: **[docs/03-gradings.md](docs/03-gradings.md)**.
@@ -195,6 +220,9 @@ Read [docs/faq.md](docs/faq.md#what-is-still-wrong) before assuming the data is 
 - **Darimi has no English at all** (3,406 records) — sunnah.com has no English translation for it.
 - **Upstream's other problems are inherited**: missing hadiths and chapter gaps. `idInBook` drift is answered by the `citation` field (93.3% coverage; the rest have no standard number to carry), but the row index itself still drifts.
 - **The proof is structural, not scholarly.** It proves a repair restored the *same hadith*; it cannot prove a translation is accurate.
+- **Nothing joins the encyclopedia to the books.** `db/hadeethenc/` carries a takhrij reference in Arabic prose, not a machine key, so the two corpora are neighbours rather than one joined table. A partial mapping presented as a complete one would be worse than none, so none is attempted.
+- **The subject index is 331 narrations, not a survey.** It is a curated entry point over four collections, and 218 of its entries are from Bukhari.
+- **Meaning search ships no model and no vectors.** The lane is specified and implemented; the embedding is yours, and a `.svec` pack built against one model or one revision of the text must be rejected by any reader running against another.
 
 ## Regenerating
 
@@ -205,6 +233,14 @@ python3 tools/fix_leading_punctuation.py --apply           # narrator-tail clean
 python3 tools/add_grades.py --donors <dir> --apply         # scholar gradings
 python3 tools/add_citations.py --donors <dir> --apply      # standard citation numbers
 tools/pack/build.sh /path/to/your-app                      # build the .hpk packs
+
+python3 tools/build_hadeethenc.py --source <dir> --apply   # the encyclopedia corpus
+python3 tools/build_topics.py --source <ts> --apply        # the subject index
+python3 tools/build_vocabulary.py --apply                  # the search vocabulary
+python3 tools/pack/pack_hadeethenc.py /path/to/your-app    # build HadeethEnc.henc
+python3 tools/verify_corpora.py --pack <pack>.henc         # the gate for all of the above
+python3 tools/verify_corpora.py --pack <pack>.henc --softened-dashes   # ... for a pack whose
+                                                           # English commentary was re-punctuated
 ```
 
 See [docs/00-getting-started.md](docs/00-getting-started.md) for what `<dir>` must contain.
@@ -216,8 +252,10 @@ See [docs/00-getting-started.md](docs/00-getting-started.md) for what `<dir>` mu
 | Base data & schema | [AhmedBaset/hadith-json](https://github.com/AhmedBaset/hadith-json) | none stated |
 | Clean text & grades | [fawazahmed0/hadith-api](https://github.com/fawazahmed0/hadith-api) | Unlicense |
 | Clean text & grades | [CheeseWithSauce/HadithsJSONFormat](https://github.com/CheeseWithSauce/HadithsJSONFormat) | MIT |
+| The encyclopedia corpus | [hadeethenc.com](https://hadeethenc.com) | reuse permitted: **no modification**, credit required |
+| Subject curation & search weights | Tilawa (Jamil Hammoudeh) | used with permission |
 
-All three ultimately derive from [sunnah.com](https://sunnah.com). Please respect sunnah.com's terms for the underlying translations; this repo claims no ownership of them. Full provenance: [CREDITS.md](CREDITS.md).
+The first three ultimately derive from [sunnah.com](https://sunnah.com); `db/hadeethenc/` does not, which is the point of it. Please respect sunnah.com's terms for the underlying translations; this repo claims no ownership of them. Full provenance: [CREDITS.md](CREDITS.md).
 
 > **Note on upstream licensing:** AhmedBaset/hadith-json states no license. This repo redistributes its schema and Arabic text on the same basis the upstream project redistributes sunnah.com's. If the upstream author objects, open an issue and it will be taken down.
 

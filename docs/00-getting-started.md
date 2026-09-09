@@ -104,10 +104,25 @@ Every step is a dry run by default. Drop `--apply` to see what it would change w
 
 > The CheeseWithSauce files carry a UTF-8 BOM. Read them with `utf-8-sig`, or `json.load` throws on the first character. Silently swallowing that leaves books with only one donor and quietly halves their confirmation — the tools report unreadable donor files rather than skipping them.
 
+## The rest of `db/`
+
+Three corpora sit beside the books and need none of the above. They are already built; the commands below only re-derive them.
+
+```bash
+python3 tools/build_hadeethenc.py --source <dump> --apply   # db/hadeethenc/, needs the site's dump
+python3 tools/build_topics.py --source <ts> --apply         # db/topics.json, needs the curation
+python3 tools/build_vocabulary.py --apply                   # db/vocabulary.txt, from db/by_book alone
+python3 tools/pack/pack_hadeethenc.py /path/to/your-app     # HadeethEnc.henc
+```
+
+Only `vocabulary.txt` is derivable from this repository alone; the other two need their upstream source, which is why both are committed rather than generated on demand. What each one is: [05](05-hadeethenc.md), [07](07-topics.md), [06](06-ranked-search.md).
+
 ## Verify what you have
 
 ```bash
 python3 tools/read_pack.py <pack>.hpk --verify   # every row decodes, chapters cover all rows
+python3 tools/read_henc.py <pack>.henc --verify  # the same, for the encyclopedia container
+python3 tools/verify_corpora.py                  # db/ beyond by_book, against the conformance vectors
 ```
 
 `manifest.json` beside the packs carries a sha256 per pack, plus both fingerprints and the shapes. Check against it before trusting a pack you did not build yourself.
