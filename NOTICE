@@ -1,0 +1,22 @@
+NOTE ON THE HADITH TEXT
+
+The MIT license in LICENSE covers the tooling, documentation, and pack format in
+this repository. It does NOT cover the hadith text itself.
+
+The Arabic text and the English translations originate from sunnah.com, by way
+of the community datasets credited in CREDITS.md. Neither this repository nor
+its author claims ownership of them. Please respect sunnah.com's terms for the
+underlying translations, and preserve the chain of attribution in CREDITS.md
+in any redistribution.
+
+The Hadith Encyclopedia in db/hadeethenc/ comes from hadeethenc.com under its
+own terms, and is the only corpus here that does not descend from sunnah.com.
+Reuse is permitted on two conditions: no modification, addition or deletion of
+the content, and the source clearly credited. A typographic or wording pass over
+it counts as a modification. See docs/05-hadeethenc.md and CREDITS.md.
+
+This note lives here rather than at the end of LICENSE so that LICENSE holds
+the MIT text and nothing else. GitHub identifies a license by comparing the
+file against known texts and tolerates only small deviations, so the appended
+note used to make the repository read as "Other" instead of MIT. The terms are
+unchanged; only their location is.

@@ -126,6 +126,8 @@ Specifications, in reading order:
 8. **[Meaning search](docs/08-semantic-search.md)**: word-vector MaxSim, and the `.svec` pack
 9. **[Porting](docs/PORTING.md)** — read the data or the packs from any language
 
+Also: **[What's new](docs/whats-new.md)**, what each release added, newest first.
+
 ## Two ways to consume this
 
 **Plain JSON** — the canonical product. Any language reads it; nothing is hidden.
@@ -276,7 +278,7 @@ Five repositories by the same author: three apps, and the two engines the apps a
 
 ## License & attribution
 
-The tooling, documentation, and specifications here are MIT — see [LICENSE](LICENSE). Use, modify, and redistribute them freely, **with attribution**, and preserve the provenance in [CREDITS.md](CREDITS.md).
+The tooling, documentation, and specifications here are MIT: see [LICENSE](LICENSE). Use, modify, and redistribute them freely, **with attribution**, and preserve the provenance in [CREDITS.md](CREDITS.md). What the MIT license does *not* cover, and the separate terms the Hadith Encyclopedia carries, are set out in [NOTICE](NOTICE).
 
 **The hadith text is not this repository's to license.** It belongs to the tradition, and its English rendering to the translators and publishers whom [sunnah.com](https://sunnah.com) credits. These are the words of the Prophet ﷺ — keep them accurate, and keep the chain of attribution intact.
 

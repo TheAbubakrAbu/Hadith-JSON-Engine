@@ -19,16 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-NOTE ON THE HADITH TEXT
-
-This license covers the tooling, documentation, and pack format in this
-repository. It does NOT cover the hadith text itself.
-
-The Arabic text and the English translations originate from sunnah.com, by way
-of the community datasets credited in CREDITS.md. Neither this repository nor
-its author claims ownership of them. Please respect sunnah.com's terms for the
-underlying translations, and preserve the chain of attribution in CREDITS.md
-in any redistribution.

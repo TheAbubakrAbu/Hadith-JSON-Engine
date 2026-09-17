@@ -154,6 +154,15 @@ A separate, single file describing the **collections** rather than their text: h
 
 It is kept out of the book files deliberately. `db/by_book/*.json` carries upstream's schema and the text, and nothing else belongs in there; a reader that only wants hadiths never has to skip past editorial prose. The two are checked against each other by `tools/verify_packs.py`, so the counts and the book order cannot drift apart.
 
+**Which side is authoritative, for this file only.** Everything else here flows outward: the corpus is repaired in this repository and an app's packs are built from it, so when the two disagree about hadith text the app is stale. The catalog's *prose* is the exception. The titles, author names and descriptions are not scraped or derived from anything; they were written for the consuming app's own shelf, in its voice, and `verify_packs.py` cross-checks them against `HadithCatalogBook.all` precisely because the same facts then exist in two places. For those nine fields the app is upstream and this file follows it, which is what `tools/sync_app_catalog.py` does:
+
+```bash
+python3 tools/sync_app_catalog.py --app /path/to/Al-Islam-iOS            # dry run
+python3 tools/sync_app_catalog.py --app /path/to/Al-Islam-iOS --apply
+```
+
+It refuses the whole run rather than carry a bad rewrite across: a vocalization pass may add and remove marks, so every Arabic change must leave the consonantal skeleton identical, and no incoming text may contain a sukoon. That is what separates a cosmetic refresh from a corrected name hiding inside one.
+
 ```jsonc
 {
   "version": 1,
@@ -168,7 +177,7 @@ It is kept out of the book files deliberately. `db/by_book/*.json` carries upstr
       "englishTitle": "Sahih al-Bukhari",
       "arabicTitle": "صَحِيح البُخارِي",     // vocalized; no sukoon, final letters left bare
       "authorEnglish": "Imam Muhammad ibn Ismail al-Bukhari",
-      "authorArabic": "الإمام محمد بن إسماعيل البخاري",
+      "authorArabic": "الإِمَامُ مُحَمَّدُ بنُ إِسمَاعِيلَ البُخَارِيُّ",
       "era": "d. 256 AH / 870 CE",        // the classical way these books are dated
       "shortDescription": "…",            // one or two lines, for a list row
       "longDescription": "…",             // the fuller story; "\n\n" separates paragraphs
@@ -184,7 +193,7 @@ It is kept out of the book files deliberately. `db/by_book/*.json` carries upstr
 |---|---|
 | `slug` | The join key for everything: `db/by_book/<folder>/<slug>.json`, `<slug>.hpk`, the manifest. |
 | `number` | Corpus order — the six canonical collections, the three early ones, the forties, then the rest. Chronological by compiler within each group. |
-| `arabicTitle` | **Vocalized**, unlike the book file's `metadata.arabic.title`, which is bare. Both are correct; this one is meant to be displayed. |
+| `arabicTitle`, `authorArabic` | **Vocalized**, unlike the book file's `metadata.arabic.title`, which is bare. Both are correct; these are meant to be displayed. Tashkeel on every letter *except* that a sukoon is never written: a letter that would carry one carries nothing. The Arabic inside `longDescription` follows the same rule. |
 | `aliases` | Lowercase alphanumeric name forms, apostrophes and hyphens removed, for resolving `"bukhari 5"`. Unique across the corpus — no alias names two books. |
 | `chapters`, `hadiths` | The real shape, asserted against the data by `tools/verify_packs.py`. |
 

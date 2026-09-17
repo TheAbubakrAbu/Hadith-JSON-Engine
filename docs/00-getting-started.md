@@ -95,12 +95,15 @@ Then:
 python3 tools/runall.py                                     # pass 1
 python3 tools/repair_line_aware.py --donors <donors> --apply  # pass 2  (~4 min)
 python3 tools/fix_leading_punctuation.py --apply
+python3 tools/fix_perso_arabic_letters.py --apply
 python3 tools/add_grades.py --donors <donors> --apply
 python3 tools/add_citations.py --donors <donors> --apply
 tools/pack/build.sh /path/to/your-app
 ```
 
 Every step is a dry run by default. Drop `--apply` to see what it would change without writing.
+
+`fix_perso_arabic_letters` folds 61 word forms that reached the corpus written the Persian way (ی ک ۃ) onto the Arabic letters they stand for. It matters more than it sounds: the KFGQPC Uthmanic faces an app renders hadith in map all three of those codepoints onto one placeholder RING glyph, and because they sit in the font's cmap the OS never substitutes a face for them - it draws a small circle. 68 of the 73 characters are in `shahwaliullah40`, across 28 of its 40 narrations, so that one book reached readers with circles where its letters should be. The fold is per WORD and not per character, because Persian writes one ی for both ي and ى, and `--verify` re-derives the table from the rest of the corpus.
 
 > The CheeseWithSauce files carry a UTF-8 BOM. Read them with `utf-8-sig`, or `json.load` throws on the first character. Silently swallowing that leaves books with only one donor and quietly halves their confirmation — the tools report unreadable donor files rather than skipping them.
 
@@ -116,6 +119,15 @@ python3 tools/pack/pack_hadeethenc.py /path/to/your-app     # HadeethEnc.henc
 ```
 
 Only `vocabulary.txt` is derivable from this repository alone; the other two need their upstream source, which is why both are committed rather than generated on demand. What each one is: [05](05-hadeethenc.md), [07](07-topics.md), [06](06-ranked-search.md).
+
+`db/catalog.json` is the one file whose prose is written *outside* this repository, in the shelf of the app that displays it, and `verify_packs.py` fails when the two drift. Pull the app's copy back in with:
+
+```bash
+python3 tools/sync_app_catalog.py --app /path/to/Al-Islam-iOS            # dry run
+python3 tools/sync_app_catalog.py --app /path/to/Al-Islam-iOS --apply
+```
+
+It takes only the nine cross-checked fields, and refuses the run if an Arabic rewrite changes the letters rather than just the marks, so a corrected name can never slip in disguised as a vocalization pass. See [the catalog](01-data-schema.md#the-catalog--dbcatalogjson) in the schema doc.
 
 ## Verify what you have
 
