@@ -1,6 +1,6 @@
 # Getting started
 
-Everything here is offline. There is no API, no key, and no network call — you read files.
+Everything here is offline. There is no API, no key, and no network call: you read files.
 
 ## Pick your path
 
@@ -28,7 +28,7 @@ print(len(book["hadiths"]))                       # 40
 
 h = book["hadiths"][23]                           # Hadith Qudsi 24
 print(h["english"]["narrator"])
-print(h["english"]["text"])                       # intact — this is the repaired record
+print(h["english"]["text"])                       # intact: this is the repaired record
 ```
 
 ```javascript
@@ -42,7 +42,7 @@ Full field reference: **[01-data-schema.md](01-data-schema.md)**.
 Two things to know before you build on it:
 
 - **`idInBook` has known drift** ([upstream #11](https://github.com/AhmedBaset/hadith-json/issues/11)). Do not treat it as a stable citation key across datasets. Match by content when you cross datasets.
-- **Darimi has no English** — all 3,406 records are Arabic-only, because sunnah.com has no English translation for it. Render the Arabic and omit the English block rather than showing a blank.
+- **Darimi has no English**: all 3,406 records are Arabic-only, because sunnah.com has no English translation for it. Render the Arabic and omit the English block rather than showing a blank.
 
 ## Use the packs
 
@@ -105,7 +105,7 @@ Every step is a dry run by default. Drop `--apply` to see what it would change w
 
 `fix_perso_arabic_letters` folds 61 word forms that reached the corpus written the Persian way (ی ک ۃ) onto the Arabic letters they stand for. It matters more than it sounds: the KFGQPC Uthmanic faces an app renders hadith in map all three of those codepoints onto one placeholder RING glyph, and because they sit in the font's cmap the OS never substitutes a face for them - it draws a small circle. 68 of the 73 characters are in `shahwaliullah40`, across 28 of its 40 narrations, so that one book reached readers with circles where its letters should be. The fold is per WORD and not per character, because Persian writes one ی for both ي and ى, and `--verify` re-derives the table from the rest of the corpus.
 
-> The CheeseWithSauce files carry a UTF-8 BOM. Read them with `utf-8-sig`, or `json.load` throws on the first character. Silently swallowing that leaves books with only one donor and quietly halves their confirmation — the tools report unreadable donor files rather than skipping them.
+> The CheeseWithSauce files carry a UTF-8 BOM. Read them with `utf-8-sig`, or `json.load` throws on the first character. Silently swallowing that leaves books with only one donor and quietly halves their confirmation, the tools report unreadable donor files rather than skipping them.
 
 ## The rest of `db/`
 

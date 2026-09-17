@@ -144,7 +144,7 @@ def provable(clean, target_norm):
 #
 # Quotes, `(` and `[` are deliberately NOT in this set: a narration really can open with
 # `"`, `(ﷺ)` or `[He said:]`, and `lstrip` stops at the first character it does not hold.
-LEAD_JUNK = ' \t\r\n):;,.-–—]'
+LEAD_JUNK = ' \t\r\n):;,.-–, ]'
 
 
 def restore(clean, narrator, before):

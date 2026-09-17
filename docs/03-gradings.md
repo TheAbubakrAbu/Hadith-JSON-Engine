@@ -1,6 +1,6 @@
 # Gradings
 
-Upstream's schema is `arabic` + `english{narrator, text}` and carries **no authentication grading at all**. A reader cannot tell a sahih narration from a da'if one. For Tirmidhi and Ibn Majah especially that is not cosmetic — those collections contain graded-weak material *by design*, and presenting it undifferentiated misrepresents it.
+Upstream's schema is `arabic` + `english{narrator, text}` and carries **no authentication grading at all**. A reader cannot tell a sahih narration from a da'if one. For Tirmidhi and Ibn Majah especially that is not cosmetic, those collections contain graded-weak material *by design*, and presenting it undifferentiated misrepresents it.
 
 [`tools/add_grades.py`](../tools/add_grades.py) adds `english.grades`. **21,455 of 50,884 records (42.2%)** carry at least one verdict.
 
@@ -37,7 +37,7 @@ Coverage by book:
 | `tirmidhi` | 3,948 | 97.4% |
 | `ahmed` | 1,239 | 90.2% |
 | `malik` | 1,705 | 85.9% |
-| everything else | ~34 | — |
+| everything else | ~34 |, |
 
 ## What it does not do
 
@@ -53,7 +53,7 @@ Coverage by book:
 
 Three categories, each caught by inspection before writing.
 
-### 1. Bukhari and Muslim get nothing — on purpose
+### 1. Bukhari and Muslim get nothing, on purpose
 
 sunnah.com does not grade those two collections hadith by hadith; they are sahih by definition of the collections. CheeseWithSauce's `grade` column for them holds the **reference** instead:
 
@@ -67,7 +67,7 @@ A first implementation that accepted those stamped **14,736 fake gradings** that
 
 If your UI wants to say something about Bukhari and Muslim, say it at the collection level. Do not synthesise per-hadith verdicts.
 
-### 2. Contradictory attribution — 1,252 records
+### 2. Contradictory attribution: 1,252 records
 
 Where the two sources attribute **different verdicts to the same named grader**, neither is written:
 
@@ -76,13 +76,13 @@ nasai #15  Zubair Ali Zai:  "Hasan"  vs  "Sahih - Agreed Upon"
 nasai #59  Zubair Ali Zai:  "Isnaad Sahih"  vs  "Sahih"
 ```
 
-Mostly `abudawud` (1,097), then `nasai` (115). Some of these are not true contradictions — `Sahih` and `Sahih - Agreed Upon` are compatible — but picking one would mean deciding which source is right about what a scholar said. Refusing is cheap; being wrong is not.
+Mostly `abudawud` (1,097), then `nasai` (115). Some of these are not true contradictions (`Sahih` and `Sahih - Agreed Upon` are compatible), but picking one would mean deciding which source is right about what a scholar said. Refusing is cheap; being wrong is not.
 
-### 3. Misaligned source columns — whole books
+### 3. Misaligned source columns, whole books
 
 In `riyadussalihin`, `adab`, `forty`, `mishkat` and `malik`, CheeseWithSauce's `grade` column contains **the entire hadith text**, English and Arabic both. Their scraper misaligned the field for those books. That data is unusable and is rejected wholesale, which is why those collections show near-zero coverage.
 
-One further cleanup: many entries repeat the verdict in Arabic after the English one —
+One further cleanup: many entries repeat the verdict in Arabic after the English one, 
 
 ```
 "Grade : Sahih (Al-Albani) صحيح (الألباني) حكم :"
@@ -94,8 +94,8 @@ Both halves say the same thing. The English half is kept and everything from the
 
 By content, never by hadith number. A grading is written only when the donor record is provably the same hadith:
 
-- **exact** — `norm(donor) == norm(ours)`, or
-- **clean twin** — some line-grouping of the donor reproduces ours, i.e. the donor is the undamaged version of a record still carrying greedy-bracket damage (see [02-repair-pipeline](02-repair-pipeline.md))
+- **exact**: `norm(donor) == norm(ours)`, or
+- **clean twin**: some line-grouping of the donor reproduces ours, i.e. the donor is the undamaged version of a record still carrying greedy-bracket damage (see [02-repair-pipeline](02-repair-pipeline.md))
 
 Anything else is left ungraded. If two donor records with *different* gradings both match, neither is written.
 
@@ -103,4 +103,4 @@ The tool is **idempotent**: it clears `grades` before each run, so a re-run cann
 
 ## In the packs
 
-Since pack format v4 the gradings ride in the packs as each hadith's fourth display string — `name U+001F grade` records joined by `U+001E`, empty when ungraded. See [04-hpk-format.md](04-hpk-format.md#display) for the encoding.
+Since pack format v4 the gradings ride in the packs as each hadith's fourth display string, `name U+001F grade` records joined by `U+001E`, empty when ungraded. See [04-hpk-format.md](04-hpk-format.md#display) for the encoding.

@@ -1,6 +1,6 @@
 # Hadith JSON Engine
 
-**An open-source, offline-first, framework-agnostic hadith engine.** The complete text of 17 collections — 50,884 hadiths in Arabic and English — *repaired* from a scraper bug that had been silently deleting sentences for years, graded by named scholars, and shipped as **portable data + a documented binary pack format + precise specifications**, so anyone can build a hadith app in any language on any platform. No network required; everything ships in the box.
+**An open-source, offline-first, framework-agnostic hadith engine.** The complete text of 17 collections (50,884 hadiths in Arabic and English), *repaired* from a scraper bug that had been silently deleting sentences for years, graded by named scholars, and shipped as **portable data + a documented binary pack format + precise specifications**, so anyone can build a hadith app in any language on any platform. No network required; everything ships in the box.
 
 > The data originates from [AhmedBaset/hadith-json](https://github.com/AhmedBaset/hadith-json), which scraped [sunnah.com](https://sunnah.com). This repository repairs it, grades it, documents it, and packages it for offline apps. It is the data layer behind **[Al-Islam | Islamic Pillars](https://github.com/TheAbubakrAbu/Al-Islam-iOS)**. See [CREDITS.md](CREDITS.md).
 
@@ -41,7 +41,7 @@ In Forty Hadith Qudsi 24, both halves of the narration contain `a servant [of Hi
 
 > If Allah has loved a servant, He calls Gabriel and says: I **abhor** So-and-so, therefore abhor him.
 
-The hadith is made to say that Allah abhors the servant He loves. The Arabic in the same record is complete — the record contradicts itself. This was reported by a user of Al-Islam, which is how the work began.
+The hadith is made to say that Allah abhors the servant He loves. The Arabic in the same record is complete; the record contradicts itself. This was reported by a user of Al-Islam, which is how the work began.
 
 This repository fixes that, proves every fix, and documents everything precisely enough to rebuild from scratch.
 
@@ -96,7 +96,7 @@ Hadith-JSON-Engine/
 
 ## Engine modules
 
-Each module is data first and stands alone — take the text and ignore the rest, or adopt all of it:
+Each module is data first and stands alone, take the text and ignore the rest, or adopt all of it:
 
 | Module | What it does | This engine |
 |---|---|---|
@@ -116,21 +116,21 @@ Each module is data first and stands alone — take the text and ignore the rest
 
 Specifications, in reading order:
 
-1. **[Data schema](docs/01-data-schema.md)** — the JSON contract, field by field
-2. **[Repair pipeline](docs/02-repair-pipeline.md)** — the bug, the proof gate, both passes
-3. **[Gradings](docs/03-gradings.md)** — what is attached, and what is deliberately refused
-4. **[HPK format](docs/04-hpk-format.md)** — the binary pack, byte by byte
+1. **[Data schema](docs/01-data-schema.md)**: the JSON contract, field by field
+2. **[Repair pipeline](docs/02-repair-pipeline.md)**: the bug, the proof gate, both passes
+3. **[Gradings](docs/03-gradings.md)**: what is attached, and what is deliberately refused
+4. **[HPK format](docs/04-hpk-format.md)**: the binary pack, byte by byte
 5. **[The Hadith Encyclopedia](docs/05-hadeethenc.md)**: the second corpus, and the `.henc` container
 6. **[Ranked search](docs/06-ranked-search.md)**: scoring by where a word landed, and typo correction
 7. **[The subject index](docs/07-topics.md)**: 331 narrations by subject, citations only
 8. **[Meaning search](docs/08-semantic-search.md)**: word-vector MaxSim, and the `.svec` pack
-9. **[Porting](docs/PORTING.md)** — read the data or the packs from any language
+9. **[Porting](docs/PORTING.md)**: read the data or the packs from any language
 
 Also: **[What's new](docs/whats-new.md)**, what each release added, newest first.
 
 ## Two ways to consume this
 
-**Plain JSON** — the canonical product. Any language reads it; nothing is hidden.
+**Plain JSON**: the canonical product. Any language reads it; nothing is hidden.
 
 ```python
 import json
@@ -138,19 +138,19 @@ book = json.load(open("db/by_book/forties/qudsi40.json"))
 book["hadiths"][23]["english"]["text"]   # Hadith Qudsi 24, intact
 ```
 
-**Packed `.hpk`** — a build artifact for apps that need speed and size. 79 MB of JSON becomes 25 MB, opening a chapter decompresses one ~256 KB block instead of parsing a book, and search folds are precomputed so a keystroke is a byte compare. The format is fully specified in [docs/04-hpk-format.md](docs/04-hpk-format.md) — it is not a private format.
+**Packed `.hpk`**: a build artifact for apps that need speed and size. 79 MB of JSON becomes 25 MB, opening a chapter decompresses one ~256 KB block instead of parsing a book, and search folds are precomputed so a keystroke is a byte compare. The format is fully specified in [docs/04-hpk-format.md](docs/04-hpk-format.md): it is not a private format.
 
 ```bash
 tools/pack/build.sh /path/to/your-app
 ```
 
-The JSON is the source of truth. The packs are reproducible from it, and nothing is in a pack that is not in the JSON — and that is **checked, not asserted**. `build.sh` finishes by re-deriving every string, id, citation, chapter range, flag, and search fold from `db/by_book` and comparing it against what it just wrote:
+The JSON is the source of truth. The packs are reproducible from it, and nothing is in a pack that is not in the JSON, and that is **checked, not asserted**. `build.sh` finishes by re-deriving every string, id, citation, chapter range, flag, and search fold from `db/by_book` and comparing it against what it just wrote:
 
 ```bash
 python3 tools/verify_packs.py <packs-dir>     # ~670,000 assertions, standard library only
 ```
 
-Packing successfully is not the same as packing correctly: a stale rebuild, an edited JSON that was never repacked, or a packer bug all produce files that decode perfectly and ship the wrong text. This is the gate that catches them. The build is also deterministic — the same JSON produces byte-identical packs, so a checksum is enough to tell whether a shipped pack is current.
+Packing successfully is not the same as packing correctly: a stale rebuild, an edited JSON that was never repacked, or a packer bug all produce files that decode perfectly and ship the wrong text. This is the gate that catches them. The build is also deterministic: the same JSON produces byte-identical packs, so a checksum is enough to tell whether a shipped pack is current.
 
 ## The repair, in short
 
@@ -161,7 +161,7 @@ simulate_bug(clean) == damaged      # provably the same hadith
 clean               != damaged      # text was provably lost
 ```
 
-Re-running the upstream bug on the candidate must reproduce the damaged record exactly. If it doesn't reproduce, nothing is written — a mis-attributed repair is structurally impossible, because the wrong hadith would not reproduce the damage. Matching is **by content, never by hadith number**, since upstream's `idInBook` has [known drift](https://github.com/AhmedBaset/hadith-json/issues/11).
+Re-running the upstream bug on the candidate must reproduce the damaged record exactly. If it doesn't reproduce, nothing is written: a mis-attributed repair is structurally impossible, because the wrong hadith would not reproduce the damage. Matching is **by content, never by hadith number**, since upstream's `idInBook` has [known drift](https://github.com/AhmedBaset/hadith-json/issues/11).
 
 Two passes were needed, because the first simulation was subtly wrong. Full detail: **[docs/02-repair-pipeline.md](docs/02-repair-pipeline.md)**.
 
@@ -190,7 +190,7 @@ Two passes were needed, because the first simulation was subtly wrong. Full deta
 
 ## Gradings
 
-Upstream carries **no grading field at all**, so a reader cannot tell sahih from da'if. [`tools/add_grades.py`](tools/add_grades.py) attaches `english.grades` — **22,764 records (44.7%)** from 10+ named scholars. Nothing is computed or adjudicated; where scholars differ, every verdict is kept.
+Upstream carries **no grading field at all**, so a reader cannot tell sahih from da'if. [`tools/add_grades.py`](tools/add_grades.py) attaches `english.grades`, **22,764 records (44.7%)** from 10+ named scholars. Nothing is computed or adjudicated; where scholars differ, every verdict is kept.
 
 | Grader | Records | | Verdict | Records |
 |---|---:|---|---|---:|
@@ -206,7 +206,7 @@ Full detail, including the three categories of grading this deliberately **refus
 Indicative figures, Apple Silicon. Packing decides everything decidable ahead of time, once, so no device repeats it:
 
 - **Storage:** 79 MB JSON → **25 MB** packed (3.15x). Whitespace cleanup, search folds, chapter ranges, and daily-card flags are all precomputed.
-- **Opening a book:** the eager section only — titles, chapters, and the id table, under 100 KB compressed for the largest book. The 12 MB of text behind it stays on disk.
+- **Opening a book:** the eager section only, titles, chapters, and the id table, under 100 KB compressed for the largest book. The 12 MB of text behind it stays on disk.
 - **Opening a chapter:** 1–3 LZMA blocks, a few milliseconds. Not a scan of the book.
 - **Search:** a byte compare against precomputed folds, with no String allocated and no normalisation pass per keystroke.
 - **Memory:** packs are memory-mapped, so untouched text is never resident and touched pages are clean and evictable.
@@ -218,8 +218,8 @@ Read [docs/faq.md](docs/faq.md#what-is-still-wrong) before assuming the data is 
 - **19 records are still provably truncated**, plus 22 undecidable. Both clean donors share the same gaps.
 - **115 repairs rest on a single donor** with no independent confirmation (`confirmed_by` in the logs says which).
 - **16 Ibn Majah records were refused as ambiguous** and left damaged rather than guessed at.
-- **2,562 records look scarred but lost nothing** — the scar heuristic over-fires roughly 130 to 1. Do not read a scar count as a damage count.
-- **Darimi has no English at all** (3,406 records) — sunnah.com has no English translation for it.
+- **2,562 records look scarred but lost nothing**: the scar heuristic over-fires roughly 130 to 1. Do not read a scar count as a damage count.
+- **Darimi has no English at all** (3,406 records): sunnah.com has no English translation for it.
 - **Upstream's other problems are inherited**: missing hadiths and chapter gaps. `idInBook` drift is answered by the `citation` field (93.3% coverage; the rest have no standard number to carry), but the row index itself still drifts.
 - **The proof is structural, not scholarly.** It proves a repair restored the *same hadith*; it cannot prove a translation is accurate.
 - **Nothing joins the encyclopedia to the books.** `db/hadeethenc/` carries a takhrij reference in Arabic prose, not a machine key, so the two corpora are neighbours rather than one joined table. A partial mapping presented as a complete one would be worse than none, so none is attempted.
@@ -267,29 +267,29 @@ Five repositories by the same author: three apps, and the two engines the apps a
 
 **Apps**
 
-- [**Al-Islam | Islamic Pillars**](https://github.com/TheAbubakrAbu/Al-Islam-iOS) — prayer times, the Quran, hadith, tafsir, and the Islamic essentials in one app
-- [**Al-Adhan | Prayer Times**](https://github.com/TheAbubakrAbu/Al-Adhan-iOS) — prayer times, adhan notifications, and the Qibla
-- [**Al-Quran | Beginner Quran**](https://github.com/TheAbubakrAbu/Al-Quran-iOS) — the Quran for beginners and Arabic learners
+- [**Al-Islam | Islamic Pillars**](https://github.com/TheAbubakrAbu/Al-Islam-iOS), prayer times, the Quran, hadith, tafsir, and the Islamic essentials in one app
+- [**Al-Adhan | Prayer Times**](https://github.com/TheAbubakrAbu/Al-Adhan-iOS), prayer times, adhan notifications, and the Qibla
+- [**Al-Quran | Beginner Quran**](https://github.com/TheAbubakrAbu/Al-Quran-iOS), the Quran for beginners and Arabic learners
 
-**Engines** — the data layers behind those apps, extracted so anyone can build on them in any language
+**Engines**: the data layers behind those apps, extracted so anyone can build on them in any language
 
-- [**Hadith JSON Engine**](https://github.com/TheAbubakrAbu/Hadith-JSON-Engine) — *this repository*. 50,884 hadiths across 17 collections: repaired, graded, cited, and packed
-- [**Quran Tajweed Engine**](https://github.com/TheAbubakrAbu/Quran-Tajweed-Engine) — the same idea for the Quran: 6,236 ayahs with pre-computed tajweed, qiraat, and recitations
+- [**Hadith JSON Engine**](https://github.com/TheAbubakrAbu/Hadith-JSON-Engine), *this repository*. 50,884 hadiths across 17 collections: repaired, graded, cited, and packed
+- [**Quran Tajweed Engine**](https://github.com/TheAbubakrAbu/Quran-Tajweed-Engine), the same idea for the Quran: 6,236 ayahs with pre-computed tajweed, qiraat, and recitations
 
 ## License & attribution
 
 The tooling, documentation, and specifications here are MIT: see [LICENSE](LICENSE). Use, modify, and redistribute them freely, **with attribution**, and preserve the provenance in [CREDITS.md](CREDITS.md). What the MIT license does *not* cover, and the separate terms the Hadith Encyclopedia carries, are set out in [NOTICE](NOTICE).
 
-**The hadith text is not this repository's to license.** It belongs to the tradition, and its English rendering to the translators and publishers whom [sunnah.com](https://sunnah.com) credits. These are the words of the Prophet ﷺ — keep them accurate, and keep the chain of attribution intact.
+**The hadith text is not this repository's to license.** It belongs to the tradition, and its English rendering to the translators and publishers whom [sunnah.com](https://sunnah.com) credits. These are the words of the Prophet ﷺ, keep them accurate, and keep the chain of attribution intact.
 
 ## Contributing
 
-Better sources, closed gaps, new language ports of the pack reader, and scholarly review of the repairs are all welcome — especially the last one. See [CONTRIBUTING.md](CONTRIBUTING.md).
+Better sources, closed gaps, new language ports of the pack reader, and scholarly review of the repairs are all welcome, especially the last one. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## A note on intent
 
-This project — like **[Al-Islam](https://github.com/TheAbubakrAbu/Al-Islam-iOS)**, **[Al-Adhan](https://github.com/TheAbubakrAbu/Al-Adhan-iOS)**, **[Al-Quran](https://github.com/TheAbubakrAbu/Al-Quran-iOS)**, and the **[Quran Tajweed Engine](https://github.com/TheAbubakrAbu/Quran-Tajweed-Engine)** — is offered as *sadaqah jariyah*. These are the words of the Prophet ﷺ; they deserve to be transmitted accurately. If a hadith in your app is wrong, someone may act on it. That is the whole reason this repository exists, and why every repair here is gated by a proof rather than a guess.
+This project, like **[Al-Islam](https://github.com/TheAbubakrAbu/Al-Islam-iOS)**, **[Al-Adhan](https://github.com/TheAbubakrAbu/Al-Adhan-iOS)**, **[Al-Quran](https://github.com/TheAbubakrAbu/Al-Quran-iOS)**, and the **[Quran Tajweed Engine](https://github.com/TheAbubakrAbu/Quran-Tajweed-Engine)**, is offered as *sadaqah jariyah*. These are the words of the Prophet ﷺ; they deserve to be transmitted accurately. If a hadith in your app is wrong, someone may act on it. That is the whole reason this repository exists, and why every repair here is gated by a proof rather than a guess.
 
 If it helps you, keep the chain of attribution intact and contribute improvements back.
 
-> *"When a person dies, all their deeds end except three: a continuing charity (sadaqah jariyah), beneficial knowledge, or a righteous child who prays for them."* — Prophet Muhammad ﷺ (Sahih Muslim)
+> *"When a person dies, all their deeds end except three: a continuing charity (sadaqah jariyah), beneficial knowledge, or a righteous child who prays for them."*, Prophet Muhammad ﷺ (Sahih Muslim)

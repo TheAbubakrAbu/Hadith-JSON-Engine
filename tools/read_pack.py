@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Reference decoder for the .hpk pack format — the executable version of docs/04-hpk-format.md.
+"""Reference decoder for the.hpk pack format, the executable version of docs/04-hpk-format.md.
 
 This exists to prove the format is genuinely portable: it was written from the specification
 alone, uses nothing but the standard library, and reads the same packs the Swift app ships.

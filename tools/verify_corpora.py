@@ -124,7 +124,7 @@ def verify_hadeethenc(report, want):
     return narrations, cats
 
 
-DASHY = re.compile("[—–]| - ")
+DASHY = re.compile("[, –]| - ")
 WORD = re.compile(r"[^\W_]+", re.UNICODE)
 SOFTENED_FIELDS = ("explanation", "benefits")
 
@@ -144,7 +144,7 @@ def compare_softened(report, want, got, label):
         return
     for index, (a, b) in enumerate(zip(src, out)):
         if DASHY.search(a):
-            report.check("—" not in b, f"{label} block {index} still carries an em dash")
+            report.check(", " not in b, f"{label} block {index} still carries an em dash")
             report.equal(WORD.findall(a.lower()), WORD.findall(b.lower()),
                          f"{label} block {index} wording")
         else:

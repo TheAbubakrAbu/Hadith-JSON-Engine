@@ -8,7 +8,7 @@ How this repository is put together, and why. Read this once and the rest makes 
 2. **Proof, not heuristic.** Nothing is written to a hadith unless re-simulating the upstream bug on the replacement reproduces the damaged record exactly. A heuristic that is right 99% of the time is wrong about 500 hadiths, and these are the words of the Prophet ﷺ.
 3. **Refuse rather than guess.** Ambiguity, donor disagreement, and unprovable candidates all result in the record being left exactly as upstream has it. A gap is honest; an invention is not.
 4. **Match by content, never by number.** Upstream's `idInBook` drifts, so every cross-dataset match is on text.
-5. **Decide once, at build time.** Anything a device would otherwise recompute on every launch — folding, chapter ranges, whitespace, daily-card eligibility — is computed here and stamped into the pack.
+5. **Decide once, at build time.** Anything a device would otherwise recompute on every launch (folding, chapter ranges, whitespace, daily-card eligibility), is computed here and stamped into the pack.
 6. **Fingerprint what must agree.** Where two repositories hold copies of the same logic, each pack carries a fingerprint of both, so drift is detected instead of silently corrupting behaviour.
 
 ## Layers
@@ -19,7 +19,7 @@ How this repository is put together, and why. Read this once and the rest makes 
         └──────────────────────────────┬───────────────────────────────┘
                                        │  reads JSON, or maps a .hpk
         ┌──────────────────────────────▼───────────────────────────────┐
-        │  PACKS  (build artifact — optional)                           │
+        │  PACKS  (build artifact, optional)                           │
         │  17 × .hpk + manifest.json · 25 MB · block-lazy, mmapped      │
         │  spec: docs/04-hpk-format.md · reader: tools/read_pack.py     │
         └──────────────────────────────┬───────────────────────────────┘
@@ -44,7 +44,7 @@ Each stage is idempotent and dry-run by default. Each writes an audit trail.
 | Stage | Tool | What it does |
 |---|---|---|
 | 1 | [`final_repair.py`](../tools/final_repair.py) + [`runall.py`](../tools/runall.py) | Whole-string greedy proof. 4,187 repairs. |
-| 2 | [`repair_line_aware.py`](../tools/repair_line_aware.py) | Per-line grouping proof — the records pass 1 could not model. 290 repairs. |
+| 2 | [`repair_line_aware.py`](../tools/repair_line_aware.py) | Per-line grouping proof: the records pass 1 could not model. 290 repairs. |
 | 3 | [`fix_leading_punctuation.py`](../tools/fix_leading_punctuation.py) | Trims narrator tails (`"): Two men…"`) left by pass 1. 646 records. |
 | 4 | [`add_grades.py`](../tools/add_grades.py) | Attaches scholar gradings, content-matched. 21,455 records. |
 | 5 | [`add_citations.py`](../tools/add_citations.py) | Attaches the standard sunnah.com citation numbers, content-matched. 47,476 records. |
@@ -76,7 +76,7 @@ The asymmetry is deliberate. A drifted fold is a **correctness** problem, so it 
 | `*.hpk`, `manifest.json` | build artifact | `tools/pack/build.sh` |
 | Search folds, chapter ranges, daily flags | computed at pack time | inside the packs only; never stored in the JSON |
 
-Note the last row: the JSON is deliberately kept as close to the upstream schema as possible, with `english.grades` and `citation` the only additions. Everything else the app needs is computed during packing rather than baked into the canonical data — so the JSON stays a clean, portable hadith corpus rather than an app-specific format.
+Note the last row: the JSON is deliberately kept as close to the upstream schema as possible, with `english.grades` and `citation` the only additions. Everything else the app needs is computed during packing rather than baked into the canonical data, so the JSON stays a clean, portable hadith corpus rather than an app-specific format.
 
 ## Why chapters are ranges
 

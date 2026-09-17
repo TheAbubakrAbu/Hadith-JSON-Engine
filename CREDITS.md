@@ -16,11 +16,11 @@ Every English translation in this corpus originates from **[sunnah.com](https://
 | Clean English text + gradings + citation cross-check | [fawazahmed0/hadith-api](https://github.com/fawazahmed0/hadith-api) | Unlicense |
 | Clean English text + gradings + citation numbers | [CheeseWithSauce/HadithsJSONFormat](https://github.com/CheeseWithSauce/HadithsJSONFormat) | MIT |
 
-**AhmedBaset/hadith-json** provides the structure this repository is built on — the book/chapter/hadith schema, the global ids, and the complete Arabic text, which is redistributed here **byte-identical and unmodified**. The greedy-regex bug this repository repairs is a bug in a generous piece of open-source work that many apps depend on, and the correction is offered back upstream ([issue #17](https://github.com/AhmedBaset/hadith-json/issues/17)).
+**AhmedBaset/hadith-json** provides the structure this repository is built on: the book/chapter/hadith schema, the global ids, and the complete Arabic text, which is redistributed here **byte-identical and unmodified**. The greedy-regex bug this repository repairs is a bug in a generous piece of open-source work that many apps depend on, and the correction is offered back upstream ([issue #17](https://github.com/AhmedBaset/hadith-json/issues/17)).
 
 **fawazahmed0/hadith-api** and **CheeseWithSauce/HadithsJSONFormat** are independent scrapes of the same sunnah.com translations. They are the reason the repair was possible at all: recovering deleted text required a clean copy of the same translation, and having *two* is what allowed 174 of the second-pass repairs to be confirmed by more than one source. They also carry the scholar gradings that upstream's schema omits entirely.
 
-They are likewise the source of the `citation` field — the standard sunnah.com numbering ("Jami` at-Tirmidhi 2950", "Sahih Muslim 8a") that upstream's `idInBook` drifts from. CheeseWithSauce preserves sunnah.com's literal reference line on every row, which was content-matched onto this corpus; fawazahmed0's independent `hadithnumber` confirms 24,479 of the assignments, and adjudicated seven scrape-era typos on sunnah.com's own pages.
+They are likewise the source of the `citation` field; the standard sunnah.com numbering ("Jami` at-Tirmidhi 2950", "Sahih Muslim 8a") that upstream's `idInBook` drifts from. CheeseWithSauce preserves sunnah.com's literal reference line on every row, which was content-matched onto this corpus; fawazahmed0's independent `hadithnumber` confirms 24,479 of the assignments, and adjudicated seven scrape-era typos on sunnah.com's own pages.
 
 **sunnah.com** additionally publishes [`sunnah-com/api`](https://github.com/sunnah-com/api), whose OpenAPI specification and `text_transform.py` informed the documentation here.
 
@@ -44,7 +44,7 @@ No hadith text is copied from that curation. Every entry is a citation resolved 
 
 ## Gradings
 
-The verdicts in `english.grades` are attributed to the scholars named in each record — among them Al-Albani, Zubair Ali Zai, Shuaib Al Arnaut, Ahmad Muhammad Shakir, Muhammad Fouad Abd al-Baqi, Abu Ghuddah, Bashar Awad Maarouf, Salim al-Hilali, and the Darussalam editorial team.
+The verdicts in `english.grades` are attributed to the scholars named in each record, among them Al-Albani, Zubair Ali Zai, Shuaib Al Arnaut, Ahmad Muhammad Shakir, Muhammad Fouad Abd al-Baqi, Abu Ghuddah, Bashar Awad Maarouf, Salim al-Hilali, and the Darussalam editorial team.
 
 This repository **transmits** those gradings. It does not compute, infer, adjudicate, or rank them. Where scholars differ, every verdict is kept with its attribution.
 
@@ -61,7 +61,7 @@ The pack format (`.hpk`), the `.henc` container, the search-fold logic, the rank
 
 Companion projects by the same author:
 
-- [**Quran Tajweed Engine**](https://github.com/TheAbubakrAbu/Quran-Tajweed-Engine) — the same idea, for the Quran
+- [**Quran Tajweed Engine**](https://github.com/TheAbubakrAbu/Quran-Tajweed-Engine), the same idea, for the Quran
 - [**Al-Adhan | Prayer Times**](https://github.com/TheAbubakrAbu/Al-Adhan-iOS)
 - [**Al-Quran | Beginner Quran**](https://github.com/TheAbubakrAbu/Al-Quran-iOS)
 
@@ -69,10 +69,10 @@ Companion projects by the same author:
 
 None of this work would have happened without the user of Al-Islam who noticed that Forty Hadith Qudsi 24 said the opposite of what it should, and took the trouble to report it. A bug that had been silently deleting sentences across sixteen collections was found because one reader paid attention and spoke up.
 
-> *"Whoever guides someone to goodness will have a reward like the one who did it."* — Prophet Muhammad ﷺ (Sahih Muslim)
+> *"Whoever guides someone to goodness will have a reward like the one who did it."*, Prophet Muhammad ﷺ (Sahih Muslim)
 
 ## License
 
-The tooling and documentation in this repository are MIT — see [LICENSE](LICENSE).
+The tooling and documentation in this repository are MIT, see [LICENSE](LICENSE).
 
 **The hadith text is not this repository's to license.** It belongs to the tradition, and its English rendering to the translators and publishers whom sunnah.com credits. Use it with care, preserve the chain of attribution above, and keep the text accurate.

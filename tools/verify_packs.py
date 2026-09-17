@@ -3,14 +3,14 @@
 specification in this repository still describes them.
 
 `read_pack.py --verify` proves a pack decodes. That is a much weaker claim than the one that
-matters, which is that the pack and the JSON say the same thing — a packer bug, a stale rebuild, or
+matters, which is that the pack and the JSON say the same thing, a packer bug, a stale rebuild, or
 an edited JSON that was never repacked all decode perfectly and all ship the wrong text. This tool
 re-derives every byte of a pack from its source and compares:
 
     metadata      the four title/author strings
     chapters      id, display text, search folds, and the row range each one owns
     rows          id, idInBook, chapterId, citation, block index, both daily flags
-    display text  arabic, narrator, text, grades — all four strings of all 50,884 hadiths
+    display text  arabic, narrator, text, grades, all four strings of all 50,884 hadiths
     folds         recomputed with tools/fold.py, and the fold fingerprint in every header
     manifest      sha256, byte size, and the shape counts of all 17 packs
     catalog       db/catalog.json against the corpus it describes
@@ -20,7 +20,7 @@ re-derives every byte of a pack from its source and compares:
     python3 tools/verify_packs.py <packs-dir>
     python3 tools/verify_packs.py <packs-dir> --quiet   # only the summary and failures
 
-Standard library only, no Apple frameworks, no third-party packages — it runs anywhere Python does,
+Standard library only, no Apple frameworks, no third-party packages: it runs anywhere Python does,
 so a port can use it as its own acceptance test. Exit status is 0 only if every check passed.
 
 The one thing it cannot read is the SEARCH payload, which ships LZFSE (the standard library has no
@@ -54,7 +54,7 @@ DAILY_MAX_CHARACTERS = 220          # dailyMaxCharacters in pack-hadith.swift
 DAILY_LENGTH, DAILY_GENTLE = 1 << 0, 1 << 1
 LZFSE, LZMA = 1, 2
 
-# Swift's .whitespacesAndNewlines, for trimmingCharacters — the same set tools/fold.py defines.
+# Swift's.whitespacesAndNewlines, for trimmingCharacters: the same set tools/fold.py defines.
 _TRIM = ''.join(fold._WHITESPACE)
 # Swift's .whitespaces (Zs + TAB), which is what the grades trim uses. Newlines are NOT in it.
 _TRIM_SPACES = ''.join(c for c in _TRIM if c not in '\n\x0b\x0c\r\x85  ')
@@ -98,7 +98,7 @@ def cleaned_hadith_text(s):
 
     Deliberate paragraph breaks survive as one "\\n\\n"; every other whitespace run collapses to a
     single space. Note the guard: a string with none of the trigger characters is returned
-    UNCHANGED — it is not even trimmed — and a port that trims unconditionally will differ.
+  UNCHANGED (it is not even trimmed), and a port that trims unconditionally will differ.
     """
     if not ('\n' in s or '  ' in s or '\t' in s or '\r' in s or ' ' in s):
         return s
@@ -113,7 +113,7 @@ def cleaned_hadith_text(s):
 
 
 def normalized_chapter_id(raw):
-    """Fractional chapter ids map to a stable synthetic integer — truncating would collide with 8."""
+    """Fractional chapter ids map to a stable synthetic integer, truncating would collide with 8."""
     return int(raw) if raw == int(raw) else 1000 + round(raw * 10)
 
 

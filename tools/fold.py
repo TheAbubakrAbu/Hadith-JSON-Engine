@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""The search fold, in portable Python — the cross-platform twin of tools/pack/HadithFold.swift.
+"""The search fold, in portable Python, the cross-platform twin of tools/pack/HadithFold.swift.
 
 The packs ship text that was folded at BUILD time by the Swift fold. A query only ever finds that
 text if it folds through the exact same rules, so any port has to agree with the packer scalar for
 scalar. `fold_fingerprint()` is how you prove it did: the packer stamps its own value into every
 pack, and this module recomputes it from the same probes. If the two agree, this port is correct on
-every rule the fold has — the probes are chosen to exercise all of them.
+every rule the fold has; the probes are chosen to exercise all of them.
 
     python3 tools/fold.py                      # print the fingerprints
     python3 tools/fold.py "الصلاة خير من النوم"  # fold one string both ways
@@ -19,7 +19,7 @@ import unicodedata
 # --- Character classes -------------------------------------------------------------------------
 # Swift's CharacterSet.punctuationCharacters is Unicode category P*, .symbols is S*, and
 # .nonBaseCharacters is M* (the combining marks). Categories, not code point lists, so this stays
-# correct as Unicode grows — exactly as the Swift original does.
+# correct as Unicode grows, exactly as the Swift original does.
 
 
 def _is_punct_symbol_or_mark(ch):
@@ -81,7 +81,7 @@ def english(text):
 def arabic(text):
     """Canonical letter folds and whitespace collapsing, then the diacritic and sign strip.
 
-    In that order — the second pass reads what the first one produced.
+    In that order: the second pass reads what the first one produced.
     """
     built = []
     for ch in text:
@@ -121,7 +121,7 @@ def _split_whitespace(text):
 
 
 def is_arabic_script(text):
-    """Whether the text carries Arabic script — which fold a query gets, and which field it can match."""
+    """Whether the text carries Arabic script: which fold a query gets, and which field it can match."""
     return any(0x0600 <= ord(c) <= 0x06FF or 0x0750 <= ord(c) <= 0x077F
                or 0x08A0 <= ord(c) <= 0x08FF for c in text)
 
@@ -137,7 +137,7 @@ def query(raw):
 # --- Fingerprints ------------------------------------------------------------------------------
 
 def fingerprint(text):
-    """FNV-1a, 64-bit — deliberately not a seeded hash, which would differ between processes."""
+    """FNV-1a, 64-bit, deliberately not a seeded hash, which would differ between processes."""
     h = 0xcbf29ce484222325
     for byte in text.encode('utf-8'):
         h ^= byte
@@ -175,7 +175,7 @@ def fold_fingerprint():
 
 
 def word_list_fingerprint(words):
-    """Order-independent fingerprint of a blocked-word list — content has to match, not order."""
+    """Order-independent fingerprint of a blocked-word list, content has to match, not order."""
     return fingerprint('\n'.join(sorted(w.lower() for w in words)))
 
 

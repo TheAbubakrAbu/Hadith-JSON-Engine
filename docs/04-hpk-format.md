@@ -1,12 +1,12 @@
 # The HPK pack format
 
-`.hpk` is the binary the apps ship. This document specifies it completely — every byte, every offset — so any language can read a pack without consulting the Swift source. A working reference decoder in ~200 lines of Python is at [`tools/read_pack.py`](../tools/read_pack.py).
+`.hpk` is the binary the apps ship. This document specifies it completely (every byte, every offset), so any language can read a pack without consulting the Swift source. A working reference decoder in ~200 lines of Python is at [`tools/read_pack.py`](../tools/read_pack.py).
 
 **The JSON in [`db/by_book/`](../db/by_book) is the source of truth. Packs are a reproducible build artifact.** Nothing is in a pack that is not in the JSON.
 
 ## Why a binary at all
 
-The 17 books are 79 MB of JSON. Bundled as-is that is 79 MB of install footprint, and opening one book means decoding megabytes of UTF-8 into strings on the device — the whole shelf resident once a launch prewarm has run.
+The 17 books are 79 MB of JSON. Bundled as-is that is 79 MB of install footprint, and opening one book means decoding megabytes of UTF-8 into strings on the device; the whole shelf resident once a launch prewarm has run.
 
 The packs are 25 MB total, and reading is: map the file (no resident cost), decompress **one** ~256 KB block, hand back the strings inside it.
 
@@ -21,7 +21,7 @@ The deeper point is that **anything decidable ahead of time is decided once, at 
 | Block layout + compression | Decoding megabytes of JSON to read one chapter |
 | Chapter and hadith counts | A hand-maintained table in the app that could drift from the data |
 
-Fields the app never reads — `bookId`, the book-level `id`, chapter `bookId`, the universally empty metadata introductions — are dropped.
+Fields the app never reads (`bookId`, the book-level `id`, chapter `bookId`, the universally empty metadata introductions), are dropped.
 
 ## Conventions
 
@@ -30,12 +30,12 @@ Fields the app never reads — `bookId`, the book-level `id`, chapter `bookId`, 
 - Offsets are absolute from the start of the file.
 - Records are 20 and 28 bytes wide, so **nothing is guaranteed to be naturally aligned**. Read integers byte by byte, or use unaligned loads.
 
-## Header — 48 bytes at offset 0
+## Header: 48 bytes at offset 0
 
 | Offset | Type | Field |
 |---:|---|---|
-| 0 | `u32` | magic — `0x4B504448`, `"HDPK"` |
-| 4 | `u16` | format version — currently **4** |
+| 0 | `u32` | magic, `0x4B504448`, `"HDPK"` |
+| 4 | `u16` | format version, currently **4** |
 | 6 | `u8` | eager codec |
 | 7 | `u8` | text codec |
 | 8 | `u8` | search codec |
@@ -51,9 +51,9 @@ Fields the app never reads — `bookId`, the book-level `id`, chapter `bookId`, 
 
 **Codec values:** `1` = LZFSE, `2` = LZMA. Both are Apple `Compression` framework buffer codecs; LZMA interoperates with standard XZ decoders. Current builds use LZMA for the eager section and display text, LZFSE for search folds.
 
-**Reject the file** if the magic or version does not match. Chapter and hadith counts are repeated inside the eager section; treat the header copies as a hint and bound any allocation by what the buffer could actually hold — a truncated file otherwise hands you a reserve count read out of garbage.
+**Reject the file** if the magic or version does not match. Chapter and hadith counts are repeated inside the eager section; treat the header copies as a hint and bound any allocation by what the buffer could actually hold: a truncated file otherwise hands you a reserve count read out of garbage.
 
-## Block table — 28 bytes per block, starting at offset 48
+## Block table: 28 bytes per block, starting at offset 48
 
 | Offset | Type | Field |
 |---:|---|---|
@@ -98,14 +98,14 @@ The per-hadith id table is what lets a book open instantly with none of its text
 
 ### Citation
 
-Base and suffix render as the standard sunnah.com citation — `2950`, or `8a` where one base covers several narrations (see [01-data-schema.md](01-data-schema.md#citation)). This is the number to print beside a hadith and to resolve reference lookups against; `idInBook` is the row key, not the citation. Base 0 means sunnah.com has no collection-level number for the row (all of Muwatta Malik, most of Bulugh al-Maram) — fall back to `idInBook` for display. Version 2 packs carried 15-byte records without these two fields; version 4 added the fourth display string (gradings) per hadith.
+Base and suffix render as the standard sunnah.com citation, `2950`, or `8a` where one base covers several narrations (see [01-data-schema.md](01-data-schema.md#citation)). This is the number to print beside a hadith and to resolve reference lookups against; `idInBook` is the row key, not the citation. Base 0 means sunnah.com has no collection-level number for the row (all of Muwatta Malik, most of Bulugh al-Maram), fall back to `idInBook` for display. Version 2 packs carried 15-byte records without these two fields; version 4 added the fourth display string (gradings) per hadith.
 
 ### Row flags
 
 | Bit | Name | Meaning |
 |---:|---|---|
-| `1 << 0` | `dailyLength` | Short enough for a daily card in both scripts, and English text is present. **Objective** — derived from the data alone. |
-| `1 << 1` | `dailyGentle` | Free of the daily-card blocked words. **Policy** — trust only when the fingerprints agree. |
+| `1 << 0` | `dailyLength` | Short enough for a daily card in both scripts, and English text is present. **Objective**, derived from the data alone. |
+| `1 << 1` | `dailyGentle` | Free of the daily-card blocked words. **Policy**: trust only when the fingerprints agree. |
 
 ### Chapters are row ranges, not filters
 
@@ -128,7 +128,7 @@ For each block, the display payload immediately followed by the search payload.
 
 ### Display
 
-The block's strings back to back, length-prefixed, **four per hadith in row order** — `arabic`, `narrator`, `text`, `grades`. Hadith `row` lives at slot `(row - block.firstRow) * 4`. `grades` encodes the scholar gradings as `name U+001F grade` records joined by `U+001E`, empty when ungraded — display them verbatim ([03-gradings.md](03-gradings.md)); they are not part of the search payload. The reader splits the block once and indexes it; there is no per-hadith offset table because the split is done once and cached.
+The block's strings back to back, length-prefixed, **four per hadith in row order**, `arabic`, `narrator`, `text`, `grades`. Hadith `row` lives at slot `(row - block.firstRow) * 4`. `grades` encodes the scholar gradings as `name U+001F grade` records joined by `U+001E`, empty when ungraded, display them verbatim ([03-gradings.md](03-gradings.md)); they are not part of the search payload. The reader splits the block once and indexes it; there is no per-hadith offset table because the split is done once and cached.
 
 ### Search
 
@@ -147,9 +147,9 @@ Lengths up front give offset → row without a scan. Each record is **NUL-termin
 
 Two independent repositories have to stay honest with each other, and both fingerprints are stamped into every pack.
 
-**Fold fingerprint** — of `HadithFold.swift`, which is copied verbatim into the app. Search only works if build-time and run-time folding agree scalar for scalar. If the app's own fingerprint differs, the prebuilt search text cannot be trusted and the packs must be rebuilt. A drifted copy is caught immediately instead of quietly breaking search.
+**Fold fingerprint**: of `HadithFold.swift`, which is copied verbatim into the app. Search only works if build-time and run-time folding agree scalar for scalar. If the app's own fingerprint differs, the prebuilt search text cannot be trusted and the packs must be rebuilt. A drifted copy is caught immediately instead of quietly breaking search.
 
-**Blocked-word fingerprint** — of the daily-card word list the flags were computed from. If it differs, nothing breaks: `dailyLength` is still objective, and the app simply rechecks the words itself for the few hadiths that pass the length gate. **Being out of sync costs speed, never correctness.**
+**Blocked-word fingerprint**: of the daily-card word list the flags were computed from. If it differs, nothing breaks: `dailyLength` is still objective, and the app simply rechecks the words itself for the few hadiths that pass the length gate. **Being out of sync costs speed, never correctness.**
 
 ## Reading a pack: the minimum path
 
@@ -160,7 +160,7 @@ Two independent repositories have to stay honest with each other, and both finge
 5. To open chapter `c`: rows `c.firstRow ..< c.firstRow + c.rowCount`. Usually 1–3 blocks.
 6. To search: fold the query the same way, then byte-compare inside each block's search payload.
 
-Cache decompressed blocks — key them by **book slug plus block index**, never by object identity. A released pack's address can be handed straight back to the next one allocated, and an identity key then serves the old book's block to the new book. (This was a real bug, found by the pack verifier reading books in order and getting Hadith Qudsi's text out of an-Nawawi's Forty.)
+Cache decompressed blocks, key them by **book slug plus block index**, never by object identity. A released pack's address can be handed straight back to the next one allocated, and an identity key then serves the old book's block to the new book. (This was a real bug, found by the pack verifier reading books in order and getting Hadith Qudsi's text out of an-Nawawi's Forty.)
 
 ## Manifest
 
@@ -168,11 +168,11 @@ Cache decompressed blocks — key them by **book slug plus block index**, never 
 
 ## Tuning
 
-Block size is 256 KB of raw display text by default (`HPK_BLOCK` env var, in KB). Measured across 64K/128K/256K/512K/1M, the compression ratio keeps improving with size — the compressor gets a longer window — but so does the cost of touching one hadith. 256K is the knee: it gives up ~1.5 MB against 1 MB blocks and keeps a single block's LZMA decode near a millisecond, so opening a chapter is 1–3 blocks and a few milliseconds.
+Block size is 256 KB of raw display text by default (`HPK_BLOCK` env var, in KB). Measured across 64K/128K/256K/512K/1M, the compression ratio keeps improving with size (the compressor gets a longer window), but so does the cost of touching one hadith. 256K is the knee: it gives up ~1.5 MB against 1 MB blocks and keeps a single block's LZMA decode near a millisecond, so opening a chapter is 1–3 blocks and a few milliseconds.
 
 The codec split is deliberate and asymmetric:
 
-- **Display text takes LZMA.** It is decompressed a block at a time and the reader caches it, so LZMA's extra saving (12.8 MB vs ~19 MB for the same text) is worth its ~170 MB/s decode — a read touches one block.
+- **Display text takes LZMA.** It is decompressed a block at a time and the reader caches it, so LZMA's extra saving (12.8 MB vs ~19 MB for the same text) is worth its ~170 MB/s decode: a read touches one block.
 - **Search folds take LZFSE.** A query scans *every* block of *every* book, 48 MB of it, so it wants ~1.6 GB/s and pays 2.4 MB for the privilege.
 
 Override with `HPK_TEXT` / `HPK_SEARCH` (`1` = LZFSE, `2` = LZMA).

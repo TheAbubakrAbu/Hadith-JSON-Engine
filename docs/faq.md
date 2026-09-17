@@ -2,7 +2,7 @@
 
 ## Is the data correct now?
 
-**No — not entirely, and you should not ship it believing otherwise.**
+**No: not entirely, and you should not ship it believing otherwise.**
 
 What is solid: the reported bug is fixed, 4,477 repairs are in, 4,476 of them re-verify against the shipped text, all 50,884 hadiths verify byte-for-byte between JSON and packs, and 99.6% of the shipped English matches an independent second scrape exactly.
 
@@ -11,26 +11,26 @@ What is not: see below.
 ## What is still wrong
 
 - **19 records are still provably truncated**, plus **22 undecidable**. Both clean donors share the same gaps, so nothing available can close them.
-- **16 Ibn Majah records were refused as ambiguous** — two candidates both reproduced the damage, so neither was written. They remain damaged.
+- **16 Ibn Majah records were refused as ambiguous**: two candidates both reproduced the damage, so neither was written. They remain damaged.
 - **115 repairs rest on a single donor** with no independent confirmation. `confirmed_by: 1` in the logs marks them. These are the ones most worth a human read.
 - **173 records are corroborated by no second source at all.**
 - **1,252 gradings were refused** because two sources attributed contradictory verdicts to the same named scholar.
-- **Bukhari and Muslim carry no gradings** — deliberately; see [03-gradings](03-gradings.md).
+- **Bukhari and Muslim carry no gradings**: deliberately; see [03-gradings](03-gradings.md).
 - **Darimi has no English translation** (3,406 records). sunnah.com has none either. Malik has 12 more empty, Ahmed 15; Malik has 125 records with no Arabic.
-- **Upstream's other problems are inherited**: missing hadiths and chapter gaps. `idInBook` drift is no longer user-facing — `citation` carries the standard number on 47,476 records (93.3%) — but the row index itself still drifts and still must not be used as a citation key.
+- **Upstream's other problems are inherited**: missing hadiths and chapter gaps. `idInBook` drift is no longer user-facing, `citation` carries the standard number on 47,476 records (93.3%), but the row index itself still drifts and still must not be used as a citation key.
 - **The Arabic has never been verified.** It is byte-identical to upstream and was never checked against sunnah.com. Treat it as inherited, not validated.
 
 ## Is a double space a sign of damage?
 
 **Usually not.** This is the single most misleading signal in the corpus.
 
-2,603 records carry the "scar" pattern — a doubled space welded mid-sentence, or whitespace against punctuation. Compared against the nearest clean donor:
+2,603 records carry the "scar" pattern, a doubled space welded mid-sentence, or whitespace against punctuation. Compared against the nearest clean donor:
 
 | | Records |
 |---|---:|
-| Donor identical — nothing was lost | 2,562 |
-| Donor holds more text — real damage | 19 |
-| No close match — undecidable | 22 |
+| Donor identical, nothing was lost | 2,562 |
+| Donor holds more text, real damage | 19 |
+| No close match, undecidable | 22 |
 
 The regex over-fires roughly **130 to 1**. The source translations simply contain doubled spaces. `final_repair.py`'s docstring warns it "both over- and under-fires"; that is what it looks like measured.
 
@@ -42,13 +42,13 @@ They need a third independent source, and there isn't one available:
 
 | Route | Result |
 |---|---|
-| sunnah.com directly | 403 — Cloudflare blocks scripted clients |
-| `sunnah-com/data` (official) | empty — README and `.gitignore` only |
+| sunnah.com directly | 403, Cloudflare blocks scripted clients |
+| `sunnah-com/data` (official) | empty, README and `.gitignore` only |
 | `sunnah-com/api` | has a DB dump, but it is a **590-row Bukhari sample** |
 | Wayback Machine | 429 rate-limited |
 | Other public scrapes | nothing substantial beyond the two already used |
 
-The real path is an [api.sunnah.com key](https://github.com/sunnah-com/api) — free on request. That is sunnah.com's own database: authoritative text, gradings, **and the original line structure both scrapes flattened**, which is exactly what the repair proof depends on.
+The real path is an [api.sunnah.com key](https://github.com/sunnah-com/api), free on request. That is sunnah.com's own database: authoritative text, gradings, **and the original line structure both scrapes flattened**, which is exactly what the repair proof depends on.
 
 One caveat if you go that route: their API runs `strip_shortcodes` to remove BBCode like `[b]`, and the pattern cannot distinguish a formatting tag from a genuine one-word insertion. `[pillars]`, `[truly]`, `[seizing]` and `[something]` are stripped; `[of His]`, `[He said:]`, `[to do]`, `[1]` survive. **134 records in this corpus hold a bracket their API would delete.** Ask for a raw dump, pre-transform, or keep the community scrapes as a fallback for those.
 
@@ -66,7 +66,7 @@ Because the apps this serves are offline-first. A reader on a plane, in a masjid
 
 ## Why is `idInBook` unreliable?
 
-Upstream's numbering does not consistently match sunnah.com's ([upstream #11](https://github.com/AhmedBaset/hadith-json/issues/11)) — Jami` at-Tirmidhi 2950 sits at `idInBook` 3033. It is a fine index *within this dataset*. It is not a citation key, and it is not safe for matching against another dataset. Every tool here matches on content instead.
+Upstream's numbering does not consistently match sunnah.com's ([upstream #11](https://github.com/AhmedBaset/hadith-json/issues/11)), Jami` at-Tirmidhi 2950 sits at `idInBook` 3033. It is a fine index *within this dataset*. It is not a citation key, and it is not safe for matching against another dataset. Every tool here matches on content instead.
 
 The number a reader should ever see is the `citation` field ([schema](01-data-schema.md#citation)), attached by [`add_citations.py`](../tools/add_citations.py): the standard sunnah.com number, content-matched from two independent donors, cross-confirmed on 24,479 records with 100% agreement after seven scrape-era site typos were adjudicated by local sequence.
 
@@ -84,11 +84,11 @@ One caveat: the search payload is LZFSE, which Python's standard library cannot 
 
 ## Why LZMA for text but LZFSE for search?
 
-Opposite access patterns. Display text is read one block at a time and cached, so LZMA's better ratio (12.8 MB vs ~19 MB) is worth its ~170 MB/s decode. Search scans *every* block of *every* book — 48 MB — so it needs ~1.6 GB/s and pays 2.4 MB for it.
+Opposite access patterns. Display text is read one block at a time and cached, so LZMA's better ratio (12.8 MB vs ~19 MB) is worth its ~170 MB/s decode. Search scans *every* block of *every* book (48 MB), so it needs ~1.6 GB/s and pays 2.4 MB for it.
 
 ## Can I use this commercially? What about attribution?
 
-The tooling here is MIT. The **text is not this repository's to license** — it originates from sunnah.com's published translations by way of three community scrapes. Respect sunnah.com's terms for the underlying translations, and preserve the provenance in [CREDITS.md](../CREDITS.md).
+The tooling here is MIT. The **text is not this repository's to license**, it originates from sunnah.com's published translations by way of three community scrapes. Respect sunnah.com's terms for the underlying translations, and preserve the provenance in [CREDITS.md](../CREDITS.md).
 
 The upstream base dataset states no license; see the note in the README.
 
